@@ -1133,7 +1133,7 @@
                     <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
                 </a>
                 
-                <nav class="nav">
+                <nav class="nav" id="mobile-nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="features.html" class="nav-link">Features</a>
                     <a href="#pricing" class="nav-link">Pricing</a>
@@ -1792,6 +1792,20 @@
     <!-- JavaScript -->
     <script>
         // ============================================================================
+        // ========================================================================
+        // MOBILE MENU TOGGLE
+        // ========================================================================
+        window.toggleMobileMenu = function() {
+            const nav = document.getElementById('mobile-nav');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.gap = '1rem';
+                nav.style.marginTop = '1rem';
+            }
+        };
         // MAIN APPLICATION SCRIPT
         // ============================================================================
 
