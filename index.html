@@ -1063,6 +1063,45 @@
             .modal-content {
                 margin: var(--space-sm);
             }
+
+            /* =======================
+               Mobile Header Buttons
+               ======================= */
+            .header .flex {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-end; /* aligns buttons to right */
+            }
+
+            .header .flex .btn {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 120px; /* ensure buttons don’t shrink too much */
+            }
+
+            /* =======================
+               Chatbot / Modal Mobile Fix
+               ======================= */
+            .modal-content {
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
+                border-radius: 0 !important;
+                padding: 1rem !important;
+            }
+
+            .chat-demo {
+                height: calc(100vh - 150px) !important; /* leave space for header/buttons */
+                max-height: 100% !important;
+                overflow-y: auto;
+            }
+
+            .chat-demo button.btn {
+                flex: 1;
+                font-size: 0.9rem !important;
+                padding: 0.5rem 1rem !important;
+            }
         }
         
         @media (max-width: 480px) {
