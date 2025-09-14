@@ -1256,12 +1256,12 @@
                 </div>
                 
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+</button>
             </div>
         </div>
     </header>
@@ -1900,27 +1900,36 @@
     <!-- JavaScript -->
     <script>
 
-        window.toggleMobileMenu = function() {
+window.toggleMobileMenu = function() {
     const mobileNav = document.getElementById('mobile-nav');
     const menuBtn = document.querySelector('.mobile-menu-btn');
     
-    if (mobileNav.classList.contains('active')) {
-        mobileNav.classList.remove('active');
-        menuBtn.innerHTML = `
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
+    console.log('Toggle function called'); // Add this to test
+    console.log('Mobile nav element:', mobileNav); // Add this to test
+    
+    if (mobileNav) {
+        if (mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            // Change hamburger back to menu icon
+            menuBtn.innerHTML = `
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            `;
+        } else {
+            mobileNav.classList.add('active');
+            // Change to X icon
+            menuBtn.innerHTML = `
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            `;
+        }
     } else {
-        mobileNav.classList.add('active');
-        menuBtn.innerHTML = `
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        `;
+        console.error('Mobile nav element not found');
     }
 };
 
