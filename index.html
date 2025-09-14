@@ -1026,6 +1026,29 @@
         }
         
         @media (max-width: 768px) {
+/* Fix mobile navigation */
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 14, 39, 0.98);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-secondary);
+        padding: 1rem;
+        display: none;
+    }
+    
+    .mobile-menu.active {
+        display: block;
+    }
+    
+    .mobile-menu .nav-link {
+        display: block;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-secondary);
+    }
+
             .hero-actions {
                 flex-direction: column;
                 align-items: stretch;
@@ -1060,9 +1083,15 @@
                 right: var(--space-md);
             }
             
-            .modal-content {
-                margin: var(--space-sm);
-            }
+            /* Fix modal sizing */
+    .modal-content {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        height: 95vh !important;
+        max-height: 95vh !important;
+        margin: 2.5vh auto !important;
+        padding: 1rem !important;
+    }
 
             /* =======================
                Mobile Header Buttons
@@ -1091,11 +1120,30 @@
                 padding: 1rem !important;
             }
 
-            .chat-demo {
-                height: calc(100vh - 150px) !important; /* leave space for header/buttons */
-                max-height: 100% !important;
-                overflow-y: auto;
-            }
+             /* Fix chat demo */
+    .chat-demo {
+        height: 70vh !important;
+        max-width: 100% !important;
+    }
+
+      /* Fix demo section layout */
+    .demo-container {
+        grid-template-columns: 1fr !important;
+    }
+
+      /* Improve button sizes */
+    .btn {
+        min-height: 48px;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Fix form inputs */
+    .form-input,
+    .form-select,
+    .form-textarea {
+        min-height: 48px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
 
             .chat-demo button.btn {
                 flex: 1;
