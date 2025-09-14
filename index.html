@@ -368,7 +368,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: relative;
         }
         
         .logo {
@@ -379,38 +378,17 @@
         }
         
         .nav {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            flex-direction: column;
-            background: rgba(10, 14, 39, 0.95);
-            padding: 0 1rem;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            z-index: 999;
+            display: none;
+            gap: var(--space-lg);
         }
-
-        .nav.nav-open {
-            display: flex;
-            max-height: 500px; /* enough for links */
-            padding: 1rem;
-        }
-
+        
         .nav-link {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-secondary);
             color: var(--gray-300);
             text-decoration: none;
             font-weight: 500;
             transition: color var(--transition-fast);
         }
-
-        .nav-link:last-child {
-            border-bottom: none;
-        }
-
+        
         .nav-link:hover {
             color: var(--primary);
         }
