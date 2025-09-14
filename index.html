@@ -368,6 +368,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
         }
         
         .logo {
@@ -378,17 +379,38 @@
         }
         
         .nav {
-            display: none;
-            gap: var(--space-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            flex-direction: column;
+            background: rgba(10, 14, 39, 0.95);
+            padding: 0 1rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 999;
         }
-        
+
+        .nav.nav-open {
+            display: flex;
+            max-height: 500px; /* enough for links */
+            padding: 1rem;
+        }
+
         .nav-link {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-secondary);
             color: var(--gray-300);
             text-decoration: none;
             font-weight: 500;
             transition: color var(--transition-fast);
         }
-        
+
+        .nav-link:last-child {
+            border-bottom: none;
+        }
+
         .nav-link:hover {
             color: var(--primary);
         }
@@ -1789,7 +1811,7 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
+
     <script>
         // ============================================================================
         // ========================================================================
@@ -1806,15 +1828,12 @@
                 nav.style.marginTop = '1rem';
             }
         };
-        // MAIN APPLICATION SCRIPT
-        // ============================================================================
+
 
         (function() {
             'use strict';
 
-            // ========================================================================
-            // INITIALIZATION
-            // ========================================================================
+
             
             let reducedMotion = false;
             let chatDemoActive = false;
@@ -1837,9 +1856,7 @@
                 }, 2000);
             });
 
-            // ========================================================================
-            // SCROLL ANIMATIONS
-            // ========================================================================
+
             
             function initScrollAnimations() {
                 if (reducedMotion) return;
@@ -1863,9 +1880,6 @@
                 observeElements();
             }
 
-            // ========================================================================
-            // HEADER SCROLL EFFECT
-            // ========================================================================
             
             function initHeaderScroll() {
                 const header = document.getElementById('header');
@@ -1884,9 +1898,7 @@
                 });
             }
 
-            // ========================================================================
-            // CHAT DEMO FUNCTIONALITY
-            // ========================================================================
+
             
             const demoMessages = [
                 { type: 'ai', text: 'Hello! Welcome to Stella\'s Spa & Wellness. I\'m your AI receptionist. How can I help you today?' },
@@ -1913,7 +1925,7 @@
                     container.appendChild(messageDiv);
                     container.scrollTop = container.scrollHeight;
                     
-                    // Add animation delay for sequential appearance
+
                     setTimeout(() => {
                         messageDiv.style.animationDelay = '0s';
                     }, 100);
@@ -1934,7 +1946,7 @@
                     </div>
                 `;
                 
-                // Add typing animation CSS if not already present
+
                 if (!document.getElementById('typing-animation')) {
                     const style = document.createElement('style');
                     style.id = 'typing-animation';
@@ -1952,7 +1964,6 @@
                 return typingDiv;
             }
 
-            // Global functions for demo
             window.startLiveDemoChat = function() {
                 const chatBody = document.getElementById('main-chat-body');
                 chatBody.innerHTML = '';
@@ -1964,7 +1975,7 @@
                     const typingDelay = isAiMessage ? 1000 : 0;
                     
                     if (isAiMessage) {
-                        // Show typing indicator before AI messages
+
                         setTimeout(() => {
                             const typingIndicator = showTypingIndicator(chatBody);
                             setTimeout(() => {
@@ -1979,7 +1990,6 @@
                     }
                 });
 
-                // Add restart button after demo completes
                 setTimeout(() => {
                     const restartDiv = document.createElement('div');
                     restartDiv.style.textAlign = 'center';
@@ -1997,10 +2007,8 @@
                 const chatBody = document.getElementById('demo-chat-body');
                 chatBody.innerHTML = '';
                 
-                // Start with initial message
                 displayChatMessage(chatBody, quickDemoMessages[0], 0);
                 
-                // Add quick reply buttons
                 setTimeout(() => {
                     const quickReplies = document.createElement('div');
                     quickReplies.style.padding = '1rem 0';
