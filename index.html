@@ -381,13 +381,6 @@
             display: none;
             gap: var(--space-lg);
         }
-
-        .nav.nav-open {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
         
         .nav-link {
             color: var(--gray-300);
@@ -1804,7 +1797,14 @@
         // ========================================================================
         window.toggleMobileMenu = function() {
             const nav = document.getElementById('mobile-nav');
-            nav.classList.toggle('nav-open');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.gap = '1rem';
+                nav.style.marginTop = '1rem';
+            }
         };
         // MAIN APPLICATION SCRIPT
         // ============================================================================
