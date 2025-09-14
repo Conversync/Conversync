@@ -1133,7 +1133,7 @@
                     <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
                 </a>
                 
-                <nav class="nav" id="mobile-nav">
+                <nav class="nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="features.html" class="nav-link">Features</a>
                     <a href="#pricing" class="nav-link">Pricing</a>
@@ -1789,29 +1789,18 @@
         </div>
     </div>
 
-
+    <!-- JavaScript -->
     <script>
         // ============================================================================
-        // ========================================================================
-        // MOBILE MENU TOGGLE
-        // ========================================================================
-        window.toggleMobileMenu = function() {
-            const nav = document.getElementById('mobile-nav');
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'flex';
-                nav.style.flexDirection = 'column';
-                nav.style.gap = '1rem';
-                nav.style.marginTop = '1rem';
-            }
-        };
-
+        // MAIN APPLICATION SCRIPT
+        // ============================================================================
 
         (function() {
             'use strict';
 
-
+            // ========================================================================
+            // INITIALIZATION
+            // ========================================================================
             
             let reducedMotion = false;
             let chatDemoActive = false;
@@ -1834,7 +1823,9 @@
                 }, 2000);
             });
 
-
+            // ========================================================================
+            // SCROLL ANIMATIONS
+            // ========================================================================
             
             function initScrollAnimations() {
                 if (reducedMotion) return;
@@ -1858,6 +1849,9 @@
                 observeElements();
             }
 
+            // ========================================================================
+            // HEADER SCROLL EFFECT
+            // ========================================================================
             
             function initHeaderScroll() {
                 const header = document.getElementById('header');
@@ -1876,7 +1870,9 @@
                 });
             }
 
-
+            // ========================================================================
+            // CHAT DEMO FUNCTIONALITY
+            // ========================================================================
             
             const demoMessages = [
                 { type: 'ai', text: 'Hello! Welcome to Stella\'s Spa & Wellness. I\'m your AI receptionist. How can I help you today?' },
@@ -1903,7 +1899,7 @@
                     container.appendChild(messageDiv);
                     container.scrollTop = container.scrollHeight;
                     
-
+                    // Add animation delay for sequential appearance
                     setTimeout(() => {
                         messageDiv.style.animationDelay = '0s';
                     }, 100);
@@ -1924,7 +1920,7 @@
                     </div>
                 `;
                 
-
+                // Add typing animation CSS if not already present
                 if (!document.getElementById('typing-animation')) {
                     const style = document.createElement('style');
                     style.id = 'typing-animation';
@@ -1942,6 +1938,7 @@
                 return typingDiv;
             }
 
+            // Global functions for demo
             window.startLiveDemoChat = function() {
                 const chatBody = document.getElementById('main-chat-body');
                 chatBody.innerHTML = '';
@@ -1953,7 +1950,7 @@
                     const typingDelay = isAiMessage ? 1000 : 0;
                     
                     if (isAiMessage) {
-
+                        // Show typing indicator before AI messages
                         setTimeout(() => {
                             const typingIndicator = showTypingIndicator(chatBody);
                             setTimeout(() => {
