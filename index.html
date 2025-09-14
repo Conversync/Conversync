@@ -381,6 +381,13 @@
             display: none;
             gap: var(--space-lg);
         }
+
+        .nav.nav-open {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
         
         .nav-link {
             color: var(--gray-300);
@@ -1077,33 +1084,6 @@
                 font-size: 0.875rem;
                 padding: 0.4rem 0.8rem;
                 min-width: 120px; /* ensure buttons don’t shrink too much */
-            }
-
-            /* ====== Mobile navigation overlay ====== */
-            /* Position the nav as an overlay on small screens and show it when .open is present */
-            .nav {
-                position: absolute;
-                top: 64px;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 39, 0.98);
-                padding: var(--space-md);
-                display: none;
-                flex-direction: column;
-                gap: var(--space-md);
-                border-bottom: 1px solid var(--border-secondary);
-                z-index: 999;
-            }
-
-            .nav.open {
-                display: flex;
-            }
-
-            /* Ensure nav links take full width on mobile */
-            .nav .nav-link {
-                display: block;
-                width: 100%;
-                padding: 0.5rem 0;
             }
 
             /* =======================
@@ -1824,20 +1804,7 @@
         // ========================================================================
         window.toggleMobileMenu = function() {
             const nav = document.getElementById('mobile-nav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            if (!nav) return;
-            const isOpen = nav.classList.toggle('open');
-
-            // update aria for accessibility
-            if (btn) {
-                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            }
-
-            // when opening, focus the first link for keyboard users
-            if (isOpen) {
-                const firstLink = nav.querySelector('a, button, [tabindex]');
-                if (firstLink) firstLink.focus();
-            }
+            nav.classList.toggle('nav-open');
         };
         // MAIN APPLICATION SCRIPT
         // ============================================================================
