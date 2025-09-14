@@ -1169,6 +1169,46 @@
                 font-size: 2.5rem;
             }
         }
+
+        .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-secondary);
+    border-top: none;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav .nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background-color var(--transition-fast);
+}
+
+.mobile-nav .nav-link:hover {
+    background: var(--bg-card);
+}
+
+.mobile-nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.mobile-nav-buttons .btn {
+    flex: 1;
+}
     </style>
 </head>
 <body>
@@ -1189,6 +1229,20 @@
                     <a href="about.html" class="nav-link">About</a>
                     <a href="#faq" class="nav-link">FAQ</a>
                 </nav>
+
+                <!-- Add this right after the existing <nav class="nav"> -->
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#compare" class="nav-link">Compare</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <div class="mobile-nav-buttons">
+        <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+        <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+    </div>
+</nav>
                 
                 <div class="flex" style="gap: 1rem;">
                     <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
@@ -1839,6 +1893,49 @@
 
     <!-- JavaScript -->
     <script>
+
+        window.toggleMobileMenu = function() {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        menuBtn.innerHTML = `
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        `;
+    } else {
+        mobileNav.classList.add('active');
+        menuBtn.innerHTML = `
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        `;
+    }
+};
+
+// Add this in your existing JavaScript
+document.addEventListener('click', function(event) {
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const header = document.querySelector('.header');
+    
+    if (mobileNav && mobileNav.classList.contains('active') && 
+        !header.contains(event.target)) {
+        mobileNav.classList.remove('active');
+        menuBtn.innerHTML = `
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        `;
+    }
+});
         // ============================================================================
         // MAIN APPLICATION SCRIPT
         // ============================================================================
