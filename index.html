@@ -1,0 +1,2293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversync - Revolutionary AI receptionist agents that never sleep. Transform your customer service with 24/7 intelligent automation, appointment booking, and seamless integrations.">
+    <meta name="keywords" content="AI receptionist, automated customer service, appointment booking, business automation, chatbot, AI assistant">
+    <meta name="theme-color" content="#0066ff">
+    <title>Conversync - Revolutionary AI Receptionists That Never Sleep</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Conversync",
+        "description": "Revolutionary AI receptionist agents for businesses that provide 24/7 customer support, intelligent appointment booking, and seamless automation",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "29",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Conversync",
+            "url": "https://aibusiness.com"
+        }
+    }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* CSS Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color System */
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #3385ff;
+            --secondary: #00d4ff;
+            --accent: #ff6b35;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Background System */
+            --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            --bg-section: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            
+            /* Border System */
+            --border-primary: rgba(0, 102, 255, 0.3);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+            --border-glass: rgba(255, 255, 255, 0.15);
+            
+            /* Shadow System */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+            --shadow-glow-secondary: 0 0 30px rgba(0, 212, 255, 0.2);
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Animation */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        /* Typography System */
+        .text-hero {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--white) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+        
+        .text-display {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .text-heading {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-subheading {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .text-lead {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.6;
+            color: var(--gray-300);
+        }
+        
+        .text-body {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-400);
+        }
+        
+        .text-small {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--white);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-primary);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            min-height: 56px;
+        }
+        
+        .btn-sm {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.875rem;
+            min-height: 36px;
+        }
+        
+        /* Card System */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .card-glass {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+        }
+        
+        .card-feature {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+        
+        .card-pricing {
+            text-align: center;
+            padding: var(--space-xl);
+            position: relative;
+        }
+        
+        .card-pricing.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            transform: scale(1.05);
+        }
+        
+        /* Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .icon-lg {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .icon-xl {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .icon-box-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .icon-box-secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+        }
+        
+        .icon-box-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-secondary);
+            padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: none;
+            gap: var(--space-lg);
+        }
+        
+        .nav-link {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+        
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            text-align: center;
+            padding-top: 100px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--space-xl);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: var(--space-xl);
+            justify-content: center;
+            margin-top: var(--space-xl);
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+        
+        /* Features Section */
+        .features {
+            background: var(--bg-section);
+        }
+        
+        .feature-icon {
+            margin-bottom: var(--space-md);
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Demo Section */
+        .demo {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+        
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+        
+        .chat-demo {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .chat-status {
+            width: 12px;
+            height: 12px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .chat-body {
+            padding: var(--space-md);
+            height: 350px;
+            overflow-y: auto;
+        }
+        
+        .chat-message {
+            margin-bottom: var(--space-md);
+            display: flex;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .chat-message.ai {
+            justify-content: flex-start;
+        }
+        
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .ai .message-bubble {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            color: var(--gray-200);
+        }
+        
+        .user .message-bubble {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: var(--bg-section);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: var(--space-md) 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: var(--gray-400);
+            font-weight: 400;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: var(--space-lg) 0;
+        }
+        
+        .feature-list li {
+            padding: var(--space-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .checkmark {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(0, 102, 255, 0.05) 100%);
+        }
+        
+        .testimonial-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: var(--space-md);
+            color: var(--gray-200);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .testimonial-role {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-section);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 15px;
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--border-primary);
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: none;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            text-align: left;
+            transition: all var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 102, 255, 0.05);
+        }
+        
+        .faq-icon {
+            transition: transform var(--transition-normal);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            padding: 0 var(--space-lg);
+        }
+        
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 0 var(--space-lg) var(--space-lg);
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+        }
+        
+        .cta .text-heading {
+            color: var(--white);
+        }
+        
+        .cta .text-lead {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: var(--space-3xl) 0 var(--space-lg);
+            border-top: 1px solid var(--border-secondary);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            margin-bottom: var(--space-md);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-secondary);
+            padding-top: var(--space-lg);
+            text-align: center;
+            color: var(--gray-400);
+        }
+        
+        /* Floating Elements */
+        .chat-fab {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-glow);
+            transition: all var(--transition-normal);
+            z-index: 1000;
+            animation: pulse-fab 2s infinite;
+            border: none;
+            color: var(--white);
+        }
+        
+        .chat-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        @keyframes pulse-fab {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Modal System */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+            padding: var(--space-lg);
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--gray-900);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all var(--transition-fast);
+        }
+        
+        .modal-close:hover {
+            background: var(--bg-card);
+            color: var(--white);
+        }
+        
+        /* Form System */
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: 500;
+            color: var(--white);
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-sm);
+            border: 1px solid var(--border-secondary);
+            border-radius: 10px;
+            background: var(--bg-card);
+            color: var(--white);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            font-family: inherit;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .flex { display: flex; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .flex-between { display: flex; align-items: center; justify-content: space-between; }
+        
+        .mt-auto { margin-top: auto; }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mt-4 { margin-top: var(--space-lg); }
+        
+        .hidden { display: none; }
+        .visible { opacity: 1; transform: translateY(0); }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animation Delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-lg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .hero-stats {
+                gap: var(--space-lg);
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-pricing.featured {
+                transform: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-fab {
+                width: 56px;
+                height: 56px;
+                bottom: var(--space-md);
+                right: var(--space-md);
+            }
+            
+            .modal-content {
+                margin: var(--space-sm);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .hero {
+                padding-top: 60px;
+            }
+            
+            .text-hero {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Conversync</a>
+                
+                <nav class="nav">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#demo" class="nav-link">Demo</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#testimonials" class="nav-link">Reviews</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </nav>
+                
+                <div class="flex" style="gap: 1rem;">
+                    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="text-hero">
+                    AI Call Agent &amp; Chatbot<br>
+                    <span style="color: var(--secondary);">For Modern Businesses</span>
+                </h1>
+                <p class="text-lead">
+                    Choose your AI: <b>AI Call Agent</b> answers your business phone, books appointments, and never misses a call—24/7. <b>AI Chatbot</b> handles your website and messaging channels, responding instantly to every inquiry. Transform your customer experience with the best of both worlds.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg" onclick="openModal('booking-modal')">
+                        Start Free Trial (Call Agent)
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-secondary btn-lg" onclick="openModal('demo-modal')">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="hero-stats fade-in delay-2">
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Live Coverage</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Call Answer Rate</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">&lt;2s</div>
+                        <div class="stat-label">Instant Response</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">60+</div>
+                        <div class="stat-label">Integrations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section" id="features">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">AI Call Agent &amp; AI Chatbot Features</h2>
+                <p class="text-lead fade-in delay-1">
+                    Choose the solution that fits your business: AI Call Agent for phone, or AI Chatbot for web and messaging.
+                </p>
+            </div>
+            <div class="grid grid-2">
+                <!-- AI Call Agent Features -->
+                <div>
+                    <div class="card card-feature fade-in delay-1">
+                        <div class="icon-box icon-box-primary">
+                            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">AI Call Agent</h3>
+                        <ul class="feature-list" style="text-align:left;">
+                            <li><span class="checkmark">✓</span> Answers business phone calls 24/7</li>
+                            <li><span class="checkmark">✓</span> Includes a business phone number automatically</li>
+                            <li><span class="checkmark">✓</span> Books, reschedules, and cancels appointments</li>
+                            <li><span class="checkmark">✓</span> Handles SMS and voicemail</li>
+                            <li><span class="checkmark">✓</span> Real-time call transcripts &amp; analytics</li>
+                            <li><span class="checkmark">✓</span> Integrates with calendars and CRMs</li>
+                            <li><span class="checkmark">✓</span> Enterprise-grade security &amp; compliance</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- AI Chatbot Features -->
+                <div>
+                    <div class="card card-feature fade-in delay-2">
+                        <div class="icon-box icon-box-secondary">
+                            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">AI Chatbot</h3>
+                        <ul class="feature-list" style="text-align:left;">
+                            <li><span class="checkmark">✓</span> Website &amp; messaging support 24/7</li>
+                            <li><span class="checkmark">✓</span> Instantly answers FAQs and customer questions</li>
+                            <li><span class="checkmark">✓</span> Books appointments and captures leads</li>
+                            <li><span class="checkmark">✓</span> Works on web, WhatsApp, Messenger, and more</li>
+                            <li><span class="checkmark">✓</span> Customizable to your brand and workflow</li>
+                            <li><span class="checkmark">✓</span> Easy one-time setup—no monthly fees</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section class="demo section" id="demo">
+        <div class="container">
+            <div class="demo-container">
+                <div class="fade-in">
+                    <h2 class="text-display">Watch the AI Receptionist Work</h2>
+                    <p class="text-lead mb-4">
+                        See how our AI answers calls, books appointments, and responds to your customers—just like a real person, but faster.
+                    </p>
+                    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                        <div class="card">
+                            <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--success);">✓ Human-Like Voice</h4>
+                            <p class="text-small">Converses naturally—customers won’t know it’s AI.</p>
+                        </div>
+                        <div class="card">
+                            <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--success);">✓ Real-Time Scheduling</h4>
+                            <p class="text-small">Books, reschedules, and confirms appointments instantly.</p>
+                        </div>
+                        <div class="card">
+                            <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--success);">✓ Multi-Channel</h4>
+                            <p class="text-small">Handles calls, texts, and chats—no extra setup.</p>
+                        </div>
+                        <div class="card">
+                            <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--success);">✓ Always Available</h4>
+                            <p class="text-small">Never takes a break, vacation, or sick day.</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg" onclick="startLiveDemoChat()">
+                        Start Live Demo
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="fade-in delay-1">
+                    <div class="chat-demo" id="main-demo">
+                        <div class="chat-header">
+                            <div class="chat-status"></div>
+                            <div>
+                                <div style="font-weight: 600;">AI Receptionist</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Online • Responds instantly</div>
+                            </div>
+                            <div style="margin-left: auto;">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="chat-body" id="main-chat-body">
+                            <div class="text-center" style="padding: 2rem; color: var(--gray-400);">
+                                <svg class="icon icon-xl" style="margin-bottom: 1rem; color: var(--primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                                <p>Click "Start Live Demo" to see our AI in action</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section" id="pricing">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Simple, Transparent Pricing</h2>
+                <p class="text-lead fade-in delay-1">
+                    Pricing designed for every business. Choose AI Call Agent (monthly/credits) or own your AI Chatbot (one-time).
+                </p>
+            </div>
+            <div class="grid grid-2" style="gap: 2.5rem;">
+                <!-- AI Call Agent Pricing -->
+                <div>
+                    <div class="card card-pricing featured fade-in delay-1">
+                        <div class="pricing-badge">AI Call Agent</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AI Call Agent</h3>
+                        <p class="text-body">Answers your business phone 24/7</p>
+                        <table style="width:100%; color:var(--gray-300); margin: 1.5rem 0; border-collapse:collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left; padding:0.5rem 0;">Plan</th>
+                                    <th style="text-align:left; padding:0.5rem 0;">Credits / Month</th>
+                                    <th style="text-align:left; padding:0.5rem 0;">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10k Credit Points</td>
+                                    <td>10,000</td>
+                                    <td>$249 / month</td>
+                                </tr>
+                                <tr>
+                                    <td>30k Credit Points</td>
+                                    <td>30,000</td>
+                                    <td>$449 / month</td>
+                                </tr>
+                                <tr>
+                                    <td>50k Credit Points</td>
+                                    <td>50,000</td>
+                                    <td>$649 / month</td>
+                                </tr>
+                                <tr>
+                                    <td>100k Credit Points</td>
+                                    <td>100,000</td>
+                                    <td>$849 / month</td>
+                                </tr>
+                                <tr>
+                                    <td>200k Credit Points</td>
+                                    <td>200,000</td>
+                                    <td>$1,249 / month</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span> Includes business phone number</li>
+                            <li><span class="checkmark">✓</span> 24/7 call answering &amp; appointment booking</li>
+                            <li><span class="checkmark">✓</span> SMS, voicemail, calendar integration</li>
+                            <li><span class="checkmark">✓</span> Real-time analytics</li>
+                            <li><span class="checkmark">✓</span> 14-day free trial (no card required)</li>
+                        </ul>
+                        <button class="btn btn-primary mt-auto" onclick="openModal('booking-modal')">Start Free Trial</button>
+                    </div>
+                </div>
+                <!-- AI Chatbot Pricing -->
+                <div>
+                    <div class="card card-pricing fade-in delay-2">
+                        <div class="pricing-badge" style="background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);">AI Chatbot</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AI Chatbot</h3>
+                        <p class="text-body">Website &amp; messaging automation</p>
+                        <table style="width:100%; color:var(--gray-300); margin: 1.5rem 0; border-collapse:collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left; padding:0.5rem 0;">License</th>
+                                    <th style="text-align:left; padding:0.5rem 0;">Channels</th>
+                                    <th style="text-align:left; padding:0.5rem 0;">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Basic Chatbot</td>
+                                    <td>Website Only</td>
+                                    <td>$599 <span class="price-period">(one-time)</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Advanced Chatbot</td>
+                                    <td>Multi-Channel</td>
+                                    <td>$799 <span class="price-period">(one-time)</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span> Lifetime license, no monthly fees</li>
+                            <li><span class="checkmark">✓</span> Unlimited website chats</li>
+                            <li><span class="checkmark">✓</span> Custom branding</li>
+                            <li><span class="checkmark">✓</span> Easy integration</li>
+                        </ul>
+                        <button class="btn btn-secondary mt-auto" onclick="openModal('booking-modal')">Buy Chatbot</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">What Our Customers Say</h2>
+                <p class="text-lead fade-in delay-1">
+                    Join thousands of businesses that have transformed their customer service with AI
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-avatar">SJ</div>
+                    <div class="testimonial-text">
+                        "Conversync transformed our customer support completely. We went from missing 30% of inquiries to handling 100% perfectly, even at 3 AM. Our customer satisfaction scores increased by 40%."
+                    </div>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">CEO, TechStart Inc.</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-avatar">MC</div>
+                    <div class="testimonial-text">
+                        "Booking reservations is now completely automated. Our AI receptionist handles complex scheduling better than our human staff ever could. It even upsells our premium services naturally."
+                    </div>
+                    <div class="testimonial-author">Michael Chen</div>
+                    <div class="testimonial-role">Owner, Chen's Bistro</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-3">
+                    <div class="testimonial-avatar">LR</div>
+                    <div class="testimonial-text">
+                        "Patient inquiries are answered instantly, and appointment scheduling is seamless. It's like having a perfect receptionist who never takes a break. Our no-show rate dropped by 60%."
+                    </div>
+                    <div class="testimonial-author">Dr. Lisa Rodriguez</div>
+                    <div class="testimonial-role">Medical Practice Director</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-avatar">DK</div>
+                    <div class="testimonial-text">
+                        "The ROI was immediate. We saved $4,000/month on reception staff costs and increased bookings by 35%. The AI handles everything from basic questions to complex service inquiries."
+                    </div>
+                    <div class="testimonial-author">David Kim</div>
+                    <div class="testimonial-role">Salon Chain Manager</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-avatar">AW</div>
+                    <div class="testimonial-text">
+                        "Setup was incredibly easy. Within 30 minutes, our AI was answering calls and booking appointments. The natural conversation flow amazes our customers daily."
+                    </div>
+                    <div class="testimonial-author">Amanda Wilson</div>
+                    <div class="testimonial-role">Spa Owner</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-3">
+                    <div class="testimonial-avatar">JT</div>
+                    <div class="testimonial-text">
+                        "As a growing law firm, we needed 24/7 client support. Conversync delivers exactly that. It qualifies leads, schedules consultations, and never misses an opportunity."
+                    </div>
+                    <div class="testimonial-author">James Thompson</div>
+                    <div class="testimonial-role">Managing Partner, Thompson & Associates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Frequently Asked Questions</h2>
+                <p class="text-lead fade-in delay-1">
+                    Everything you need to know about our AI Receptionist
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How fast can I get started?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Most businesses are live in under 10 minutes. Just connect your calendar, Implement a free given phone number, and your AI is ready to answer calls and book appointments immediately.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can the AI answer my business phone and text messages?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! Our AI receptionist can answer calls to your business number, respond to SMS, and even handle website chat and email—all with the same intelligence and personality.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-3">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if a customer asks something the AI doesn’t know?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            If the AI is unsure, it will politely take a message or transfer the customer to a human (or send you a transcript). You can also teach it new answers any time.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-4">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is my data secure?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Absolutely. All calls, messages, and customer data are encrypted. We comply with GDPR, CCPA, HIPAA, and never sell or share your data.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I change how the AI sounds or what it says?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! You can choose your AI’s voice, set its greeting, and customize responses—so it always matches your brand.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Does it work with my existing booking/calendar system?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            We integrate with Google Calendar, Outlook, Calendly, Acuity, Square, and 60+ more tools. Custom integrations are available too.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-3">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What’s included in the free trial?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            The free trial gives you full access to all features: unlimited calls and SMS for 14 days, real appointment booking, and analytics. No credit card required.
+                        </p>
+                    </div>
+                </div>
+                <!-- New FAQ items about phone AI -->
+                <div class="faq-item fade-in delay-4">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can the AI really answer my business phone 24/7?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! Our AI receptionist can answer your business phone line 24/7, including nights, weekends, and holidays—so you never miss a customer.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Does the AI receptionist sound human on the phone?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Absolutely. Our AI uses advanced voice synthesis for natural, friendly conversation. Most callers won’t realize they’re speaking with AI.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I keep my existing business phone number?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes, you can forward your current business number to the AI, or we can provide a new local or toll-free number for you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container text-center">
+            <h2 class="text-heading fade-in">Upgrade Your Business with AI</h2>
+            <p class="text-lead fade-in delay-1">
+                Start answering every call with our AI Call Agent, or automate your website with our AI Chatbot. Try a free trial or buy your chatbot now.
+            </p>
+            <div class="fade-in delay-2" style="margin-top: 2rem;">
+                <button class="btn btn-secondary btn-lg" onclick="openModal('booking-modal')" style="margin-right: 1rem;">
+                    Start Free Trial (Call Agent)
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+                <button class="btn btn-primary btn-lg" onclick="openModal('booking-modal')" style="margin-right: 1rem;">
+                    Buy Chatbot
+                </button>
+                <button class="btn btn-outline btn-lg" onclick="openModal('demo-modal')" style="color: white; border-color: white;">
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Conversync</div>
+                    <p class="footer-description">
+                        Revolutionizing customer service with AI that never sleeps. Transform your business with intelligent automation and 24/7 support.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.865-.608 1.249a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.249.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37.07.07 0 0 0 3.647 4.4C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Conversync. All rights reserved. Transforming customer service with intelligent AI solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <button class="chat-fab" onclick="openModal('demo-modal')" aria-label="Try AI Demo">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('booking-modal')" aria-label="Close modal">&times;</button>
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Get Started with Conversync</h2>
+            <p class="text-body" style="margin-bottom: 2rem;">
+                Ready to transform your customer service? Fill out the form below and we'll get your AI receptionist set up in minutes.
+            </p>
+            
+            <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Business Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder="you@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="company">Company Name *</label>
+                    <input type="text" id="company" name="company" class="form-input" required placeholder="Your Business Name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="business-type">Business Type</label>
+                    <select id="business-type" name="business-type" class="form-input">
+                        <option value="">Select your industry</option>
+                        <option value="healthcare">Healthcare & Medical</option>
+                        <option value="restaurant">Restaurant & Food Service</option>
+                        <option value="beauty">Beauty & Wellness</option>
+                        <option value="legal">Legal Services</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="retail">Retail & E-commerce</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="team-size">Team Size</label>
+                    <select id="team-size" name="team-size" class="form-input">
+                        <option value="">Select team size</option>
+                        <option value="1-5">1-5 employees</option>
+                        <option value="6-20">6-20 employees</option>
+                        <option value="21-50">21-50 employees</option>
+                        <option value="51-100">51-100 employees</option>
+                        <option value="100+">100+ employees</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="message">How can we help? (Optional)</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="3" placeholder="Tell us about your customer service needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                    <span>Start Free Trial</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+                
+                <p class="text-small" style="text-align: center; margin-top: 1rem; color: var(--gray-400);">
+                    No credit card required • 14-day free trial • Setup in under 15 minutes
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content" style="max-width: 450px;">
+            <button class="modal-close" onclick="closeModal('demo-modal')" aria-label="Close demo">&times;</button>
+            
+            <div class="text-center" style="margin-bottom: 1.5rem;">
+                <h2 style="color: var(--primary); margin-bottom: 0.5rem;">AI Receptionist Demo</h2>
+                <p class="text-body">Experience how our AI handles real customer conversations</p>
+            </div>
+            
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-status"></div>
+                    <div>
+                        <div style="font-weight: 600;">AI Receptionist</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Stella's Spa & Wellness</div>
+                    </div>
+                </div>
+                <div class="chat-body" id="demo-chat-body">
+                    <!-- Demo messages will be populated here -->
+                </div>
+                <div style="padding: 1rem; border-top: 1px solid var(--border-secondary); display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secondary btn-sm" onclick="startDemoChat()" style="flex: 1;">
+                        Start New Demo
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal'); closeModal('demo-modal');">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================================================
+        // MAIN APPLICATION SCRIPT
+        // ============================================================================
+
+        (function() {
+            'use strict';
+
+            // ========================================================================
+            // INITIALIZATION
+            // ========================================================================
+            
+            let reducedMotion = false;
+            let chatDemoActive = false;
+            
+            // Check for reduced motion preference
+            if (window.matchMedia) {
+                reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
+
+            // Initialize app when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                initScrollAnimations();
+                initHeaderScroll();
+                
+                // Auto-start main demo after a delay
+                setTimeout(() => {
+                    if (!chatDemoActive) {
+                        startLiveDemoChat();
+                    }
+                }, 2000);
+            });
+
+            // ========================================================================
+            // SCROLL ANIMATIONS
+            // ========================================================================
+            
+            function initScrollAnimations() {
+                if (reducedMotion) return;
+                
+                const observeElements = () => {
+                    const elements = document.querySelectorAll('.fade-in');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    }, { 
+                        threshold: 0.1,
+                        rootMargin: '50px 0px -100px 0px'
+                    });
+
+                    elements.forEach(el => observer.observe(el));
+                };
+
+                observeElements();
+            }
+
+            // ========================================================================
+            // HEADER SCROLL EFFECT
+            // ========================================================================
+            
+            function initHeaderScroll() {
+                const header = document.getElementById('header');
+                let lastScrollTop = 0;
+                
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    
+                    lastScrollTop = scrollTop;
+                });
+            }
+
+            // ========================================================================
+            // CHAT DEMO FUNCTIONALITY
+            // ========================================================================
+            
+            const demoMessages = [
+                { type: 'ai', text: 'Hello! Welcome to Stella\'s Spa & Wellness. I\'m your AI receptionist. How can I help you today?' },
+                { type: 'user', text: 'Hi! I\'d like to book a massage appointment for this weekend.' },
+                { type: 'ai', text: 'I\'d be delighted to help you book a massage! What type of massage are you interested in? We offer Swedish, deep tissue, hot stone, and couples massages.' },
+                { type: 'user', text: 'A deep tissue massage sounds perfect. What do you have available on Saturday?' },
+                { type: 'ai', text: 'Great choice! For deep tissue massage on Saturday, I have these available times:\n\n• 10:00 AM with Maria\n• 2:30 PM with James  \n• 4:00 PM with Maria\n\nWhich time works best for you?' },
+                { type: 'user', text: 'The 2:30 PM slot with James would be perfect!' },
+                { type: 'ai', text: 'Excellent! I\'ve reserved Saturday at 2:30 PM with James for a 60-minute deep tissue massage. Can I get your name and phone number to complete the booking?' },
+                { type: 'user', text: 'Sure! It\'s Sarah Johnson, and my number is (555) 123-4567.' },
+                { type: 'ai', text: '✅ Perfect, Sarah! Your appointment is confirmed:\n\n📅 Saturday, 2:30 PM\n💆 Deep tissue massage with James\n📍 Stella\'s Spa & Wellness\n\nI\'ve sent a confirmation text to (555) 123-4567. Is there anything else I can help you with today?' }
+            ];
+
+            const quickDemoMessages = [
+                { type: 'ai', text: 'Hi! I\'m your AI receptionist. I can help with bookings, questions, and more. What would you like to try?' }
+            ];
+
+            function displayChatMessage(container, message, delay = 0) {
+                setTimeout(() => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `chat-message ${message.type}`;
+                    messageDiv.innerHTML = `<div class="message-bubble">${message.text.replace(/\n/g, '<br>')}</div>`;
+                    
+                    container.appendChild(messageDiv);
+                    container.scrollTop = container.scrollHeight;
+                    
+                    // Add animation delay for sequential appearance
+                    setTimeout(() => {
+                        messageDiv.style.animationDelay = '0s';
+                    }, 100);
+                    
+                }, delay);
+            }
+
+            function showTypingIndicator(container) {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'chat-message ai typing-indicator';
+                typingDiv.innerHTML = `
+                    <div class="message-bubble">
+                        <div style="display: flex; gap: 4px; align-items: center;">
+                            <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out;"></div>
+                            <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.2s;"></div>
+                            <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.4s;"></div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add typing animation CSS if not already present
+                if (!document.getElementById('typing-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'typing-animation';
+                    style.textContent = `
+                        @keyframes typing-dot {
+                            0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+                            40% { opacity: 1; transform: scale(1.2); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+                
+                container.appendChild(typingDiv);
+                container.scrollTop = container.scrollHeight;
+                return typingDiv;
+            }
+
+            // Global functions for demo
+            window.startLiveDemoChat = function() {
+                const chatBody = document.getElementById('main-chat-body');
+                chatBody.innerHTML = '';
+                chatDemoActive = true;
+
+                demoMessages.forEach((message, index) => {
+                    const isAiMessage = message.type === 'ai' && index > 0;
+                    const baseDelay = index * 2000;
+                    const typingDelay = isAiMessage ? 1000 : 0;
+                    
+                    if (isAiMessage) {
+                        // Show typing indicator before AI messages
+                        setTimeout(() => {
+                            const typingIndicator = showTypingIndicator(chatBody);
+                            setTimeout(() => {
+                                if (typingIndicator.parentNode) {
+                                    chatBody.removeChild(typingIndicator);
+                                }
+                                displayChatMessage(chatBody, message, 0);
+                            }, typingDelay);
+                        }, baseDelay - typingDelay);
+                    } else {
+                        displayChatMessage(chatBody, message, baseDelay);
+                    }
+                });
+
+                // Add restart button after demo completes
+                setTimeout(() => {
+                    const restartDiv = document.createElement('div');
+                    restartDiv.style.textAlign = 'center';
+                    restartDiv.style.padding = '1rem 0';
+                    restartDiv.innerHTML = `
+                        <button class="btn btn-outline btn-sm" onclick="startLiveDemoChat()">
+                            ↻ Restart Demo
+                        </button>
+                    `;
+                    chatBody.appendChild(restartDiv);
+                }, demoMessages.length * 2000 + 2000);
+            };
+
+            window.startDemoChat = function() {
+                const chatBody = document.getElementById('demo-chat-body');
+                chatBody.innerHTML = '';
+                
+                // Start with initial message
+                displayChatMessage(chatBody, quickDemoMessages[0], 0);
+                
+                // Add quick reply buttons
+                setTimeout(() => {
+                    const quickReplies = document.createElement('div');
+                    quickReplies.style.padding = '1rem 0';
+                    quickReplies.innerHTML = `
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Book appointment')" style="justify-content: flex-start;">
+                                📅 Book an appointment
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Business hours')" style="justify-content: flex-start;">
+                                🕒 What are your hours?
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Services offered')" style="justify-content: flex-start;">
+                                💆 What services do you offer?
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Pricing info')" style="justify-content: flex-start;">
+                                💰 Pricing information
+                            </button>
+                        </div>
+                    `;
+                    chatBody.appendChild(quickReplies);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 500);
+            };
+
+            window.handleDemoReply = function(reply) {
+                const chatBody = document.getElementById('demo-chat-body');
+                
+                // Remove quick reply buttons
+                const quickReplies = chatBody.querySelector('div[style*="padding: 1rem 0"]');
+                if (quickReplies) {
+                    chatBody.removeChild(quickReplies);
+                }
+                
+                // Add user message
+                const userMessage = { type: 'user', text: reply };
+                displayChatMessage(chatBody, userMessage, 0);
+                
+                // Show typing and AI response
+                setTimeout(() => {
+                    const typingIndicator = showTypingIndicator(chatBody);
+                    
+                    let aiResponse = '';
+                    switch(reply) {
+                        case 'Book appointment':
+                            aiResponse = 'I\'d be happy to help you book an appointment! What type of service are you interested in today? We offer massage therapy, facials, body treatments, and wellness consultations.';
+                            break;
+                        case 'Business hours':
+                            aiResponse = 'We\'re open Monday through Saturday, 9 AM to 7 PM, and Sunday 10 AM to 6 PM. Our AI system is available 24/7 for booking and questions!';
+                            break;
+                        case 'Services offered':
+                            aiResponse = 'We offer a full range of spa services including Swedish & deep tissue massage, hot stone therapy, anti-aging facials, body wraps, aromatherapy, and couples packages. Would you like details about any specific service?';
+                            break;
+                        case 'Pricing info':
+                            aiResponse = 'Our services range from $85 for a 60-minute Swedish massage to $250 for our signature couples package. I can provide detailed pricing for any service you\'re interested in. What would you like to know more about?';
+                            break;
+                        default:
+                            aiResponse = 'Thanks for your question! I\'m here to help with bookings, service information, and any other questions you might have.';
+                    }
+                    
+                    setTimeout(() => {
+                        if (typingIndicator.parentNode) {
+                            chatBody.removeChild(typingIndicator);
+                        }
+                        const aiMessage = { type: 'ai', text: aiResponse };
+                        displayChatMessage(chatBody, aiMessage, 0);
+                        
+                        // Add continue demo button
+                        setTimeout(() => {
+                            const continueDiv = document.createElement('div');
+                            continueDiv.style.textAlign = 'center';
+                            continueDiv.style.padding = '1rem 0';
+                            continueDiv.innerHTML = `
+                                <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal'); closeModal('demo-modal');">
+                                    Try It For Your Business
+                                </button>
+                            `;
+                            chatBody.appendChild(continueDiv);
+                            chatBody.scrollTop = chatBody.scrollHeight;
+                        }, 1000);
+                        
+                    }, 1500);
+                }, 1000);
+            };
+
+            // ========================================================================
+            // MODAL FUNCTIONALITY
+            // ========================================================================
+            
+            window.openModal = function(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Initialize demo if it's the demo modal
+                    if (modalId === 'demo-modal') {
+                        setTimeout(() => startDemoChat(), 300);
+                    }
+                    
+                    // Focus first input for accessibility
+                    if (modalId === 'booking-modal') {
+                        setTimeout(() => {
+                            const firstInput = modal.querySelector('input');
+                            if (firstInput) firstInput.focus();
+                        }, 300);
+                    }
+                }
+            };
+
+            window.closeModal = function(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            };
+
+            // Close modals when clicking outside
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close modals with escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    const activeModal = document.querySelector('.modal.active');
+                    if (activeModal) {
+                        activeModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            });
+
+            // ========================================================================
+            // FAQ FUNCTIONALITY
+            // ========================================================================
+            
+            window.toggleFaq = function(element) {
+                const faqItem = element.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const isOpen = faqItem.classList.contains('open');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item.open').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('open');
+                        item.querySelector('.faq-answer').classList.remove('open');
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isOpen) {
+                    faqItem.classList.remove('open');
+                    answer.classList.remove('open');
+                } else {
+                    faqItem.classList.add('open');
+                    answer.classList.add('open');
+                }
+            };
+
+            // ========================================================================
+            // FORM HANDLING
+            // ========================================================================
+            
+            window.handleBookingSubmit = function(event) {
+                event.preventDefault();
+                
+                const formData = new FormData(event.target);
+                const bookingData = Object.fromEntries(formData);
+                
+                // Show loading state
+                const submitBtn = event.target.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        Setting up your AI...
+                    </div>
+                `;
+                submitBtn.disabled = true;
+                
+                // Add spin animation if not present
+                if (!document.getElementById('spin-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'spin-animation';
+                    style.textContent = `
+                        @keyframes spin {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+
+                // TODO: Replace with your actual booking API endpoint
+                // fetch('YOUR_BOOKING_API_ENDPOINT', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(bookingData)
+                // })
+
+                // Simulate API call for demo
+                setTimeout(() => {
+                    showBookingSuccess();
+                }, 2000);
+            };
+
+            function showBookingSuccess() {
+                const modal = document.getElementById('booking-modal');
+                const modalContent = modal.querySelector('.modal-content');
+                modalContent.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; animation: checkmark-bounce 0.6s ease;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                        </div>
+                        <h2 style="color: var(--success); margin-bottom: 1rem; font-size: 1.8rem;">Welcome to Conversync! 🎉</h2>
+                        <p style="color: var(--gray-300); margin-bottom: 2rem; font-size: 1.1rem;">
+                            Your AI receptionist is being set up now. You'll receive an email with login details and setup instructions within the next few minutes.
+                        </p>
+                        <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid var(--border-secondary);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">What happens next?</h3>
+                            <div style="text-align: left; color: var(--gray-300);">
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                    <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">1</div>
+                                    <span>Check your email for setup instructions</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                    <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">2</div>
+                                    <span>Complete the 10-minute setup wizard</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">3</div>
+                                    <span>Start receiving perfect customer service</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg" onclick="closeModal('booking-modal')" style="margin-right: 1rem;">
+                            Get Started Now
+                        </button>
+                        <button class="btn btn-secondary" onclick="closeModal('booking-modal')">
+                            Close
+                        </button>
+                    </div>
+                `;
+                
+                // Add bounce animation
+                if (!document.getElementById('bounce-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'bounce-animation';
+                    style.textContent = `
+                        @keyframes checkmark-bounce {
+                            0% { transform: scale(0); }
+                            50% { transform: scale(1.2); }
+                            100% { transform: scale(1); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+
+            // ========================================================================
+            // MOBILE MENU
+            // ========================================================================
+            
+            window.toggleMobileMenu = function() {
+                // Implementation for mobile menu if needed
+                console.log('Mobile menu toggle');
+            };
+
+            // ========================================================================
+            // SMOOTH SCROLLING FOR ANCHOR LINKS
+            // ========================================================================
+            
+            document.addEventListener('click', function(event) {
+                const link = event.target.closest('a[href^="#"]');
+                if (link) {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
