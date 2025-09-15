@@ -1,0 +1,2357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversync Pricing - Affordable AI receptionist and chatbot solutions. Choose from AI Call Agent plans or one-time AI Chatbot licenses. Transparent pricing, no hidden fees.">
+    <meta name="keywords" content="AI receptionist pricing, chatbot pricing, AI call agent cost, business automation pricing">
+    <meta name="theme-color" content="#0066ff">
+    <title>Pricing - Conversync AI Receptionist & Chatbot Solutions</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Conversync AI Solutions",
+        "description": "AI Call Agent and Chatbot pricing for businesses",
+        "brand": {
+            "@type": "Brand",
+            "name": "Conversync"
+        },
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "AI Call Agent",
+                "price": "249",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2025-12-31"
+            },
+            {
+                "@type": "Offer",
+                "name": "AI Chatbot",
+                "price": "599",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2025-12-31"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* CSS Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color System */
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #3385ff;
+            --secondary: #00d4ff;
+            --accent: #ff6b35;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Background System */
+            --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            --bg-section: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            
+            /* Border System */
+            --border-primary: rgba(0, 102, 255, 0.3);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+            --border-glass: rgba(255, 255, 255, 0.15);
+            
+            /* Shadow System */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+            --shadow-glow-secondary: 0 0 30px rgba(0, 212, 255, 0.2);
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Animation */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        /* Typography System */
+        .text-hero {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--white) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+        
+        .text-display {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .text-heading {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-subheading {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .text-lead {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.6;
+            color: var(--gray-300);
+        }
+        
+        .text-body {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-400);
+        }
+        
+        .text-small {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--white);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-primary);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            min-height: 56px;
+        }
+        
+        .btn-sm {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.875rem;
+            min-height: 36px;
+        }
+        
+        /* Card System */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .card-glass {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+        }
+        
+        .card-pricing {
+            text-align: center;
+            padding: var(--space-xl);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-pricing.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            transform: scale(1.02);
+        }
+        
+        .card-pricing.popular {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 138, 91, 0.05) 100%);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-secondary);
+            padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: none;
+            gap: var(--space-lg);
+        }
+        
+        .nav-link {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+        
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-secondary);
+            border-top: none;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+        
+        .mobile-nav.active {
+            display: flex;
+        }
+        
+        .mobile-nav .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .mobile-nav .nav-link:hover {
+            background: var(--bg-card);
+        }
+        
+        .mobile-nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .mobile-nav-buttons .btn {
+            flex: 1;
+        }
+        
+        /* Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .icon-lg {
+            width: 48px;
+            height: 48px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        /* Pricing Toggle */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            margin: var(--space-xl) 0;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        
+        .toggle-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            transition: 0.3s;
+            border-radius: 30px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--white);
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+        
+        .toggle-input:checked + .toggle-slider {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .toggle-input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+        
+        .toggle-label {
+            font-weight: 600;
+            transition: color var(--transition-normal);
+        }
+        
+        .toggle-label.active {
+            color: var(--primary);
+        }
+        
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-badge.primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .pricing-badge.secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: var(--space-md) 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: var(--gray-400);
+            font-weight: 400;
+        }
+        
+        .price-description {
+            color: var(--gray-300);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: var(--space-lg) 0;
+            text-align: left;
+        }
+        
+        .feature-list li {
+            padding: var(--space-xs) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+        
+        .checkmark {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        
+        .xmark {
+            color: var(--gray-500);
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        
+        .feature-text {
+            flex: 1;
+            color: var(--gray-300);
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-secondary);
+        }
+        
+        .comparison-table th {
+            background: var(--bg-glass);
+            font-weight: 600;
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .comparison-table td {
+            color: var(--gray-300);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table .feature-name {
+            font-weight: 500;
+            color: var(--white);
+        }
+        
+        .comparison-table .check {
+            color: var(--success);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .comparison-table .cross {
+            color: var(--gray-500);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+        }
+        
+        .testimonial-content {
+            flex: 1;
+            margin-bottom: var(--space-md);
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--gray-200);
+            margin-bottom: var(--space-md);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .testimonial-info {
+            flex: 1;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .testimonial-role {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 15px;
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--border-primary);
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: none;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            text-align: left;
+            transition: all var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 102, 255, 0.05);
+        }
+        
+        .faq-icon {
+            transition: transform var(--transition-normal);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            padding: 0 var(--space-lg);
+        }
+        
+        .faq-answer.open {
+            max-height: 300px;
+            padding: 0 var(--space-lg) var(--space-lg);
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+        }
+        
+        .cta .text-heading {
+            color: var(--white);
+        }
+        
+        .cta .text-lead {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: var(--space-xl) 0 var(--space-lg);
+            border-top: 1px solid var(--border-secondary);
+        }
+        
+        .footer-content {
+            text-align: center;
+            color: var(--gray-400);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .flex { display: flex; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .flex-between { display: flex; align-items: center; justify-content: space-between; }
+        
+        .mt-auto { margin-top: auto; }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mt-4 { margin-top: var(--space-lg); }
+        
+        .hidden { display: none; }
+        .visible { opacity: 1; transform: translateY(0); }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animation Delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .pricing-grid.call-agent {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .pricing-grid.chatbot {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-nav {
+                background: rgba(10, 14, 39, 0.98);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--border-secondary);
+                padding: 1rem;
+                display: none;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav .nav-link {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-secondary);
+            }
+            
+            .hero {
+                padding-top: 100px;
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-pricing.featured,
+            .card-pricing.popular {
+                transform: none;
+            }
+            
+            .comparison-table {
+                overflow-x: auto;
+            }
+            
+            .header .flex {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-end;
+            }
+            
+            .header .flex .btn {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 120px;
+            }
+            
+            .btn {
+                min-height: 48px;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .text-hero {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-toggle {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
+                    <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
+                    <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="#pricing" class="nav-link active">Pricing</a>
+                    <a href="compare.html" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </nav>
+
+                <nav class="mobile-nav" id="mobile-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="#pricing" class="nav-link active">Pricing</a>
+                    <a href="#compare" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <div class="mobile-nav-buttons">
+                        <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+                        <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+                    </div>
+                </nav>
+                
+                <div class="flex" style="gap: 1rem;">
+                    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="text-hero">
+                    Simple, Transparent
+                    <span style="color: var(--secondary);">Pricing</span>
+                </h1>
+                <p class="text-lead">
+                    Choose the AI solution that fits your business. Call Agent for phone calls or Chatbot for web and messaging. No hidden fees, no setup costs.
+                </p>
+                
+                <!-- Pricing Toggle -->
+                <div class="pricing-toggle">
+                    <span class="toggle-label" id="call-agent-label">AI Call Agent</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="toggle-input" id="pricing-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label" id="chatbot-label">AI Chatbot</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Call Agent Pricing -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div id="call-agent-pricing">
+                <div class="text-center mb-4">
+                    <h2 class="text-display fade-in">AI Call Agent Pricing</h2>
+                    <p class="text-lead fade-in delay-1">
+                        Professional phone answering service with human-like conversations. Pay only for what you use with our credit system.
+                    </p>
+                </div>
+                
+                <div class="pricing-grid call-agent">
+                    <!-- Starter Plan -->
+                    <div class="card card-pricing fade-in delay-1">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--white);">Starter</h3>
+                        <p class="price-description">Perfect for small businesses getting started</p>
+                        <div class="price">$249<span class="price-period">/month</span></div>
+                        <p style="color: var(--gray-400); margin-bottom: var(--space-lg);">10,000 credit points included</p>
+                        
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span><span class="feature-text">24/7 call answering</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Basic appointment booking</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">FAQ answering</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Call transcripts & analytics</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Email notifications</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Basic CRM integration</span></li>
+                            <li><span class="xmark">✗</span><span class="feature-text">Advanced scheduling features</span></li>
+                            <li><span class="xmark">✗</span><span class="feature-text">Multi-language support</span></li>
+                        </ul>
+                        
+                        <button class="btn btn-secondary mt-auto" onclick="openModal('booking-modal')">Start 14-Day Trial</button>
+                        <p class="text-small" style="margin-top: 0.5rem; color: var(--gray-500);">~300-500 calls per month</p>
+                    </div>
+
+                    <!-- Business Plan -->
+                    <div class="card card-pricing featured fade-in delay-2">
+                        <div class="pricing-badge primary">Most Popular</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--white);">Business</h3>
+                        <p class="price-description">Ideal for growing businesses with higher call volume</p>
+                        <div class="price">$449<span class="price-period">/month</span></div>
+                        <p style="color: var(--gray-400); margin-bottom: var(--space-lg);">30,000 credit points included</p>
+                        
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span><span class="feature-text">Everything in Starter</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Advanced appointment booking</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Calendar integrations (Google, Outlook)</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Custom hold music & messages</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Lead qualification & routing</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Priority customer support</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Advanced analytics dashboard</span></li>
+                            <li><span class="xmark">✗</span><span class="feature-text">Multi-language support</span></li>
+                        </ul>
+                        
+                        <button class="btn btn-primary mt-auto" onclick="openModal('booking-modal')">Start 14-Day Trial</button>
+                        <p class="text-small" style="margin-top: 0.5rem; color: var(--gray-500);">~900-1500 calls per month</p>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="card card-pricing fade-in delay-3">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--white);">Enterprise</h3>
+                        <p class="price-description">Full-featured solution for large operations</p>
+                        <div class="price">$849<span class="price-period">/month</span></div>
+                        <p style="color: var(--gray-400); margin-bottom: var(--space-lg);">100,000 credit points included</p>
+                        
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span><span class="feature-text">Everything in Business</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Multi-language support (10+ languages)</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Advanced CRM integrations</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Custom voice training</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">White-label options</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Dedicated account manager</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">24/7 priority support</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Custom integrations</span></li>
+                        </ul>
+                        
+                        <button class="btn btn-outline mt-auto" onclick="openModal('booking-modal')">Contact Sales</button>
+                        <p class="text-small" style="margin-top: 0.5rem; color: var(--gray-500);">~3000-5000 calls per month</p>
+                    </div>
+                </div>
+                
+                <!-- Credit System Explanation -->
+                <div style="max-width: 800px; margin: var(--space-2xl) auto; text-align: center;">
+                    <div class="card">
+                        <h3 style="color: var(--primary); margin-bottom: var(--space-md);">How Credit Points Work</h3>
+                        <div class="grid grid-3" style="text-align: left;">
+                            <div>
+                                <h4 style="color: var(--white); margin-bottom: var(--space-xs);">Basic Call</h4>
+                                <p class="text-small">Simple FAQ or info request</p>
+                                <p style="color: var(--success); font-weight: 600;">~20-30 credits</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--white); margin-bottom: var(--space-xs);">Booking Call</h4>
+                                <p class="text-small">Appointment scheduling</p>
+                                <p style="color: var(--warning); font-weight: 600;">~40-60 credits</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--white); margin-bottom: var(--space-xs);">Complex Call</h4>
+                                <p class="text-small">Detailed consultation</p>
+                                <p style="color: var(--error); font-weight: 600;">~80-120 credits</p>
+                            </div>
+                        </div>
+                        <p class="text-small" style="margin-top: var(--space-md); color: var(--gray-400);">
+                            Credits are consumed based on call duration and complexity. Unused credits roll over to the next month.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Chatbot Pricing -->
+            <div id="chatbot-pricing" class="hidden">
+                <div class="text-center mb-4">
+                    <h2 class="text-display fade-in">AI Chatbot Pricing</h2>
+                    <p class="text-lead fade-in delay-1">
+                        One-time purchase, lifetime license. No monthly fees, unlimited conversations on your website and messaging platforms.
+                    </p>
+                </div>
+                
+                <div class="pricing-grid chatbot">
+                    <!-- Basic Chatbot -->
+                    <div class="card card-pricing fade-in delay-1">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--white);">Basic Chatbot</h3>
+                        <p class="price-description">Perfect for website customer support</p>
+                        <div class="price">$599<span class="price-period"> one-time</span></div>
+                        <p style="color: var(--gray-400); margin-bottom: var(--space-lg);">Lifetime license • No monthly fees</p>
+                        
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span><span class="feature-text">Website widget integration</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Unlimited conversations</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">FAQ answering</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Lead capture forms</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Basic customization</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Email notifications</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Chat history & analytics</span></li>
+                            <li><span class="xmark">✗</span><span class="feature-text">Multi-channel support</span></li>
+                            <li><span class="xmark">✗</span><span class="feature-text">Advanced integrations</span></li>
+                        </ul>
+                        
+                        <button class="btn btn-secondary mt-auto" onclick="openModal('booking-modal')">Buy Basic Chatbot</button>
+                        <p class="text-small" style="margin-top: 0.5rem; color: var(--gray-500);">Setup in under 30 minutes</p>
+                    </div>
+
+                    <!-- Advanced Chatbot -->
+                    <div class="card card-pricing popular fade-in delay-2">
+                        <div class="pricing-badge">Best Value</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--white);">Advanced Chatbot</h3>
+                        <p class="price-description">Multi-channel support with advanced features</p>
+                        <div class="price">$799<span class="price-period"> one-time</span></div>
+                        <p style="color: var(--gray-400); margin-bottom: var(--space-lg);">Lifetime license • No monthly fees</p>
+                        
+                        <ul class="feature-list">
+                            <li><span class="checkmark">✓</span><span class="feature-text">Everything in Basic</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">WhatsApp integration</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Facebook Messenger support</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Advanced appointment booking</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">CRM integrations (Salesforce, HubSpot)</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Custom branding & themes</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Multi-language support</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">API access for custom integrations</span></li>
+                            <li><span class="checkmark">✓</span><span class="feature-text">Priority support & updates</span></li>
+                        </ul>
+                        
+                        <button class="btn btn-primary mt-auto" onclick="openModal('booking-modal')">Buy Advanced Chatbot</button>
+                        <p class="text-small" style="margin-top: 0.5rem; color: var(--gray-500);">Full setup assistance included</p>
+                    </div>
+                </div>
+                
+                <!-- Chatbot Benefits -->
+                <div style="max-width: 900px; margin: var(--space-2xl) auto;">
+                    <div class="grid grid-3">
+                        <div class="text-center fade-in delay-1">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md);">
+                                <svg class="icon" style="color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3 style="color: var(--white); margin-bottom: var(--space-sm);">No Monthly Fees</h3>
+                            <p class="text-body">Pay once, use forever. No subscription costs or hidden charges.</p>
+                        </div>
+                        
+                        <div class="text-center fade-in delay-2">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md);">
+                                <svg class="icon" style="color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                            </div>
+                            <h3 style="color: var(--white); margin-bottom: var(--space-sm);">Instant Setup</h3>
+                            <p class="text-body">Get your chatbot running in under 30 minutes with our simple integration.</p>
+                        </div>
+                        
+                        <div class="text-center fade-in delay-3">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md);">
+                                <svg class="icon" style="color: white;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                </svg>
+                            </div>
+                            <h3 style="color: var(--white); margin-bottom: var(--space-sm);">Unlimited Usage</h3>
+                            <p class="text-body">Handle unlimited conversations across all your channels without restrictions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section" id="compare" style="background: var(--bg-section);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Feature Comparison</h2>
+                <p class="text-lead fade-in delay-1">
+                    Compare our AI Call Agent and AI Chatbot solutions to find the perfect fit for your business
+                </p>
+            </div>
+            
+            <div class="comparison-table fade-in delay-2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th style="text-align: center;">AI Call Agent</th>
+                            <th style="text-align: center;">AI Chatbot</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">24/7 Availability</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Answers Phone Calls</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Website Chat Widget</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">WhatsApp Integration</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Human-like Voice</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Appointment Booking</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">FAQ Answering</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Lead Qualification</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">CRM Integration</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Multi-language Support</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Pricing Model</td>
+                            <td style="color: var(--warning);">Monthly Subscription</td>
+                            <td style="color: var(--success);">One-time Purchase</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Setup Time</td>
+                            <td style="color: var(--gray-300);">10-15 minutes</td>
+                            <td style="color: var(--gray-300);">Under 30 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">What Our Customers Say</h2>
+                <p class="text-lead fade-in delay-1">
+                    Real results from businesses using Conversync AI solutions
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "The ROI was immediate with Conversync's Call Agent. We went from missing 40% of calls to answering every single one. Our booking rate increased by 60% in the first month."
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SJ</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Sarah Johnson</div>
+                            <div class="testimonial-role">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "The chatbot handles 80% of our customer inquiries automatically. It's like having a perfect customer service rep who never takes a break. Worth every penny of the one-time cost."
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MC</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Michael Chen</div>
+                            <div class="testimonial-role">E-commerce Director</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-3">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "Setup was incredibly easy. Our AI receptionist was answering calls perfectly within 10 minutes. The natural conversation flow amazes our clients every day."
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LR</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Dr. Lisa Rodriguez</div>
+                            <div class="testimonial-role">Medical Practice Owner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq" style="background: var(--bg-section);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Pricing FAQ</h2>
+                <p class="text-lead fade-in delay-1">
+                    Common questions about our AI solutions pricing
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What's the difference between Call Agent and Chatbot pricing?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            AI Call Agent uses a monthly subscription with credit points based on usage, perfect for phone-based customer service. AI Chatbot is a one-time purchase with unlimited usage, ideal for website and messaging support.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do credit points work for the Call Agent?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Credits are consumed based on call duration and complexity. Simple FAQ calls use 20-30 credits, appointment bookings use 40-60 credits, and complex consultations use 80-120 credits. Unused credits roll over monthly.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-3">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is there a free trial available?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! We offer a 14-day free trial for the AI Call Agent with full access to all features. No credit card required. For the AI Chatbot, we offer a 30-day money-back guarantee.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-4">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are there any setup fees or hidden costs?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            No setup fees, no hidden costs. Call Agent pricing includes everything you need. Chatbot is a one-time purchase with lifetime updates included. Additional services like custom integrations are optional.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I upgrade or downgrade my plan?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            For Call Agent plans, you can upgrade or downgrade anytime. Changes take effect on your next billing cycle. For Chatbot, you can upgrade from Basic to Advanced by paying the difference.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What happens if I exceed my credit limit?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            You'll receive notifications when approaching your limit. You can purchase additional credits or upgrade your plan. We never cut off service unexpectedly - you'll always have buffer time to adjust your plan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container text-center">
+            <h2 class="text-heading fade-in">Ready to Transform Your Customer Service?</h2>
+            <p class="text-lead fade-in delay-1">
+                Choose the AI solution that fits your business. Start with a free trial or get lifetime access with our chatbot.
+            </p>
+            <div class="fade-in delay-2" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-secondary btn-lg" onclick="openModal('booking-modal')">
+                    Start Call Agent Trial
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+                <button class="btn btn-primary btn-lg" onclick="openModal('booking-modal')" style="color: white; background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);">
+                    Buy Chatbot License
+                </button>
+            </div>
+            <p class="text-small fade-in delay-3" style="margin-top: 1rem; color: rgba(255, 255, 255, 0.7);">
+                14-day free trial • No setup fees • Cancel anytime
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="features.html">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="about.html">About</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Support</a>
+                </div>
+                <p>&copy; 2025 Conversync. All rights reserved. Transparent pricing for intelligent AI solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('booking-modal')" aria-label="Close modal">&times;</button>
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Get Started with Conversync</h2>
+            <p class="text-body" style="margin-bottom: 2rem;">
+                Ready to transform your customer service? Choose your solution and we'll get you set up in minutes.
+            </p>
+            
+            <!-- Solution Selection -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <button class="solution-btn" data-solution="call-agent" onclick="selectSolution('call-agent')">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <svg class="icon" style="color: var(--primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span style="font-weight: 600;">AI Call Agent</span>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--gray-400); margin: 0;">14-day free trial</p>
+                </button>
+                
+                <button class="solution-btn" data-solution="chatbot" onclick="selectSolution('chatbot')">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <svg class="icon" style="color: var(--secondary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <span style="font-weight: 600;">AI Chatbot</span>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--gray-400); margin: 0;">One-time purchase</p>
+                </button>
+            </div>
+            
+            <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Business Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder="you@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="company">Company Name *</label>
+                    <input type="text" id="company" name="company" class="form-input" required placeholder="Your Business Name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="business-type">Business Type</label>
+                    <select id="business-type" name="business-type" class="form-input">
+                        <option value="">Select your industry</option>
+                        <option value="healthcare">Healthcare & Medical</option>
+                        <option value="restaurant">Restaurant & Food Service</option>
+                        <option value="beauty">Beauty & Wellness</option>
+                        <option value="legal">Legal Services</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="retail">Retail & E-commerce</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="call-agent-plan" style="display: none;">
+                    <label class="form-label" for="plan">Call Agent Plan</label>
+                    <select id="plan" name="plan" class="form-input">
+                        <option value="starter">Starter - $249/month (10k credits)</option>
+                        <option value="business" selected>Business - $449/month (30k credits)</option>
+                        <option value="enterprise">Enterprise - $849/month (100k credits)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="chatbot-plan" style="display: none;">
+                    <label class="form-label" for="chatbot-type">Chatbot License</label>
+                    <select id="chatbot-type" name="chatbot-type" class="form-input">
+                        <option value="basic">Basic Chatbot - $599 (one-time)</option>
+                        <option value="advanced" selected>Advanced Chatbot - $799 (one-time)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="message">Additional Requirements (Optional)</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="3" placeholder="Any specific features or integrations you need?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="submit-btn">
+                    <span id="submit-text">Start Free Trial</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+                
+                <p class="text-small" style="text-align: center; margin-top: 1rem; color: var(--gray-400);" id="trial-text">
+                    No credit card required • 14-day free trial • Setup in under 15 minutes
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content" style="max-width: 450px;">
+            <button class="modal-close" onclick="closeModal('demo-modal')" aria-label="Close demo">&times;</button>
+            
+            <div class="text-center" style="margin-bottom: 1.5rem;">
+                <h2 style="color: var(--primary); margin-bottom: 0.5rem;">AI Receptionist Demo</h2>
+                <p class="text-body">Experience how our AI handles real customer conversations</p>
+            </div>
+            
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-status"></div>
+                    <div>
+                        <div style="font-weight: 600;">AI Receptionist</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Stella's Spa & Wellness</div>
+                    </div>
+                </div>
+                <div class="chat-body" id="demo-chat-body">
+                    <!-- Demo messages will be populated here -->
+                </div>
+                <div style="padding: 1rem; border-top: 1px solid var(--border-secondary); display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secondary btn-sm" onclick="startDemoChat()" style="flex: 1;">
+                        Start New Demo
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal'); closeModal('demo-modal');">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileNav) {
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    `;
+                } else {
+                    mobileNav.classList.add('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    `;
+                }
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const header = document.querySelector('.header');
+            
+            if (mobileNav && mobileNav.classList.contains('active') && 
+                !header.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                menuBtn.innerHTML = `
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                `;
+            }
+        });
+
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollAnimations();
+            initHeaderScroll();
+            initPricingToggle();
+            initSolutionButtons();
+        });
+
+        // Scroll animations
+        function initScrollAnimations() {
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '50px 0px -100px 0px'
+            });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // Header scroll effect
+        function initHeaderScroll() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Pricing toggle functionality
+        function initPricingToggle() {
+            const toggle = document.getElementById('pricing-toggle');
+            const callAgentLabel = document.getElementById('call-agent-label');
+            const chatbotLabel = document.getElementById('chatbot-label');
+            const callAgentPricing = document.getElementById('call-agent-pricing');
+            const chatbotPricing = document.getElementById('chatbot-pricing');
+
+            if (!toggle) return;
+
+            toggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Show chatbot pricing
+                    callAgentPricing.classList.add('hidden');
+                    chatbotPricing.classList.remove('hidden');
+                    callAgentLabel.classList.remove('active');
+                    chatbotLabel.classList.add('active');
+                } else {
+                    // Show call agent pricing
+                    chatbotPricing.classList.add('hidden');
+                    callAgentPricing.classList.remove('hidden');
+                    chatbotLabel.classList.remove('active');
+                    callAgentLabel.classList.add('active');
+                }
+            });
+
+            // Set initial state
+            callAgentLabel.classList.add('active');
+        }
+
+        // Solution selection in modal
+        function initSolutionButtons() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .solution-btn {
+                    background: var(--bg-card);
+                    border: 2px solid var(--border-secondary);
+                    border-radius: 15px;
+                    padding: 1rem;
+                    cursor: pointer;
+                    transition: all var(--transition-normal);
+                    text-align: left;
+                    color: var(--white);
+                }
+                
+                .solution-btn:hover {
+                    border-color: var(--border-primary);
+                    background: var(--bg-glass);
+                }
+                
+                .solution-btn.active {
+                    border-color: var(--primary);
+                    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function selectSolution(solution) {
+            const buttons = document.querySelectorAll('.solution-btn');
+            const callAgentPlan = document.getElementById('call-agent-plan');
+            const chatbotPlan = document.getElementById('chatbot-plan');
+            const submitBtn = document.getElementById('submit-text');
+            const trialText = document.getElementById('trial-text');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-solution="${solution}"]`).classList.add('active');
+            
+            if (solution === 'call-agent') {
+                callAgentPlan.style.display = 'block';
+                chatbotPlan.style.display = 'none';
+                submitBtn.textContent = 'Start Free Trial';
+                trialText.textContent = 'No credit card required • 14-day free trial • Setup in under 15 minutes';
+            } else {
+                callAgentPlan.style.display = 'none';
+                chatbotPlan.style.display = 'block';
+                submitBtn.textContent = 'Purchase Chatbot';
+                trialText.textContent = 'One-time payment • 30-day money-back guarantee • Lifetime license';
+            }
+        }
+
+        // FAQ functionality
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isOpen = faqItem.classList.contains('open');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item.open').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('open');
+                    item.querySelector('.faq-answer').classList.remove('open');
+                }
+            });
+            
+            // Toggle current FAQ
+            if (isOpen) {
+                faqItem.classList.remove('open');
+                answer.classList.remove('open');
+            } else {
+                faqItem.classList.add('open');
+                answer.classList.add('open');
+            }
+        }
+
+        // Modal functionality
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Initialize demo if it's the demo modal
+                if (modalId === 'demo-modal') {
+                    setTimeout(() => startDemoChat(), 300);
+                }
+                
+                // Focus first input for accessibility
+                if (modalId === 'booking-modal') {
+                    setTimeout(() => {
+                        const firstInput = modal.querySelector('input');
+                        if (firstInput) firstInput.focus();
+                    }, 300);
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modals with escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
+        // Demo chat functionality
+        function startDemoChat() {
+            const chatBody = document.getElementById('demo-chat-body');
+            chatBody.innerHTML = '';
+            
+            const initialMessage = { type: 'ai', text: 'Hi! I\'m your AI receptionist. I can help with bookings, questions, and more. What would you like to try?' };
+            displayChatMessage(chatBody, initialMessage, 0);
+            
+            // Add quick reply buttons
+            setTimeout(() => {
+                const quickReplies = document.createElement('div');
+                quickReplies.style.padding = '1rem 0';
+                quickReplies.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Book appointment')" style="justify-content: flex-start;">
+                            📅 Book an appointment
+                        </button>
+                        <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Business hours')" style="justify-content: flex-start;">
+                            🕒 What are your hours?
+                        </button>
+                        <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Services offered')" style="justify-content: flex-start;">
+                            💆 What services do you offer?
+                        </button>
+                        <button class="btn btn-outline btn-sm" onclick="handleDemoReply('Pricing info')" style="justify-content: flex-start;">
+                            💰 Pricing information
+                        </button>
+                    </div>
+                `;
+                chatBody.appendChild(quickReplies);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 500);
+        }
+
+        function displayChatMessage(container, message, delay = 0) {
+            setTimeout(() => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chat-message ${message.type}`;
+                messageDiv.innerHTML = `<div class="message-bubble">${message.text.replace(/\n/g, '<br>')}</div>`;
+                
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight;
+            }, delay);
+        }
+
+        function showTypingIndicator(container) {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message ai typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-bubble">
+                    <div style="display: flex; gap: 4px; align-items: center;">
+                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out;"></div>
+                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.2s;"></div>
+                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.4s;"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Add typing animation CSS if not already present
+            if (!document.getElementById('typing-animation')) {
+                const style = document.createElement('style');
+                style.id = 'typing-animation';
+                style.textContent = `
+                    @keyframes typing-dot {
+                        0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+                        40% { opacity: 1; transform: scale(1.2); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            container.appendChild(typingDiv);
+            container.scrollTop = container.scrollHeight;
+            return typingDiv;
+        }
+
+        function handleDemoReply(reply) {
+            const chatBody = document.getElementById('demo-chat-body');
+            
+            // Remove quick reply buttons
+            const quickReplies = chatBody.querySelector('div[style*="padding: 1rem 0"]');
+            if (quickReplies) {
+                chatBody.removeChild(quickReplies);
+            }
+            
+            // Add user message
+            const userMessage = { type: 'user', text: reply };
+            displayChatMessage(chatBody, userMessage, 0);
+            
+            // Show typing and AI response
+            setTimeout(() => {
+                const typingIndicator = showTypingIndicator(chatBody);
+                
+                let aiResponse = '';
+                switch(reply) {
+                    case 'Book appointment':
+                        aiResponse = 'I\'d be happy to help you book an appointment! What type of service are you interested in today? We offer massage therapy, facials, body treatments, and wellness consultations.';
+                        break;
+                    case 'Business hours':
+                        aiResponse = 'We\'re open Monday through Saturday, 9 AM to 7 PM, and Sunday 10 AM to 6 PM. Our AI system is available 24/7 for booking and questions!';
+                        break;
+                    case 'Services offered':
+                        aiResponse = 'We offer a full range of spa services including Swedish & deep tissue massage, hot stone therapy, anti-aging facials, body wraps, aromatherapy, and couples packages. Would you like details about any specific service?';
+                        break;
+                    case 'Pricing info':
+                        aiResponse = 'Our services range from $85 for a 60-minute Swedish massage to $250 for our signature couples package. I can provide detailed pricing for any service you\'re interested in. What would you like to know more about?';
+                        break;
+                    default:
+                        aiResponse = 'Thanks for your question! I\'m here to help with bookings, service information, and any other questions you might have.';
+                }
+                
+                setTimeout(() => {
+                    if (typingIndicator.parentNode) {
+                        chatBody.removeChild(typingIndicator);
+                    }
+                    const aiMessage = { type: 'ai', text: aiResponse };
+                    displayChatMessage(chatBody, aiMessage, 0);
+                    
+                    // Add continue demo button
+                    setTimeout(() => {
+                        const continueDiv = document.createElement('div');
+                        continueDiv.style.textAlign = 'center';
+                        continueDiv.style.padding = '1rem 0';
+                        continueDiv.innerHTML = `
+                            <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal'); closeModal('demo-modal');">
+                                Try It For Your Business
+                            </button>
+                        `;
+                        chatBody.appendChild(continueDiv);
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 1000);
+                    
+                }, 1500);
+            }, 1000);
+        }
+
+        // Form handling
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const bookingData = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    Setting up your AI...
+                </div>
+            `;
+            submitBtn.disabled = true;
+            
+            // Add spin animation if not present
+            if (!document.getElementById('spin-animation')) {
+                const style = document.createElement('style');
+                style.id = 'spin-animation';
+                style.textContent = `
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            // Simulate API call for demo
+            setTimeout(() => {
+                showBookingSuccess();
+            }, 2000);
+        }
+
+        function showBookingSuccess() {
+            const modal = document.getElementById('booking-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            modalContent.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; animation: checkmark-bounce 0.6s ease;">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                            <polyline points="20,6 9,17 4,12"></polyline>
+                        </svg>
+                    </div>
+                    <h2 style="color: var(--success); margin-bottom: 1rem; font-size: 1.8rem;">Welcome to Conversync! 🎉</h2>
+                    <p style="color: var(--gray-300); margin-bottom: 2rem; font-size: 1.1rem;">
+                        Your AI solution is being set up now. You'll receive an email with login details and setup instructions within the next few minutes.
+                    </p>
+                    <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid var(--border-secondary);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">What happens next?</h3>
+                        <div style="text-align: left; color: var(--gray-300);">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">1</div>
+                                <span>Check your email for setup instructions</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">2</div>
+                                <span>Complete the 10-minute setup wizard</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">3</div>
+                                <span>Start receiving perfect customer service</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg" onclick="closeModal('booking-modal')" style="margin-right: 1rem;">
+                        Get Started Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeModal('booking-modal')">
+                        Close
+                    </button>
+                </div>
+            `;
+            
+            // Add bounce animation
+            if (!document.getElementById('bounce-animation')) {
+                const style = document.createElement('style');
+                style.id = 'bounce-animation';
+                style.textContent = `
+                    @keyframes checkmark-bounce {
+                        0% { transform: scale(0); }
+                        50% { transform: scale(1.2); }
+                        100% { transform: scale(1); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('a[href^="#"]');
+            if (link) {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+
+        // Add chat demo styles
+        const chatDemoStyles = document.createElement('style');
+        chatDemoStyles.textContent = `
+            .chat-demo {
+                background: var(--bg-glass);
+                border: 1px solid var(--border-glass);
+                border-radius: 20px;
+                overflow: hidden;
+                backdrop-filter: blur(10px);
+                max-width: 400px;
+                margin: 0 auto;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .chat-header {
+                background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+                padding: var(--space-md);
+                display: flex;
+                align-items: center;
+                gap: var(--space-sm);
+                flex-shrink: 0;
+            }
+            
+            .chat-status {
+                width: 12px;
+                height: 12px;
+                background: var(--success);
+                border-radius: 50%;
+                animation: pulse-dot 2s infinite;
+            }
+            
+            @keyframes pulse-dot {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.5; }
+            }
+            
+            .chat-body {
+                padding: var(--space-md);
+                flex: 1;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .chat-message {
+                margin-bottom: var(--space-md);
+                display: flex;
+                animation: fadeInUp 0.5s ease forwards;
+            }
+            
+            .chat-message.ai {
+                justify-content: flex-start;
+            }
+            
+            .chat-message.user {
+                justify-content: flex-end;
+            }
+            
+            .message-bubble {
+                max-width: 80%;
+                padding: var(--space-sm) var(--space-md);
+                border-radius: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .ai .message-bubble {
+                background: var(--bg-card);
+                border: 1px solid var(--border-secondary);
+                color: var(--gray-200);
+            }
+            
+            .user .message-bubble {
+                background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+                color: var(--white);
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* Form styles */
+            .form-group {
+                margin-bottom: var(--space-md);
+            }
+            
+            .form-label {
+                display: block;
+                margin-bottom: var(--space-xs);
+                font-weight: 500;
+                color: var(--white);
+            }
+            
+            .form-input,
+            .form-select,
+            .form-textarea {
+                width: 100%;
+                padding: var(--space-sm);
+                border: 1px solid var(--border-secondary);
+                border-radius: 10px;
+                background: var(--bg-card);
+                color: var(--white);
+                font-size: 1rem;
+                transition: all var(--transition-normal);
+                font-family: inherit;
+            }
+            
+            .form-input:focus,
+            .form-select:focus,
+            .form-textarea:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+            }
+            
+            .form-textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+            
+            /* Modal styles */
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.8);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 2000;
+                backdrop-filter: blur(5px);
+                padding: var(--space-lg);
+            }
+            
+            .modal.active {
+                display: flex;
+            }
+            
+            .modal-content {
+                background: var(--gray-900);
+                border: 1px solid var(--border-glass);
+                border-radius: 20px;
+                padding: var(--space-xl);
+                max-width: 500px;
+                width: 100%;
+                max-height: 90vh;
+                overflow-y: auto;
+                position: relative;
+                animation: modalSlideIn 0.3s ease;
+            }
+            
+            @keyframes modalSlideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-50px) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            .modal-close {
+                position: absolute;
+                top: var(--space-md);
+                right: var(--space-md);
+                background: none;
+                border: none;
+                color: var(--gray-400);
+                font-size: 1.5rem;
+                cursor: pointer;
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all var(--transition-fast);
+            }
+            
+            .modal-close:hover {
+                background: var(--bg-card);
+                color: var(--white);
+            }
+            
+            @media (max-width: 768px) {
+                .modal-content {
+                    width: 95vw;
+                    max-width: 95vw;
+                    height: 95vh;
+                    max-height: 95vh;
+                    margin: 2.5vh auto;
+                    padding: 1rem;
+                }
+                
+                .chat-demo {
+                    height: 70vh;
+                    max-width: 100%;
+                }
+            }
+        `;
+        document.head.appendChild(chatDemoStyles);
+
+        // Initialize solution selection
+        setTimeout(() => {
+            selectSolution('call-agent'); // Default to call agent
+        }, 100);
+    </script>
+</body>
+</html>

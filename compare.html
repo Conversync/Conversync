@@ -1,0 +1,2600 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare AI Call Agent vs AI Chatbot - Choose the right AI solution for your business. Feature comparison, pricing, and benefits analysis.">
+    <meta name="keywords" content="AI comparison, call agent vs chatbot, business automation comparison, AI receptionist comparison">
+    <meta name="theme-color" content="#0066ff">
+    <title>Compare AI Solutions - AI Call Agent vs AI Chatbot | Conversync</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AI Call Agent vs AI Chatbot Comparison",
+        "description": "Compare AI Call Agent and AI Chatbot solutions for businesses. Features, pricing, and benefits analysis.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Conversync",
+            "url": "https://aibusiness.com"
+        }
+    }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* CSS Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color System */
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #3385ff;
+            --secondary: #00d4ff;
+            --accent: #ff6b35;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Background System */
+            --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            --bg-section: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            
+            /* Border System */
+            --border-primary: rgba(0, 102, 255, 0.3);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+            --border-glass: rgba(255, 255, 255, 0.15);
+            
+            /* Shadow System */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+            --shadow-glow-secondary: 0 0 30px rgba(0, 212, 255, 0.2);
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Animation */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        /* Typography System */
+        .text-hero {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--white) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+        
+        .text-display {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .text-heading {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-subheading {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .text-lead {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.6;
+            color: var(--gray-300);
+        }
+        
+        .text-body {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-400);
+        }
+        
+        .text-small {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--white);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-primary);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            min-height: 56px;
+        }
+        
+        .btn-sm {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.875rem;
+            min-height: 36px;
+        }
+        
+        /* Card System */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .card-glass {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+        }
+        
+        .card-feature {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+        
+        .card-pricing {
+            text-align: center;
+            padding: var(--space-xl);
+            position: relative;
+        }
+        
+        .card-pricing.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            transform: scale(1.05);
+        }
+        
+        /* Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .icon-lg {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .icon-xl {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .icon-box-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .icon-box-secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+        }
+        
+        .icon-box-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-secondary);
+            padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: none;
+            gap: var(--space-lg);
+        }
+        
+        .nav-link {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-secondary);
+            border-top: none;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+        
+        .mobile-nav.active {
+            display: flex;
+        }
+        
+        .mobile-nav .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .mobile-nav .nav-link:hover {
+            background: var(--bg-card);
+        }
+        
+        .mobile-nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .mobile-nav-buttons .btn {
+            flex: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            text-align: center;
+            padding-top: 60px;
+        }
+        
+        /* Comparison Table Styles */
+        .comparison-section {
+            background: var(--bg-section);
+        }
+        
+        .comparison-table {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border-bottom: 1px solid var(--border-glass);
+        }
+        
+        .comparison-header > div {
+            padding: var(--space-lg);
+            text-align: center;
+            font-weight: 600;
+            border-right: 1px solid var(--border-glass);
+        }
+        
+        .comparison-header > div:last-child {
+            border-right: none;
+        }
+        
+        .feature-category {
+            background: rgba(0, 102, 255, 0.05);
+            padding: var(--space-md) var(--space-lg);
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border-glass);
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-glass);
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-cell {
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            align-items: center;
+            border-right: 1px solid var(--border-glass);
+            min-height: 60px;
+        }
+        
+        .comparison-cell:last-child {
+            border-right: none;
+        }
+        
+        .feature-name {
+            font-weight: 500;
+            color: var(--gray-200);
+        }
+        
+        .feature-value {
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .check-yes {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .check-no {
+            color: var(--gray-500);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .feature-text {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Solution Cards */
+        .solution-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-3xl);
+        }
+        
+        .solution-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+            text-align: center;
+            position: relative;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .solution-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+        
+        .solution-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .solution-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        
+        .solution-description {
+            color: var(--gray-300);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .best-for {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 15px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .best-for-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+            font-size: 0.9rem;
+        }
+        
+        .best-for-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .best-for-list li {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .best-for-list .checkmark {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+        }
+        
+        .feature-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+        }
+        
+        .feature-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .feature-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .feature-card-description {
+            color: var(--gray-300);
+            margin-bottom: var(--space-md);
+        }
+        
+        .feature-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.9rem;
+        }
+        
+        .feature-item.call-agent {
+            color: var(--primary);
+        }
+        
+        .feature-item.chatbot {
+            color: var(--secondary);
+        }
+        
+        /* Decision Helper */
+        .decision-helper {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+        
+        .decision-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .decision-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--white);
+        }
+        
+        .decision-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+        
+        .decision-option {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 15px;
+            padding: var(--space-lg);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .decision-option:hover {
+            border-color: var(--border-primary);
+            transform: translateY(-2px);
+        }
+        
+        .decision-option.selected {
+            border-color: var(--primary);
+            background: rgba(0, 102, 255, 0.1);
+        }
+        
+        .option-title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        
+        .option-description {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+        
+        .recommendation {
+            margin-top: var(--space-lg);
+            padding: var(--space-lg);
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 15px;
+            display: none;
+        }
+        
+        .recommendation.show {
+            display: block;
+        }
+        
+        .recommendation-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .recommendation-text {
+            color: var(--gray-300);
+            margin-bottom: var(--space-md);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+        }
+        
+        .cta .text-heading {
+            color: var(--white);
+        }
+        
+        .cta .text-lead {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: var(--space-3xl) 0 var(--space-lg);
+            border-top: 1px solid var(--border-secondary);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            margin-bottom: var(--space-md);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-secondary);
+            padding-top: var(--space-lg);
+            text-align: center;
+            color: var(--gray-400);
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .flex { display: flex; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .flex-between { display: flex; align-items: center; justify-content: space-between; }
+        
+        .mt-auto { margin-top: auto; }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mt-4 { margin-top: var(--space-lg); }
+        
+        .hidden { display: none; }
+        .visible { opacity: 1; transform: translateY(0); }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animation Delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .decision-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 39, 0.98);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--border-secondary);
+                padding: 1rem;
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            .mobile-menu .nav-link {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-secondary);
+            }
+
+            .header .flex {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-end;
+            }
+
+            .header .flex .btn {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 120px;
+            }
+
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1.5fr 0.75fr 0.75fr;
+            }
+            
+            .comparison-cell {
+                padding: var(--space-sm);
+                font-size: 0.9rem;
+            }
+            
+            .feature-name {
+                font-size: 0.85rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                min-height: 48px;
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .solution-cards {
+                gap: var(--space-lg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .hero {
+                padding-top: 60px;
+            }
+            
+            .text-hero {
+                font-size: 2.5rem;
+            }
+            
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-header > div:not(:first-child),
+            .comparison-cell:not(:first-child) {
+                border-right: none;
+                border-top: 1px solid var(--border-glass);
+            }
+            
+            .comparison-cell {
+                min-height: auto;
+                padding: var(--space-sm);
+            }
+            
+            .feature-value {
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+
+        /* ================= FIXES FOR BOTTOM ALIGNMENT ================= */
+
+        /* Footer Grid Alignment */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+                text-align: center;
+            }
+
+            .footer-links {
+                padding: 0;
+            }
+
+            .footer-links li {
+                margin-bottom: var(--space-xs);
+            }
+        }
+
+        /* CTA Buttons Alignment */
+        .cta .fade-in {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta .btn {
+            margin: 0 !important;
+        }
+
+        /* Modal Centering */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.6);
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Booking Modal Buttons */
+        .solution-selector {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Feature Comparison Grid Fix */
+        .feature-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        @media (max-width: 480px) {
+            .feature-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+         /* ================= BOOKING MODAL FORM STYLES ================= */
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--gray-300);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+#booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+#booking-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#booking-form .form-label {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.95rem;
+}
+
+#booking-form .form-input,
+#booking-form .form-textarea,
+#booking-form select {
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-glass);
+    background: var(--bg-card);
+    color: var(--white);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all var(--transition-normal);
+}
+
+#booking-form .form-input:focus,
+#booking-form .form-textarea:focus,
+#booking-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(0, 102, 255, 0.4);
+}
+
+#booking-form button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: var(--space-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    transition: all var(--transition-normal);
+}
+
+#booking-form button[type="submit"]:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-glow);
+}
+
+#booking-form .text-small {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--gray-400);
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: var(--space-lg);
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: var(--space-md);
+        width: 95%;
+    }
+}
+        /* ================= FREE TRIAL MODAL FORM STYLES ================= */
+
+#free-trial-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+#free-trial-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#free-trial-form .form-label {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.95rem;
+}
+
+#free-trial-form .form-input,
+#free-trial-form select {
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-glass);
+    background: var(--bg-card);
+    color: var(--white);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all var(--transition-normal);
+}
+
+#free-trial-form .form-input:focus,
+#free-trial-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(0, 102, 255, 0.4);
+}
+
+#free-trial-form button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: var(--space-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+    color: var(--white);
+    transition: all var(--transition-normal);
+}
+
+#free-trial-form button[type="submit"]:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-glow-secondary);
+}
+
+#free-trial-form .text-small {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--gray-400);
+}
+
+/* Modal Enhancements */
+.modal-content {
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(12px);
+}
+
+.modal-content button.modal-close {
+    font-size: 1.8rem;
+    color: var(--primary);
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    top: 1rem;
+    right: 1rem;
+    transition: all var(--transition-normal);
+}
+
+.modal-content button.modal-close:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: var(--space-lg);
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: var(--space-md);
+        width: 95%;
+    }
+}
+    </style>
+   
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
+                    <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
+                    <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="price.html" class="nav-link">Pricing</a>
+                    <a href="compare.html" class="nav-link active">Compare</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#faq" class="nav-link">FAQ</a>
+                </nav>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="price.html" class="nav-link">Pricing</a>
+        <a href="#" class="nav-link active">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <div class="mobile-nav-buttons">
+            <button class="btn btn-primary" onclick="openModal('booking-modal')">Get Personalised recommendation</button>
+            <button class="btn btn-primary" onclick="openModal('free-trial-modal')">Request Free Trial</button>
+            <button class="btn btn-secondary" onclick="openModal('booking-modal')">Request Chatbot</button>
+        </div>
+    </nav>
+                
+                <div class="flex" style="gap: 1rem;">
+                    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="text-hero">
+                    AI Call Agent vs <br>
+                    <span style="color: var(--secondary);">AI Chatbot</span>
+                </h1>
+                <p class="text-lead">
+                    Choose the perfect AI solution for your business. Compare features, pricing, and benefits to make the right decision for your customer service needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Overview Cards -->
+    <section class="section">
+        <div class="container">
+            <div class="solution-cards fade-in">
+                <div class="solution-card featured">
+                    <div class="solution-badge">Most Popular</div>
+                    <div class="icon-box icon-box-primary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3 class="solution-title">AI Call Agent</h3>
+                    <p class="solution-description">
+                        Human-like AI that answers your business phone 24/7, manages reservations, and handles customer inquiries with natural conversation.
+                    </p>
+                    <div class="best-for">
+                        <div class="best-for-title">BEST FOR:</div>
+                        <ul class="best-for-list">
+                            <li><span class="checkmark">✓</span> Service-based businesses</li>
+                            <li><span class="checkmark">✓</span> Appointment scheduling</li>
+                            <li><span class="checkmark">✓</span> Phone-first customer service</li>
+                            <li><span class="checkmark">✓</span> Higher-value transactions</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="openModal('free-trial-modal')">
+                        Request Free Trial
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="solution-card">
+                    <div class="icon-box icon-box-secondary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="solution-title">AI Chatbot</h3>
+                    <p class="solution-description">
+                        Intelligent chatbot for websites and messaging platforms. One-time purchase, lifetime license, no monthly fees.
+                    </p>
+                    <div class="best-for">
+                        <div class="best-for-title">BEST FOR:</div>
+                        <ul class="best-for-list">
+                            <li><span class="checkmark">✓</span> E-commerce & retail</li>
+                            <li><span class="checkmark">✓</span> FAQ automation</li>
+                            <li><span class="checkmark">✓</span> Lead generation</li>
+                            <li><span class="checkmark">✓</span> Budget-conscious businesses</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('booking-modal')">
+                        Request Chatbot
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 10L5 3H3m4 10a2 2 0 1 0 0 4 2 2 0 0 1 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 1 0-4z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature Comparison -->
+    <section class="comparison-section section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Feature-by-Feature Comparison</h2>
+                <p class="text-lead fade-in delay-1">
+                    See exactly how our AI Call Agent and AI Chatbot compare across all features and capabilities.
+                </p>
+            </div>
+            
+            <div class="comparison-table fade-in delay-2">
+                <div class="comparison-header">
+                    <div>Features</div>
+                    <div style="color: var(--primary);">AI Call Agent</div>
+                    <div style="color: var(--secondary);">AI Chatbot</div>
+                </div>
+                
+                <div class="feature-category">Communication Channels</div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Phone Call Handling</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Website Chat Widget</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">WhatsApp Integration</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Facebook Messenger</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="feature-category">Core Capabilities</div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">24/7 Availability</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Human-like Conversation</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Appointment Booking</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">FAQ Answering</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Lead Capture</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="feature-category">Advanced Features</div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Voice Recognition & Response</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Interruption Handling</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Multi-language Support</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Custom Branding</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">Limited</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="feature-category">Integration & Setup</div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">CRM Integration</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Calendar Integration</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-yes">✓</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Setup Time</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">15 min</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">30 min</span>
+                    </div>
+                </div>
+                
+                <div class="feature-category">Pricing Model</div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Pricing Structure</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">Monthly</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">One-time</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Starting Price</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">$249/mo</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">$599</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <span class="feature-name">Free Trial</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="feature-text">14 days</span>
+                    </div>
+                    <div class="comparison-cell feature-value">
+                        <span class="check-no">✗</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decision Helper -->
+    <section class="decision-helper section">
+        <div class="container">
+            <div class="decision-card fade-in">
+                <div class="decision-title">Not sure which solution is right for you?</div>
+                <p class="text-body">Answer a few quick questions to get a personalized recommendation.</p>
+                
+                <div class="decision-options">
+                    <div class="decision-option" onclick="selectOption('phone-first')">
+                        <div class="option-title">📞 Phone-First Business</div>
+                        <div class="option-description">Most customer interactions happen over the phone</div>
+                    </div>
+                    <div class="decision-option" onclick="selectOption('digital-first')">
+                        <div class="option-title">💻 Digital-First Business</div>
+                        <div class="option-description">Customers primarily interact through your website</div>
+                    </div>
+                </div>
+                
+                <div id="recommendation-phone" class="recommendation">
+                    <div class="recommendation-title">🎯 Perfect Match: AI Call Agent</div>
+                    <div class="recommendation-text">
+                        Since most of your customer interactions happen over the phone, our AI Call Agent is ideal for your business. It handles calls like a human receptionist, manages appointments, and never misses a call.
+                    </div>
+                    <button class="btn btn-primary" onclick="openModal('booking-modal')">
+                        Get Personalised recommendation
+                    </button>
+                </div>
+                
+                <div id="recommendation-digital" class="recommendation">
+                    <div class="recommendation-title">🎯 Perfect Match: AI Chatbot</div>
+                    <div class="recommendation-text">
+                        For digital-first businesses, our AI Chatbot is perfect. It handles website visitors, captures leads, and supports multiple messaging platforms with a one-time purchase and no monthly fees.
+                    </div>
+                    <button class="btn btn-secondary" onclick="openModal('booking-modal')">
+                        Get Personalised recommendation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Deep Dive -->
+    <section class="section" style="background: var(--bg-section);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Key Differences Explained</h2>
+                <p class="text-lead fade-in delay-1">
+                    Understanding the unique strengths of each solution
+                </p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-card-header">
+                        <div class="icon-box icon-box-primary">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-card-title">Voice & Phone Capabilities</div>
+                    </div>
+                    <div class="feature-card-description">
+                        How each solution handles voice-based customer interactions and phone support.
+                    </div>
+                    <div class="feature-comparison">
+                        <div class="feature-item call-agent">
+                            <span class="check-yes">✓</span>
+                            <span>Natural voice conversations</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-no">✗</span>
+                            <span>Text-only communication</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span class="check-yes">✓</span>
+                            <span>Handles interruptions</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-no">✗</span>
+                            <span>Sequential messaging only</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span class="check-yes">✓</span>
+                            <span>Phone number integration</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-no">✗</span>
+                            <span>No phone functionality</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-card-header">
+                        <div class="icon-box icon-box-secondary">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <div class="feature-card-title">Digital Channels</div>
+                    </div>
+                    <div class="feature-card-description">
+                        Coverage across websites, social media, and messaging platforms.
+                    </div>
+                    <div class="feature-comparison">
+                        <div class="feature-item call-agent">
+                            <span class="check-no">✗</span>
+                            <span>No website integration</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-yes">✓</span>
+                            <span>Full website integration</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span class="check-no">✗</span>
+                            <span>No messaging apps</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-yes">✓</span>
+                            <span>WhatsApp, Messenger+</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span class="check-no">✗</span>
+                            <span>No social media</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-yes">✓</span>
+                            <span>Multi-platform support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-card-header">
+                        <div class="icon-box icon-box-accent">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-card-title">Setup & Maintenance</div>
+                    </div>
+                    <div class="feature-card-description">
+                        Implementation complexity, ongoing maintenance, and technical requirements.
+                    </div>
+                    <div class="feature-comparison">
+                        <div class="feature-item call-agent">
+                            <span class="check-yes">✓</span>
+                            <span>15-minute setup</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-yes">✓</span>
+                            <span>30-minute setup</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span class="check-yes">✓</span>
+                            <span>Managed service</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-yes">✓</span>
+                            <span>Self-managed</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span class="check-yes">✓</span>
+                            <span>Auto-updates</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span class="check-yes">✓</span>
+                            <span>Manual updates</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-card-header">
+                        <div class="icon-box" style="background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="m17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="feature-card-title">Cost Structure</div>
+                    </div>
+                    <div class="feature-card-description">
+                        Pricing models, long-term costs, and return on investment comparison.
+                    </div>
+                    <div class="feature-comparison">
+                        <div class="feature-item call-agent">
+                            <span>💳</span>
+                            <span>$249-$1,249/month</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span>💰</span>
+                            <span>$599-$799 one-time</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span>🔄</span>
+                            <span>Recurring payments</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span>✅</span>
+                            <span>Lifetime license</span>
+                        </div>
+                        <div class="feature-item call-agent">
+                            <span>📞</span>
+                            <span>Per-call efficiency</span>
+                        </div>
+                        <div class="feature-item chatbot">
+                            <span>💻</span>
+                            <span>Unlimited usage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('booking-modal')" aria-label="Close modal">&times;</button>
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Get Started with Conversync</h2>
+            <p class="text-body" style="margin-bottom: 2rem;">
+                Ready to transform your customer service? Fill out the form below and we'll get your AI receptionist set up in minutes.
+            </p>
+            
+            <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Business Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder="you@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="company">Company Name *</label>
+                    <input type="text" id="company" name="company" class="form-input" required placeholder="Your Business Name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="business-type">Business Type</label>
+                    <select id="business-type" name="business-type" class="form-input">
+                        <option value="">Select your industry</option>
+                        <option value="healthcare">Healthcare & Medical</option>
+                        <option value="restaurant">Restaurant & Food Service</option>
+                        <option value="beauty">Beauty & Wellness</option>
+                        <option value="legal">Legal Services</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="retail">Retail & E-commerce</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="team-size">Team Size</label>
+                    <select id="team-size" name="team-size" class="form-input">
+                        <option value="">Select team size</option>
+                        <option value="1-5">1-5 employees</option>
+                        <option value="6-20">6-20 employees</option>
+                        <option value="21-50">21-50 employees</option>
+                        <option value="51-100">51-100 employees</option>
+                        <option value="100+">100+ employees</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="message">How can we help? (Optional)</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="3" placeholder="Tell us about your customer service needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                    <span>Request Free Trial</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+                
+                <p class="text-small" style="text-align: center; margin-top: 1rem; color: var(--gray-400);">
+                    No credit card required • 14-day free trial • Setup in under 15 minutes
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Request Free Trial Modal -->
+    <div id="free-trial-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('free-trial-modal')" aria-label="Close modal">&times;</button>
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Request Your Free Trial</h2>
+            <p class="text-body" style="margin-bottom: 2rem;">
+                Fill out the form below to start your 14-day free trial with Conversync's AI solutions.
+            </p>
+            
+            <form id="free-trial-form" onsubmit="handleFreeTrialSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="trial-name">Full Name *</label>
+                    <input type="text" id="trial-name" name="trial-name" class="form-input" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="trial-email">Email *</label>
+                    <input type="email" id="trial-email" name="trial-email" class="form-input" required placeholder="you@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="trial-phone">Phone Number</label>
+                    <input type="tel" id="trial-phone" name="trial-phone" class="form-input" placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="trial-company">Company Name *</label>
+                    <input type="text" id="trial-company" name="trial-company" class="form-input" required placeholder="Your Business Name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="trial-solution">Select Solution</label>
+                    <select id="trial-solution" name="trial-solution" class="form-input">
+                        <option value="call-agent">AI Call Agent</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                    <span>Start Free Trial</span>
+                </button>
+                
+                <p class="text-small" style="text-align: center; margin-top: 1rem; color: var(--gray-400);">
+                    No credit card required • 14-day free trial • Setup in under 15 minutes
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Global variables
+        let selectedSolution = '';
+        let currentDemoType = 'call-agent';
+        let reducedMotion = false;
+        
+        // Check for reduced motion preference
+        if (window.matchMedia) {
+            reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        }
+
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollAnimations();
+            initHeaderScroll();
+        });
+
+        // ========================================================================
+        // MOBILE MENU FUNCTIONALITY
+        // ========================================================================
+        
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileNav) {
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    `;
+                } else {
+                    mobileNav.classList.add('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    `;
+                }
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const header = document.querySelector('.header');
+            
+            if (mobileNav && mobileNav.classList.contains('active') && 
+                !header.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                menuBtn.innerHTML = `
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                `;
+            }
+        });
+
+        // ========================================================================
+        // SCROLL ANIMATIONS
+        // ========================================================================
+        
+        function initScrollAnimations() {
+            if (reducedMotion) return;
+            
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '50px 0px -100px 0px'
+            });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // ========================================================================
+        // HEADER SCROLL EFFECT
+        // ========================================================================
+        
+        function initHeaderScroll() {
+            const header = document.getElementById('header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        }
+
+        // ========================================================================
+        // DECISION HELPER
+        // ========================================================================
+        
+        function selectOption(optionType) {
+            // Remove active class from all options
+            document.querySelectorAll('.decision-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Hide all recommendations
+            document.querySelectorAll('.recommendation').forEach(rec => {
+                rec.classList.remove('show');
+            });
+            
+            // Add active class to selected option
+            event.target.classList.add('selected');
+            
+            // Show appropriate recommendation
+            if (optionType === 'phone-first') {
+                document.getElementById('recommendation-phone').classList.add('show');
+            } else if (optionType === 'digital-first') {
+                document.getElementById('recommendation-digital').classList.add('show');
+            }
+        }
+
+        // ========================================================================
+        // SOLUTION SELECTION
+        // ========================================================================
+        
+        function selectSolution(solution) {
+            selectedSolution = solution;
+            
+            // Update button states
+            document.querySelectorAll('#booking-modal .btn-outline').forEach(btn => {
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-outline');
+            });
+            
+            const selectedBtn = document.getElementById(`select-${solution}`);
+            selectedBtn.classList.remove('btn-outline');
+            selectedBtn.classList.add('btn-primary');
+            
+            // Update form submission button and disclaimer
+            const submitBtn = document.getElementById('submit-btn');
+            const disclaimer = document.getElementById('form-disclaimer');
+            
+            if (solution === 'call-agent') {
+                submitBtn.innerHTML = `
+                    <span>Request Free Trial (AI Call Agent)</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                `;
+                disclaimer.textContent = 'No credit card required • 14-day free trial • Setup in under 15 minutes';
+            } else if (solution === 'chatbot') {
+                submitBtn.innerHTML = `
+                    <span>Purchase AI Chatbot</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 10L5 3H3m4 10a2 2 0 1 0 0 4 2 2 0 0 1 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 1 0-4z"/>
+                    </svg>
+                `;
+                disclaimer.textContent = 'One-time purchase • Lifetime license • No monthly fees';
+            }
+        }
+
+        // ========================================================================
+        // DEMO FUNCTIONALITY
+        // ========================================================================
+        
+        const callAgentMessages = [
+            { type: 'ai', text: 'Hello! Thank you for calling Stella\'s Spa. I\'m your AI receptionist. How can I help you today?' },
+            { type: 'user', text: 'Hi! I\'d like to book a massage for this weekend.' },
+            { type: 'ai', text: 'I\'d be happy to help you book a massage! What type would you prefer? We offer Swedish, deep tissue, hot stone, and couples massages.' },
+            { type: 'user', text: 'A deep tissue massage sounds perfect.' },
+            { type: 'ai', text: 'Excellent choice! For this weekend, I have these available times:\n\n• Saturday 2:30 PM with James\n• Sunday 11:00 AM with Maria\n• Sunday 3:00 PM with James\n\nWhich works best for you?' },
+            { type: 'user', text: 'Saturday at 2:30 PM would be perfect!' },
+            { type: 'ai', text: '✅ Perfect! I\'ve booked you for Saturday at 2:30 PM with James for a 60-minute deep tissue massage. May I get your name and phone number to confirm?' }
+        ];
+
+        const chatbotMessages = [
+            { type: 'ai', text: 'Hi there! Welcome to our online store. How can I help you today?' },
+            { type: 'user', text: 'I\'m looking for information about your return policy.' },
+            { type: 'ai', text: 'I\'d be happy to help with that! We offer a 30-day return policy on most items. Items must be unused and in original packaging. Would you like details about a specific product?' },
+            { type: 'user', text: 'What about electronics?' },
+            { type: 'ai', text: 'Electronics have a 14-day return window due to their nature. They must be in original condition with all accessories and packaging. We also offer a 1-year warranty on all electronics. Need help with anything else?' },
+            { type: 'user', text: 'That\'s helpful, thanks! Can you help me track an order?' },
+            { type: 'ai', text: 'Absolutely! I can help you track your order. Please provide your order number or the email address used for the purchase, and I\'ll get your tracking information right away.' }
+        ];
+
+        function switchDemo(demoType) {
+            currentDemoType = demoType;
+            
+            // Update button states
+            document.querySelectorAll('[id^="demo-"]').forEach(btn => {
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-outline');
+            });
+            
+            document.getElementById(`demo-${demoType}`).classList.remove('btn-outline');
+            document.getElementById(`demo-${demoType}`).classList.add('btn-primary');
+            
+            // Update header info
+            const headerInfo = document.getElementById('demo-header-info');
+            if (demoType === 'call-agent') {
+                headerInfo.innerHTML = `
+                    <div style="font-weight: 600;">AI Call Agent</div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Stella's Spa & Wellness</div>
+                `;
+            } else {
+                headerInfo.innerHTML = `
+                    <div style="font-weight: 600;">AI Chatbot</div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Online Store Support</div>
+                `;
+            }
+            
+            // Clear chat and start new demo
+            document.getElementById('demo-chat-body').innerHTML = '';
+            startDemoChat();
+        }
+
+        function startDemoChat() {
+            const chatBody = document.getElementById('demo-chat-body');
+            chatBody.innerHTML = '';
+            
+            const messages = currentDemoType === 'call-agent' ? callAgentMessages : chatbotMessages;
+            
+            messages.forEach((message, index) => {
+                const isAiMessage = message.type === 'ai' && index > 0;
+                const baseDelay = index * 1500;
+                const typingDelay = isAiMessage ? 800 : 0;
+                
+                if (isAiMessage) {
+                    // Show typing indicator before AI messages
+                    setTimeout(() => {
+                        const typingIndicator = showTypingIndicator(chatBody);
+                        setTimeout(() => {
+                            if (typingIndicator.parentNode) {
+                                chatBody.removeChild(typingIndicator);
+                            }
+                            displayChatMessage(chatBody, message, 0);
+                        }, typingDelay);
+                    }, baseDelay - typingDelay);
+                } else {
+                    displayChatMessage(chatBody, message, baseDelay);
+                }
+            });
+        }
+
+        function displayChatMessage(container, message, delay = 0) {
+            setTimeout(() => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chat-message ${message.type}`;
+                messageDiv.innerHTML = `<div class="message-bubble">${message.text.replace(/\n/g, '<br>')}</div>`;
+                
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight;
+                
+                setTimeout(() => {
+                    messageDiv.style.animationDelay = '0s';
+                }, 100);
+                
+            }, delay);
+        }
+
+        function showTypingIndicator(container) {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message ai typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-bubble">
+                    <div style="display: flex; gap: 4px; align-items: center;">
+                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out;"></div>
+                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.2s;"></div>
+                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.4s;"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Add typing animation CSS if not already present
+            if (!document.getElementById('typing-animation')) {
+                const style = document.createElement('style');
+                style.id = 'typing-animation';
+                style.textContent = `
+                    @keyframes typing-dot {
+                        0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+                        40% { opacity: 1; transform: scale(1.2); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            container.appendChild(typingDiv);
+            container.scrollTop = container.scrollHeight;
+            return typingDiv;
+        }
+
+        // ========================================================================
+        // MODAL FUNCTIONALITY
+        // ========================================================================
+        
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Initialize demo if it's the demo modal
+                if (modalId === 'demo-modal') {
+                    setTimeout(() => {
+                        switchDemo('call-agent');
+                    }, 300);
+                }
+                
+                // Focus first input for accessibility
+                if (modalId === 'booking-modal') {
+                    setTimeout(() => {
+                        const firstInput = modal.querySelector('input');
+                        if (firstInput) firstInput.focus();
+                    }, 300);
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modals with escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
+        // ========================================================================
+        // FORM HANDLING
+        // ========================================================================
+        
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            
+            if (!selectedSolution) {
+                alert('Please select a solution (AI Call Agent or AI Chatbot) before continuing.');
+                return;
+            }
+            
+            const formData = new FormData(event.target);
+            const bookingData = Object.fromEntries(formData);
+            bookingData.solution = selectedSolution;
+            
+            // Show loading state
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    Setting up your AI...
+                </div>
+            `;
+            submitBtn.disabled = true;
+            
+            // Add spin animation if not present
+            if (!document.getElementById('spin-animation')) {
+                const style = document.createElement('style');
+                style.id = 'spin-animation';
+                style.textContent = `
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            // Simulate API call for demo
+            setTimeout(() => {
+                showBookingSuccess();
+            }, 2000);
+        }
+
+        function showBookingSuccess() {
+            const modal = document.getElementById('booking-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            const solutionName = selectedSolution === 'call-agent' ? 'AI Call Agent' : 'AI Chatbot';
+            const solutionIcon = selectedSolution === 'call-agent' ? 
+                '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>' :
+                '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>';
+            
+            modalContent.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; animation: checkmark-bounce 0.6s ease;">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                            <polyline points="20,6 9,17 4,12"></polyline>
+                        </svg>
+                    </div>
+                    <h2 style="color: var(--success); margin-bottom: 1rem; font-size: 1.8rem;">Welcome to Conversync!</h2>
+                    <p style="color: var(--gray-300); margin-bottom: 2rem; font-size: 1.1rem;">
+                        Your ${solutionName} is being set up now. You'll receive an email with ${selectedSolution === 'call-agent' ? 'login details and setup instructions' : 'download links and installation guide'} within the next few minutes.
+                    </p>
+                    <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid var(--border-secondary);">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    ${solutionIcon}
+                                </svg>
+                            </div>
+                            <div style="text-align: left;">
+                                <h3 style="color: var(--primary); margin-bottom: 0.25rem;">${solutionName}</h3>
+                                <p style="color: var(--gray-400); font-size: 0.9rem;">
+                                    ${selectedSolution === 'call-agent' ? 'Phone-based customer service automation' : 'Website and messaging automation'}
+                                </p>
+                            </div>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">What happens next?</h3>
+                        <div style="text-align: left; color: var(--gray-300);">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">1</div>
+                                <span>Check your email for setup instructions</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">2</div>
+                                <span>${selectedSolution === 'call-agent' ? 'Complete the 10-minute setup wizard' : 'Install and customize your chatbot'}</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">3</div>
+                                <span>Start ${selectedSolution === 'call-agent' ? 'receiving perfect phone service' : 'automating customer conversations'}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg" onclick="closeModal('booking-modal')" style="margin-right: 1rem;">
+                        Get Started Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeModal('booking-modal')">
+                        Close
+                    </button>
+                </div>
+            `;
+            
+            // Add bounce animation
+            if (!document.getElementById('bounce-animation')) {
+                const style = document.createElement('style');
+                style.id = 'bounce-animation';
+                style.textContent = `
+                    @keyframes checkmark-bounce {
+                        0% { transform: scale(0); }
+                        50% { transform: scale(1.2); }
+                        100% { transform: scale(1); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // ========================================================================
+        // SMOOTH SCROLLING FOR ANCHOR LINKS
+        // ========================================================================
+        
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('a[href^="#"]');
+            if (link) {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+
+        function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+// Close modal when clicking outside modal content
+window.addEventListener('click', function(event) {
+    const bookingModal = document.getElementById('booking-modal');
+    if (event.target === bookingModal) {
+        closeModal('booking-modal');
+    }
+});
+    </script>
+</body>
+</html>
