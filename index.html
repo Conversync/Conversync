@@ -1215,6 +1215,22 @@
 .mobile-nav-buttons .btn {
     flex: 1;
 }
+
+/* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -1236,6 +1252,11 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
 
+                 <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
                 <!-- Add this right after the existing <nav class="nav"> -->
 <nav class="mobile-nav" id="mobile-nav">
     <a href="index.html" class="nav-link">Home</a>
@@ -1249,16 +1270,6 @@
         <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
     </div>
 </nav>
-                
-
-                
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-</button>
             </div>
         </div>
     </header>
@@ -1897,57 +1908,27 @@
     <!-- JavaScript -->
     <script>
 
+        // Mobile menu toggle
 function toggleMobileMenu() {
-    const mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    
-    console.log('Toggle function called'); // Add this to test
-    console.log('Mobile nav element:', mobileNav); // Add this to test
-    
-    if (mobileNav) {
-        if (mobileNav.classList.contains('active')) {
-            mobileNav.classList.remove('active');
-            // Change hamburger back to menu icon
-            menuBtn.innerHTML = `
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            `;
-        } else {
-            mobileNav.classList.add('active');
-            // Change to X icon
-            menuBtn.innerHTML = `
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            `;
-        }
-    } else {
-        console.error('Mobile nav element not found');
-    }
-};
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navMenu = document.getElementById('navMenu');
+  
+  mobileMenuBtn.classList.toggle('active');
+  navMenu.classList.toggle('open');
+}
 
-// Add this in your existing JavaScript
-document.addEventListener('click', function(event) {
-    const mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const header = document.querySelector('.header');
-    
-    if (mobileNav && mobileNav.classList.contains('active') && 
-        !header.contains(event.target)) {
-        mobileNav.classList.remove('active');
-        menuBtn.innerHTML = `
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navMenu = document.getElementById('navMenu');
+      mobileMenuBtn.classList.remove('active');
+      navMenu.classList.remove('open');
     }
+  });
 });
+
         // ============================================================================
         // MAIN APPLICATION SCRIPT
         // ============================================================================
