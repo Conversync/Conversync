@@ -197,6 +197,21 @@
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
         }
+
+        /* Make Get Started button transparent with blue border */
+        .btn-primary.no-highlight {
+            background: transparent; /* no background */
+            color: var(--primary);   /* blue text */
+            border: 2px solid var(--primary); /* blue border */
+            box-shadow: none;        /* remove glow */
+        }
+
+        .btn-primary.no-highlight:hover {
+            background: var(--primary); /* blue background on hover */
+            color: var(--white);        /* white text on hover */
+            transform: none;            
+            box-shadow: none;
+        }
         
         .btn-secondary {
             background: var(--bg-glass);
@@ -784,13 +799,13 @@
     <a href="contact.html" class="nav-link">Contact</a>
     <div class="mobile-nav-buttons">
         <a href="contact.html" class="btn btn-outline btn-sm">Get in Touch</a>
-        <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
+    <a href="get_started.html" class="btn btn-primary btn-sm no-highlight">Get Started</a>
     </div>
 </nav>
 
 <div class="flex desktop-only" style="gap: 1rem;">
     <a href="contact.html" class="btn btn-outline btn-sm">Get in Touch</a>
-    <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
+    <a href="get_started.html" class="btn btn-primary btn-sm no-highlight">Get Started</a>
 </div>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
     <span></span>
