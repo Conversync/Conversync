@@ -1,0 +1,1365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Conversync - the team behind revolutionary AI receptionist technology. Our mission to transform customer service with intelligent automation.">
+    <meta name="keywords" content="Conversync team, AI company, customer service automation, about us">
+    <meta name="theme-color" content="#0066ff">
+    <title>About Conversync - Revolutionizing Customer Service with AI</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* CSS Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color System */
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #3385ff;
+            --secondary: #00d4ff;
+            --accent: #ff6b35;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Background System */
+            --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            --bg-section: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            
+            /* Border System */
+            --border-primary: rgba(0, 102, 255, 0.3);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+            --border-glass: rgba(255, 255, 255, 0.15);
+            
+            /* Shadow System */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+            --shadow-glow-secondary: 0 0 30px rgba(0, 212, 255, 0.2);
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Animation */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        /* Typography System */
+        .text-hero {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--white) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+        
+        .text-display {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .text-heading {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-subheading {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .text-lead {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.6;
+            color: var(--gray-300);
+        }
+        
+        .text-body {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-400);
+        }
+        
+        .text-small {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--white);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-primary);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            min-height: 56px;
+        }
+        
+        .btn-sm {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.875rem;
+            min-height: 36px;
+        }
+        
+        /* Card System */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .card-glass {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+        }
+        
+        .card-feature {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+        
+        /* Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .icon-lg {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .icon-xl {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .icon-box-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .icon-box-secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+        }
+        
+        .icon-box-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+        }
+        
+        .icon-box-success {
+            background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-secondary);
+            padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: none;
+            gap: var(--space-lg);
+        }
+        
+        .nav-link {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+        
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-secondary);
+            border-top: none;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background-color var(--transition-fast);
+        }
+
+        .mobile-nav .nav-link:hover {
+            background: var(--bg-card);
+        }
+
+        .mobile-nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .mobile-nav-buttons .btn {
+            flex: 1;
+        }
+        
+        /* About Hero Section */
+        .about-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        /* Mission Section */
+        .mission {
+            background: var(--bg-section);
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+        
+        .mission-content h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin-top: 0.5rem;
+        }
+        
+        /* Team Section */
+        .team {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-avatar::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 50%;
+            background: var(--gray-900);
+            z-index: -1;
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .team-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+        }
+        
+        .team-bio {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Values Section */
+        .values {
+            background: var(--bg-section);
+        }
+        
+        .value-card {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        
+        .value-description {
+            color: var(--gray-400);
+            flex-grow: 1;
+        }
+        
+        /* Story Timeline */
+        .story {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(0, 102, 255, 0.05) 100%);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-3xl);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .timeline-year {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        
+        .timeline-description {
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px var(--gray-900), 0 0 0 8px var(--primary-light);
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+        }
+        
+        .contact-cta .text-heading {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+        
+        .contact-cta .text-lead {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .flex { display: flex; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .flex-between { display: flex; align-items: center; justify-content: space-between; }
+        
+        .mt-auto { margin-top: auto; }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mt-4 { margin-top: var(--space-lg); }
+        
+        .hidden { display: none; }
+        .visible { opacity: 1; transform: translateY(0); }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animation Delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                text-align: left !important;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 39, 0.98);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--border-secondary);
+                padding: 1rem;
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            .mobile-menu .nav-link {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-secondary);
+            }
+            
+            .about-hero {
+                min-height: 60vh;
+                padding-top: 80px;
+            }
+            
+            .mission-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .about-hero {
+                padding-top: 60px;
+            }
+            
+            .text-hero {
+                font-size: 2.5rem;
+            }
+            
+            .mission-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
+                    <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
+                    <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="price.html" class="nav-link">Pricing</a>
+                    <a href="compare.html" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <nav class="mobile-nav" id="mobile-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="price.html" class="nav-link">Pricing</a>
+                    <a href="compare.html" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="mobile-nav-buttons">
+                        <button class="btn btn-outline btn-sm" onclick="window.open('index.html#demo', '_self')">Try Demo</button>
+                        <button class="btn btn-primary btn-sm" onclick="window.open('index.html#pricing', '_self')">Get Started</button>
+                    </div>
+                </nav>
+                
+                <div class="flex" style="gap: 1rem;">
+                    <button class="btn btn-outline btn-sm" onclick="window.open('index.html#demo', '_self')">Try Demo</button>
+                    <button class="btn btn-primary btn-sm" onclick="window.open('index.html#pricing', '_self')">Get Started</button>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero section">
+        <div class="container">
+            <div class="about-hero-content fade-in">
+                <h1 class="text-hero">
+                    Revolutionizing Customer Service<br>
+                    <span style="color: var(--secondary);">One Conversation at a Time</span>
+                </h1>
+                <p class="text-lead" style="max-width: 700px; margin: 0 auto;">
+                    We're building the future of customer interactions with AI that understands, responds, and delivers experiences that feel authentically human.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission section" id="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-content fade-in">
+                    <h2 class="text-heading">Our Mission</h2>
+                    <p class="text-body" style="margin-bottom: var(--space-md);">
+                        At Conversync, we believe every customer interaction should be exceptional. Traditional customer service solutions leave businesses choosing between cost-effective automation and quality human experience.
+                    </p>
+                    <p class="text-body" style="margin-bottom: var(--space-md);">
+                        We've eliminated that compromise. Our AI receptionists and chatbots deliver the warmth and intelligence of human conversation with the reliability and scalability of advanced technology.
+                    </p>
+                    <p class="text-body">
+                        From missed calls at 3 AM to complex appointment scheduling, we ensure your business never misses an opportunity to serve customers excellently.
+                    </p>
+                </div>
+                <div class="fade-in delay-1">
+                    <div class="card card-glass" style="text-align: center; padding: var(--space-xl);">
+                        <h3 style="color: var(--primary); margin-bottom: var(--space-lg); font-size: 1.4rem; font-weight: 600;">Why We Built This</h3>
+                        <p style="color: var(--gray-300); margin-bottom: var(--space-md); font-size: 1rem;">
+                            After experiencing countless frustrating customer service interactions, we knew there had to be a better way.
+                        </p>
+                        <p style="color: var(--gray-300); font-size: 1rem;">
+                            Traditional systems force businesses to choose between human warmth and automated efficiency. We refuse to accept that compromise.
+                        </p>
+                    </div>
+                    
+                    <div class="mission-stats">
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Availability</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15k+</span>
+                            <span class="stat-label">Businesses Served</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.5M+</span>
+                            <span class="stat-label">Conversations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values section" id="values">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Our Core Values</h2>
+                <p class="text-lead fade-in delay-1">
+                    The principles that guide every decision we make and every product we build.
+                </p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card value-card fade-in delay-1">
+                    <div class="icon-box icon-box-primary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Human-Centric Design</h3>
+                    <p class="value-description">
+                        Technology should enhance human connection, not replace it. Our AI is designed to feel natural, empathetic, and genuinely helpful in every interaction.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-2">
+                    <div class="icon-box icon-box-secondary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="10" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Privacy & Security</h3>
+                    <p class="value-description">
+                        Your data and your customers' data are sacred. We implement enterprise-grade security and never compromise on privacy protection.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-3">
+                    <div class="icon-box icon-box-accent">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Delightful Experiences</h3>
+                    <p class="value-description">
+                        Every customer interaction should be a positive moment. We obsess over details that make conversations feel smooth, natural, and pleasant.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-1">
+                    <div class="icon-box icon-box-success">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Continuous Innovation</h3>
+                    <p class="value-description">
+                        We're constantly pushing boundaries in AI conversation technology, staying ahead of the curve to deliver cutting-edge solutions.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-2">
+                    <div class="icon-box icon-box-primary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21V19a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Customer Success</h3>
+                    <p class="value-description">
+                        Your success is our success. We provide comprehensive support, training, and resources to ensure you get maximum value from our platform.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-3">
+                    <div class="icon-box icon-box-secondary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Excellence in Simplicity</h3>
+                    <p class="value-description">
+                        Complex technology should be simple to use. We create powerful AI solutions that are intuitive and accessible to everyone.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team section" id="team">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Meet Our Team</h2>
+                <p class="text-lead fade-in delay-1">
+                    Passionate experts in AI, customer experience, and business automation working to revolutionize how businesses connect with customers.
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card team-member fade-in delay-1">
+                    <div class="team-avatar">AS</div>
+                    <h3 class="team-name">Alex Singh</h3>
+                    <p class="team-role">CEO & Co-Founder</p>
+                    <p class="team-bio">
+                        Former AI researcher at Google with 12+ years building conversational AI systems. Passionate about making AI accessible and human-centered.
+                    </p>
+                </div>
+                
+                <div class="card team-member fade-in delay-2">
+                    <div class="team-avatar">MR</div>
+                    <h3 class="team-name">Maria Rodriguez</h3>
+                    <p class="team-role">CTO & Co-Founder</p>
+                    <p class="team-bio">
+                        Previously led engineering teams at Stripe and Shopify. Expert in scalable systems and natural language processing with a focus on customer experience.
+                    </p>
+                </div>
+                
+                <div class="card team-member fade-in delay-3">
+                    <div class="team-avatar">DK</div>
+                    <h3 class="team-name">David Kim</h3>
+                    <p class="team-role">VP of Product</p>
+                    <p class="team-bio">
+                        Product leader with deep experience in SaaS and customer service tools. Previously at Zendesk and Intercom, building products used by millions.
+                    </p>
+                </div>
+                
+                <div class="card team-member fade-in delay-1">
+                    <div class="team-avatar">SJ</div>
+                    <h3 class="team-name">Sarah Johnson</h3>
+                    <p class="team-role">VP of Engineering</p>
+                    <p class="team-bio">
+                        Experienced engineering leader with expertise in machine learning infrastructure. Former principal engineer at OpenAI and Microsoft AI.
+                    </p>
+                </div>
+                
+                <div class="card team-member fade-in delay-2">
+                    <div class="team-avatar">RC</div>
+                    <h3 class="team-name">Robert Chen</h3>
+                    <p class="team-role">Head of Customer Success</p>
+                    <p class="team-bio">
+                        Customer success expert who has helped thousands of businesses optimize their customer service operations at companies like Salesforce and HubSpot.
+                    </p>
+                </div>
+                
+                <div class="card team-member fade-in delay-3">
+                    <div class="team-avatar">EP</div>
+                    <h3 class="team-name">Emily Parker</h3>
+                    <p class="team-role">Head of Design</p>
+                    <p class="team-bio">
+                        UX design leader focused on creating intuitive, accessible interfaces. Previously designed conversation experiences at Slack and Discord.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Timeline Section -->
+    <section class="story section" id="story">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Our Story</h2>
+                <p class="text-lead fade-in delay-1">
+                    The journey from frustrated customers to AI pioneers transforming customer service.
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3 class="timeline-title">The Problem Becomes Clear</h3>
+                        <p class="timeline-description">
+                            After countless experiences with poor customer service automation, our founders realized that businesses were forced to choose between cost-effective bots and quality human interaction. There had to be a better way.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3 class="timeline-title">Research & Development</h3>
+                        <p class="timeline-description">
+                            We began deep research into conversational AI, studying thousands of customer interactions to understand what makes conversations feel natural, helpful, and genuinely human.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3 class="timeline-title">First Breakthrough</h3>
+                        <p class="timeline-description">
+                            Our prototype AI successfully handled complex restaurant reservations with interruption handling and natural conversation flow. The first business to try it saw a 300% increase in bookings.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3 class="timeline-title">Company Founded</h3>
+                        <p class="timeline-description">
+                            Conversync officially launched with seed funding from leading AI investors. Our mission: make every customer interaction exceptional through human-like AI technology.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3 class="timeline-title">Rapid Growth</h3>
+                        <p class="timeline-description">
+                            Reached 1,000+ businesses using our AI receptionist. Expanded from restaurants to healthcare, legal services, and retail with consistently outstanding results.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3 class="timeline-title">Advanced AI Platform</h3>
+                        <p class="timeline-description">
+                            Launched our comprehensive AI platform with both call agents and chatbots. Processed over 1 million customer conversations with industry-leading satisfaction scores.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">The Future of Customer Service</h3>
+                        <p class="timeline-description">
+                            Today, we're proud to serve 15,000+ businesses worldwide, handling millions of conversations with AI that customers often prefer over human agents. This is just the beginning.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta section" id="contact">
+        <div class="container text-center">
+            <h2 class="text-heading fade-in">Ready to Transform Your Customer Service?</h2>
+            <p class="text-lead fade-in delay-1" style="max-width: 600px; margin: 0 auto var(--space-xl);">
+                Join thousands of businesses that have revolutionized their customer interactions with Conversync. Our AI agents are ready to work for you 24/7.
+            </p>
+            <div class="fade-in delay-2" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-secondary btn-lg" onclick="window.open('index.html#pricing', '_self')">
+                    Start Free Trial
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+                <button class="btn btn-outline btn-lg" onclick="window.open('index.html#demo', '_self')" style="color: white; border-color: white;">
+                    Try Demo
+                </button>
+                <button class="btn btn-secondary btn-lg" onclick="window.open('mailto:hello@conversync.ai', '_blank')">
+                    Contact Us
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4" style="margin-bottom: var(--space-xl);">
+                <div>
+                    <div class="footer-brand">Conversync</div>
+                    <p class="footer-description">
+                        Revolutionizing customer service with AI that never sleeps. Transform your business with intelligent automation and 24/7 support.
+                    </p>
+                    <div class="social-links" style="display: flex; gap: var(--space-sm);">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-md); color: var(--white);">Product</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#features" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Features</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#pricing" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Pricing</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#demo" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Demo</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">API Documentation</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-md); color: var(--white);">Company</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="about.html" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">About Us</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Blog</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Careers</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Press Kit</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#contact" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-md); color: var(--white);">Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Help Center</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#faq" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">FAQ</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Community</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Privacy Policy</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--border-secondary); padding-top: var(--space-lg); text-align: center; color: var(--gray-400);">
+                <p>&copy; 2025 Conversync. All rights reserved. Transforming customer service with intelligent AI solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileNav) {
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    `;
+                } else {
+                    mobileNav.classList.add('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    `;
+                }
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const header = document.querySelector('.header');
+            
+            if (mobileNav && mobileNav.classList.contains('active') && 
+                !header.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                menuBtn.innerHTML = `
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                `;
+            }
+        });
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const observeElements = () => {
+                const elements = document.querySelectorAll('.fade-in');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { 
+                    threshold: 0.1,
+                    rootMargin: '50px 0px -100px 0px'
+                });
+
+                elements.forEach(el => observer.observe(el));
+            };
+
+            observeElements();
+        }
+
+        // Header scroll effect
+        function initHeaderScroll() {
+            const header = document.getElementById('header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('click', function(event) {
+            const link = event.target.closest('a[href^="#"]');
+            if (link) {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollAnimations();
+            initHeaderScroll();
+        });
+    </script>
+</body>
+</html>

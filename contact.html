@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Conversync - Get in touch with our AI receptionist experts. We're here to help transform your customer service with intelligent automation.">
+    <meta name="keywords" content="contact Conversync, AI receptionist support, customer service automation, get help">
+    <meta name="theme-color" content="#0066ff">
+    <title>Contact Us - Conversync</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* CSS Reset and Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color System */
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #3385ff;
+            --secondary: #00d4ff;
+            --accent: #ff6b35;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Background System */
+            --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            --bg-section: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            
+            /* Border System */
+            --border-primary: rgba(0, 102, 255, 0.3);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+            --border-glass: rgba(255, 255, 255, 0.15);
+            
+            /* Shadow System */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
+            --shadow-glow-secondary: 0 0 30px rgba(0, 212, 255, 0.2);
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Animation */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        
+        /* Typography System */
+        .text-hero {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--white) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+        
+        .text-display {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .text-heading {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .text-subheading {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .text-lead {
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            line-height: 1.6;
+            color: var(--gray-300);
+        }
+        
+        .text-body {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-400);
+        }
+        
+        /* Button System */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            min-height: 48px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--white);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-primary);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1.1rem;
+            min-height: 56px;
+        }
+        
+        .btn-sm {
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.875rem;
+            min-height: 36px;
+        }
+        
+        /* Card System */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .card-glass {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+        }
+        
+        /* Icon System */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .icon-lg {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .icon-xl {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .icon-box-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .icon-box-secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+        }
+        
+        .icon-box-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-secondary);
+            padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: none;
+            gap: var(--space-lg);
+        }
+        
+        .nav-link {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-secondary);
+            border-top: none;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background-color var(--transition-fast);
+        }
+
+        .mobile-nav .nav-link:hover {
+            background: var(--bg-card);
+        }
+
+        .mobile-nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .mobile-nav-buttons .btn {
+            flex: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .page-hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding-top: 60px;
+        }
+        
+        /* Contact Methods */
+        .contact-methods {
+            background: var(--bg-section);
+        }
+        
+        .contact-method {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+        
+        .contact-method:hover .icon-box {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .contact-method h3 {
+            margin-bottom: var(--space-sm);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .contact-method p {
+            margin-bottom: var(--space-md);
+            color: var(--gray-400);
+        }
+        
+        .contact-info {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        /* Form Styles */
+        .contact-form-section {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: 500;
+            color: var(--white);
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-md);
+            border: 1px solid var(--border-secondary);
+            border-radius: 15px;
+            background: var(--bg-card);
+            color: var(--white);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            font-family: inherit;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--gray-500);
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1), var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 15px;
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--border-primary);
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: none;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            text-align: left;
+            transition: all var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 102, 255, 0.05);
+        }
+        
+        .faq-icon {
+            transition: transform var(--transition-normal);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            padding: 0 var(--space-lg);
+        }
+        
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 0 var(--space-lg) var(--space-lg);
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* Office Hours */
+        .office-hours {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+        }
+        
+        .office-hours h3 {
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid var(--border-secondary);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .day {
+            font-weight: 500;
+            color: var(--gray-300);
+        }
+        
+        .time {
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .time.closed {
+            color: var(--gray-500);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--border-secondary);
+            text-align: center;
+            color: var(--gray-400);
+        }
+        
+        /* Floating Chat Button */
+        .chat-fab {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-glow);
+            transition: all var(--transition-normal);
+            z-index: 1000;
+            animation: pulse-fab 2s infinite;
+            border: none;
+            color: var(--white);
+        }
+        
+        .chat-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+        }
+        
+        @keyframes pulse-fab {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 39, 0.98);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--border-secondary);
+                padding: 1rem;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav .nav-link {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-secondary);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-fab {
+                width: 56px;
+                height: 56px;
+                bottom: var(--space-md);
+                right: var(--space-md);
+            }
+            
+            .header .flex {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-end;
+            }
+
+            .header .flex .btn {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.8rem;
+                min-width: 120px;
+            }
+            
+            .form-input,
+            .form-select,
+            .form-textarea {
+                min-height: 48px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .page-hero {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
+                    <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
+                    <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
+                </a>
+                
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="price.html" class="nav-link">Pricing</a>
+                    <a href="compare.html" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+
+                <nav class="mobile-nav" id="mobile-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="price.html" class="nav-link">Pricing</a>
+                    <a href="compare.html" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="mobile-nav-buttons">
+                        <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
+                        <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
+                    </div>
+                </nav>
+                
+                <div class="flex" style="gap: 1rem;">
+                    <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
+                    <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero section">
+        <div class="container">
+            <div class="page-hero-content fade-in">
+                <h1 class="text-hero">Get In Touch</h1>
+                <p class="text-lead">
+                    Have questions about our AI receptionist solutions? We're here to help you transform your customer service with intelligent automation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Multiple Ways to Connect</h2>
+                <p class="text-lead fade-in delay-1">
+                    Choose the method that works best for you
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card contact-method fade-in delay-1">
+                    <div class="icon-box icon-box-primary floating">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>Get detailed answers to your questions. We typically respond within 2 hours during business hours.</p>
+                    <a href="mailto:conversyn@gmail.com" class="contact-info" style="display:block; margin-top:0.5rem; text-decoration:underline; color:var(--primary);">
+                        conversync@gmail.com
+                    </a>
+                </div>
+                
+                <div class="card contact-method fade-in delay-2">
+                    <div class="icon-box icon-box-secondary floating" style="animation-delay: 0.5s;">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p>Speak directly with our AI experts. Available Monday-Friday, 9 AM - 6 PM EST.</p>
+                    <a href="tel:+61 479 085 297" class="contact-info" style="display:block; margin-top:0.5rem; text-decoration:underline; color:var(--primary);">
+                        +61 479 085 297
+                    </a>
+                    <a href="tel:+61 400 123 456" class="contact-info" style="display:block; margin-top:0.5rem; text-decoration:underline; color:var(--primary);">
+                        +61 400 123 456
+                    </a>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section section" id="contact-form">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Send Us a Message</h2>
+                <p class="text-lead fade-in delay-1">
+                    Tell us about your needs and we'll get back to you within 24 hours
+                </p>
+            </div>
+            
+            <div class="form-container">
+                <form class="card card-glass fade-in delay-2" onsubmit="handleContactSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" class="form-input" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" class="form-input" required placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="company">Company Name</label>
+                        <input type="text" id="company" name="company" class="form-input" placeholder="Your Business Name">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="industry">Industry</label>
+                            <select id="industry" name="industry" class="form-select">
+                                <option value="">Select your industry</option>
+                                <option value="healthcare">Healthcare & Medical</option>
+                                <option value="restaurant">Restaurant & Food Service</option>
+                                <option value="beauty">Beauty & Wellness</option>
+                                <option value="legal">Legal Services</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="retail">Retail & E-commerce</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="automotive">Automotive</option>
+                                <option value="financial">Financial Services</option>
+                                <option value="education">Education</option>
+                                <option value="nonprofit">Non-Profit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry-type">Inquiry Type</label>
+                            <select id="inquiry-type" name="inquiry-type" class="form-select">
+                                <option value="">What can we help with?</option>
+                                <option value="general">General Information</option>
+                                <option value="demo">Request a Demo</option>
+                                <option value="pricing">Pricing Questions</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="integration">Integration Help</option>
+                                <option value="enterprise">Enterprise Sales</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your business needs, questions, or how we can help you implement AI receptionist solutions..."></textarea>
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            <span>Send Message</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22,2 15,22 11,13 2,9"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Hours & Info -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="fade-in">
+                    <div class="office-hours">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM EST</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 4:00 PM EST</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time closed">Closed</span>
+                            </li>
+                        </ul>
+                        <div style="margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--border-secondary);">
+                            <p style="color: var(--gray-300); font-size: 0.9rem;">
+                                <strong>Emergency Support:</strong> Our AI systems monitor critical issues 24/7. For urgent technical problems, use the live chat or call our emergency line.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in delay-1">
+                    <div class="card">
+                        <h3 style="color: var(--primary); margin-bottom: var(--space-md);">Why Choose Conversync?</h3>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                            <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                                <div style="width: 24px; height: 24px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                                        <polyline points="20,6 9,17 4,12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.25rem; color: var(--white);">Expert Support Team</h4>
+                                    <p style="color: var(--gray-400); font-size: 0.9rem;">Our team has 10+ years of experience in AI and customer service automation</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                                <div style="width: 24px; height: 24px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                                        <polyline points="20,6 9,17 4,12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.25rem; color: var(--white);">Quick Implementation</h4>
+                                    <p style="color: var(--gray-400); font-size: 0.9rem;">Most clients are live and answering calls within 15 minutes of setup</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                                <div style="width: 24px; height: 24px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                                        <polyline points="20,6 9,17 4,12"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 0.25rem; color: var(--white);">24/7 Monitoring</h4>
+                                    <p style="color: var(--gray-400); font-size: 0.9rem;">We monitor your AI systems around the clock to ensure optimal performance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--bg-section);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Frequently Asked Questions</h2>
+                <p class="text-lead fade-in delay-1">
+                    Common questions about getting started with Conversync
+                </p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How quickly can you get my AI receptionist set up?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Most businesses are live within 15 minutes. Our setup wizard guides you through the process, and our team is available to help with any custom requirements or integrations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you offer custom integrations with my existing systems?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Yes! We integrate with over 60 popular business tools including CRMs, scheduling systems, payment processors, and more. Our technical team can also build custom integrations for enterprise clients.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-3">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What kind of support do you provide after setup?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            We provide 24/7 system monitoring, regular performance optimization, and dedicated customer success managers for enterprise clients. Our support team is available via chat, email, and phone.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I try Conversync before committing to a paid plan?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Absolutely! We offer a 14-day free trial with full access to all features. No credit card required. You can test the AI with real calls and see the results before making any commitment.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if my industry has specific compliance requirements?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            We're experienced with HIPAA, PCI DSS, and other industry standards. Our platform is SOC 2 compliant and we can configure your AI to meet specific regulatory requirements for healthcare, finance, and other regulated industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Conversync. All rights reserved. Transforming customer service with intelligent AI solutions.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); display: none; align-items: center; justify-content: center; z-index: 2000; backdrop-filter: blur(5px); padding: var(--space-lg);">
+        <div style="background: var(--gray-900); border: 1px solid var(--border-glass); border-radius: 20px; padding: var(--space-xl); max-width: 500px; width: 100%; text-align: center; animation: modalSlideIn 0.3s ease;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; animation: checkmark-bounce 0.6s ease;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                    <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+            </div>
+            <h2 style="color: var(--success); margin-bottom: 1rem; font-size: 1.8rem;">Message Sent Successfully!</h2>
+            <p style="color: var(--gray-300); margin-bottom: 2rem;">
+                Thank you for contacting us. We'll get back to you within 24 hours with a detailed response to your inquiry.
+            </p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        (function() {
+            'use strict';
+
+            let reducedMotion = false;
+            
+            // Check for reduced motion preference
+            if (window.matchMedia) {
+                reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
+
+            // Initialize app when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                initScrollAnimations();
+                initHeaderScroll();
+            });
+
+            // ========================================================================
+            // SCROLL ANIMATIONS
+            // ========================================================================
+            
+            function initScrollAnimations() {
+                if (reducedMotion) return;
+                
+                const elements = document.querySelectorAll('.fade-in');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { 
+                    threshold: 0.1,
+                    rootMargin: '50px 0px -100px 0px'
+                });
+
+                elements.forEach(el => observer.observe(el));
+            }
+
+            // ========================================================================
+            // HEADER SCROLL EFFECT
+            // ========================================================================
+            
+            function initHeaderScroll() {
+                const header = document.getElementById('header');
+                
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // ========================================================================
+            // MOBILE MENU
+            // ========================================================================
+            
+            window.toggleMobileMenu = function() {
+                const mobileNav = document.getElementById('mobile-nav');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                
+                if (mobileNav) {
+                    if (mobileNav.classList.contains('active')) {
+                        mobileNav.classList.remove('active');
+                        menuBtn.innerHTML = `
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        `;
+                    } else {
+                        mobileNav.classList.add('active');
+                        menuBtn.innerHTML = `
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        `;
+                    }
+                }
+            };
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const mobileNav = document.getElementById('mobile-nav');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                const header = document.querySelector('.header');
+                
+                if (mobileNav && mobileNav.classList.contains('active') && 
+                    !header.contains(event.target)) {
+                    mobileNav.classList.remove('active');
+                    menuBtn.innerHTML = `
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    `;
+                }
+            });
+
+            // ========================================================================
+            // FAQ FUNCTIONALITY
+            // ========================================================================
+            
+            window.toggleFaq = function(element) {
+                const faqItem = element.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const isOpen = faqItem.classList.contains('open');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item.open').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('open');
+                        item.querySelector('.faq-answer').classList.remove('open');
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isOpen) {
+                    faqItem.classList.remove('open');
+                    answer.classList.remove('open');
+                } else {
+                    faqItem.classList.add('open');
+                    answer.classList.add('open');
+                }
+            };
+
+            // ========================================================================
+            // FORM HANDLING
+            // ========================================================================
+            
+            window.handleContactSubmit = function(event) {
+                event.preventDefault();
+                
+                const formData = new FormData(event.target);
+                const contactData = Object.fromEntries(formData);
+                
+                // Show loading state
+                const submitBtn = event.target.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        Sending...
+                    </div>
+                `;
+                submitBtn.disabled = true;
+                
+                // Add spin animation if not present
+                if (!document.getElementById('spin-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'spin-animation';
+                    style.textContent = `
+                        @keyframes spin {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+                        @keyframes modalSlideIn {
+                            from {
+                                opacity: 0;
+                                transform: translateY(-50px) scale(0.9);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0) scale(1);
+                            }
+                        }
+                        @keyframes checkmark-bounce {
+                            0% { transform: scale(0); }
+                            50% { transform: scale(1.2); }
+                            100% { transform: scale(1); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+
+                // TODO: Replace with your actual contact API endpoint
+                // fetch('YOUR_CONTACT_API_ENDPOINT', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(contactData)
+                // })
+
+                // Simulate API call
+                setTimeout(() => {
+                    showSuccessModal();
+                    event.target.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            };
+
+            window.showSuccessModal = function() {
+                const modal = document.getElementById('success-modal');
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeSuccessModal = function() {
+                const modal = document.getElementById('success-modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+
+            // ========================================================================
+            // UTILITY FUNCTIONS
+            // ========================================================================
+            
+            window.scrollToForm = function() {
+                document.getElementById('contact-form').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            };
+
+            window.openLiveChat = function() {
+                // TODO: Integrate with your live chat system (Intercom, Zendesk Chat, etc.)
+                alert('Live chat integration would go here. This could open Intercom, Zendesk Chat, or your custom chat widget.');
+            };
+
+            // ========================================================================
+            // SMOOTH SCROLLING FOR ANCHOR LINKS
+            // ========================================================================
+            
+            document.addEventListener('click', function(event) {
+                const link = event.target.closest('a[href^="#"]');
+                if (link) {
+                    event.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
