@@ -1178,37 +1178,42 @@
 
 /* Mobile navigation with animated reveal */
 .mobile-nav {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     right: 0;
     background: rgba(10, 14, 39, 0.98);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border-secondary);
-    border-top: none;
-    padding: 1rem;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-secondary);
+    padding: 80px 1.5rem 1.5rem 1.5rem;
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
-    z-index: 999;
+    gap: 0.75rem;
+    opacity: 0;               /* hidden initially */
+    pointer-events: none;     /* prevents interaction when hidden */
+    max-height: 0;            /* collapsed */
+    transition: opacity 0.35s cubic-bezier(.4,1.5,.5,1), max-height 0.35s cubic-bezier(.4,1.5,.5,1);
+    z-index: 1100;
 }
 
 .mobile-nav.active {
-    max-height: 500px;
-    opacity: 1;
-    display: flex;
+    opacity: 1;               /* fully visible */
+    pointer-events: auto;     /* allows interaction */
+    max-height: 100vh;        /* expands to full height */
 }
 
 .mobile-nav .nav-link {
-    padding: 0.75rem 1rem;
+    color: var(--gray-100);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 0.75rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
+    transition: background 0.2s, color 0.2s;
+    background: none;
+    display: block;
 }
+
 
 .mobile-nav .nav-link:hover {
     background: var(--bg-card);
@@ -1227,15 +1232,20 @@
 
 .mobile-nav-buttons {
     display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
 .mobile-nav-buttons .btn {
-    flex: 1;
+    width: 100%;
+    justify-content: center;
+}
+
+.mobile-nav .nav-link.active,
+.mobile-nav .nav-link:hover {
+    background: var(--bg-card);
+    color: var(--primary);
 }
 
 .mobile-nav.active .mobile-nav-buttons {
