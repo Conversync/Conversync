@@ -363,9 +363,12 @@
         }
         
         .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            position: fixed;
+            top: 60px;
             left: 0;
             right: 0;
             background: rgba(10, 14, 39, 0.98);
@@ -377,29 +380,44 @@
             gap: 1rem;
             z-index: 999;
         }
-
         .mobile-nav.active {
+            max-height: 500px;
+            opacity: 1;
             display: flex;
         }
-
         .mobile-nav .nav-link {
             padding: 0.75rem 1rem;
             border-radius: 8px;
-            transition: background-color var(--transition-fast);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
         }
-
         .mobile-nav .nav-link:hover {
             background: var(--bg-card);
         }
-
+        .mobile-nav.active .nav-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mobile-nav.active .nav-link:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-nav.active .nav-link:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-nav.active .nav-link:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-nav.active .nav-link:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-nav.active .nav-link:nth-child(5) { transition-delay: 0.5s; }
+        .mobile-nav.active .nav-link:nth-child(6) { transition-delay: 0.6s; }
         .mobile-nav-buttons {
             display: flex;
             gap: 0.5rem;
             margin-top: 0.5rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
         }
-
-        .mobile-nav-buttons .btn {
-            flex: 1;
+        .mobile-nav-buttons .btn { flex: 1; }
+        .mobile-nav.active .mobile-nav-buttons {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.7s;
         }
         
         @media (min-width: 768px) {
@@ -700,28 +718,6 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 39, 0.98);
-                backdrop-filter: blur(20px);
-                border: 1px solid var(--border-secondary);
-                padding: 1rem;
-            }
-            
-            .mobile-nav.active {
-                display: block;
-            }
-            
-            .mobile-nav .nav-link {
-                display: block;
-                padding: 0.75rem 0;
-                border-bottom: 1px solid var(--border-secondary);
-            }
-
             .form-row {
                 grid-template-columns: 1fr;
             }
@@ -1209,7 +1205,6 @@
             window.toggleMobileMenu = function() {
                 const mobileNav = document.getElementById('mobile-nav');
                 const menuBtn = document.querySelector('.mobile-menu-btn');
-                
                 if (mobileNav) {
                     if (mobileNav.classList.contains('active')) {
                         mobileNav.classList.remove('active');
@@ -1232,13 +1227,12 @@
                 }
             };
 
-            // Close mobile menu when clicking outside
+            // Close mobile menu when clicking outside (from index.html)
             document.addEventListener('click', function(event) {
                 const mobileNav = document.getElementById('mobile-nav');
                 const menuBtn = document.querySelector('.mobile-menu-btn');
                 const header = document.querySelector('.header');
-                
-                if (mobileNav && mobileNav.classList.contains('active') && 
+                if (mobileNav && mobileNav.classList.contains('active') &&
                     !header.contains(event.target)) {
                     mobileNav.classList.remove('active');
                     menuBtn.innerHTML = `
