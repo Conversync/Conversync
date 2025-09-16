@@ -767,6 +767,16 @@
                 padding-top: 60px;
             }
         }
+
+        .hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: currentColor; /* takes the button's color */
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all var(--transition-normal);
+}
     </style>
 </head>
 <body>
@@ -795,10 +805,7 @@
                     <a href="compare.html" class="nav-link">Compare</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-                    <div class="mobile-nav-buttons">
-                        <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
-                        <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
-                    </div>
+
                 </nav>
                 
                 <div class="flex" style="gap: 1rem;">
@@ -806,13 +813,11 @@
                     <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
                 </div>
                 
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
+<button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+</button>
             </div>
         </div>
     </header>
