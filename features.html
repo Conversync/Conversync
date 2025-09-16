@@ -358,18 +358,8 @@
             color: var(--primary);
         }
         
-        .mobile-menu-btn {
-            display: block;
-            background: none;
-            border: none;
-            color: var(--white);
-            cursor: pointer;
-            padding: var(--space-xs);
-        }
-        
         @media (min-width: 768px) {
             .nav { display: flex; }
-            .mobile-menu-btn { display: none; }
         }
         
         /* Hero Section */
@@ -661,6 +651,98 @@
             color: var(--primary);
             font-weight: 600;
         }
+
+        /* Mobile Hamburger & Navbar */
+.mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1101;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 4px 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.2);
+}
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-secondary);
+    padding: 80px 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    transition: opacity 0.35s, max-height 0.35s;
+    z-index: 1100;
+}
+
+.mobile-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 100vh;
+}
+
+.mobile-nav .nav-link {
+    color: var(--gray-100);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.mobile-nav .nav-link:hover,
+.mobile-nav .nav-link.active {
+    background: var(--bg-card);
+    color: var(--primary);
+}
+
+.mobile-nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.mobile-nav-buttons .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn, .mobile-nav { display: none; }
+}
     </style>
 </head>
 <body>
@@ -682,18 +764,28 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
                 
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="features.html" class="nav-link active">Features</a>
+    <a href="price.html" class="nav-link">Pricing</a>
+    <a href="compare.html" class="nav-link">Compare</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <div class="mobile-nav-buttons">
+        <a href="/" class="btn btn-outline btn-sm">Try Demo</a>
+        <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+</nav>
+
                 <div class="flex" style="gap: 1rem;">
                     <a href="/" class="btn btn-outline btn-sm">Try Demo</a>
                     <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
                 </div>
-                
-                <button class="mobile-menu-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
             </div>
         </div>
     </header>
@@ -1391,6 +1483,24 @@ document.getElementById('total-benefit').textContent = `$${totalBenefit.toLocale
                 }
             }
         });
+
+        // Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+});
+
+document.querySelectorAll('.mobile-nav .nav-link, .mobile-nav-buttons .btn').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            mobileMenuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
+});
     </script>
 </body>
 </html>
