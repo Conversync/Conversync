@@ -934,6 +934,28 @@
         @media (min-width: 768px) {
             .mobile-menu-btn, .mobile-nav { display: none; }
         }
+
+        /* Show only on desktop */
+.desktop-only {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* Show only on desktop */
+.desktop-only {
+    display: flex !important;
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -946,14 +968,14 @@
                     <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
                 </a>
                 
-                <nav class="nav">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="features.html" class="nav-link">Features</a>
-                    <a href="#pricing" class="nav-link active">Pricing</a>
-                    <a href="compare.html" class="nav-link">Compare</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href= "contact.html" class="nav-link">Contact</a>
-                </nav>
+<nav class="nav desktop-only">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="#pricing" class="nav-link active">Pricing</a>
+    <a href="compare.html" class="nav-link">Compare</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+</nav>
 
                 <!-- Mobile Hamburger Button -->
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
@@ -964,9 +986,9 @@
 
                 <!-- Mobile Navbar -->
                 <nav class="mobile-nav" id="mobile-nav">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                     <a href="features.html" class="nav-link">Features</a>
-                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#pricing" class="nav-link active">Pricing</a>
                     <a href="compare.html" class="nav-link">Compare</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
@@ -976,10 +998,10 @@
                     </div>
                 </nav>
                 
-                <div class="flex" style="gap: 1rem;">
-                    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
-                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
-                </div>
+  <div class="flex desktop-only" style="gap: 1rem;">
+    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+</div>
             </div>
         </div>
     </header>
