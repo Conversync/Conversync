@@ -410,7 +410,7 @@
         
         @media (min-width: 768px) {
             .nav { display: flex; }
-            .mobile-menu-btn { display: none; }
+            .mobile-menu-btn { display: none !important; }
         }
         
         /* Hero Section */
@@ -1262,44 +1262,50 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header & Navigation -->
     <header class="header" id="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
-                    <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
-                    <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
-                </a>
-                
-                <nav class="nav">
-                    <a href="index.html" class="nav-link active">Home</a>
-                    <a href="features.html" class="nav-link">Features</a>
-                    <a href="price.html" class="nav-link">Pricing</a>
-                    <a href="compare.html" class="nav-link">Compare</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </nav>
-
-                 <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-                <!-- Add this right after the existing <nav class="nav"> -->
-<nav class="mobile-nav" id="mobile-nav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="features.html" class="nav-link">Features</a>
-    <a href="price.html" class="nav-link">Pricing</a>
-    <a href="compare.html" class="nav-link">Compare</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-    <div class="mobile-nav-buttons">
-        <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
-        <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
-    </div>
-</nav>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <a href="/" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
+            <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
+            <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
+          </a>
+          <!-- Desktop Nav -->
+          <nav class="nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="features.html" class="nav-link">Features</a>
+            <a href="price.html" class="nav-link">Pricing</a>
+            <a href="compare.html" class="nav-link">Compare</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </nav>
+          <!-- Desktop CTA Buttons -->
+          <div class="flex" style="gap: 1rem;">
+            <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
+            <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+          </div>
+          <!-- Mobile Hamburger Button -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+      </div>
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="price.html" class="nav-link">Pricing</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="mobile-nav-buttons">
+          <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+          <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+        </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->
@@ -1930,25 +1936,27 @@
     <!-- JavaScript -->
     <script>
 
-        // Mobile menu toggle
-function toggleMobileMenu() {
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-  mobileMenuBtn.classList.toggle('active');
-  mobileNav.classList.toggle('active');
-}
+        // =========================
+        // Mobile menu toggle logic
+        // =========================
+        function toggleMobileMenu() {
+          const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+          const mobileNav = document.getElementById('mobile-nav');
+          mobileMenuBtn.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+        }
 
-// Close mobile menu when clicking on a nav link
-document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const mobileNav = document.getElementById('mobile-nav');
-      mobileMenuBtn.classList.remove('active');
-      mobileNav.classList.remove('active');
-    }
-  });
-});
+        // Close mobile nav on link click
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('#mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+              if (window.innerWidth <= 768) {
+                document.getElementById('mobile-menu-btn').classList.remove('active');
+                document.getElementById('mobile-nav').classList.remove('active');
+              }
+            });
+          });
+        });
 
         // ============================================================================
         // MAIN APPLICATION SCRIPT
