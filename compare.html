@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compare AI Call Agent vs AI Chatbot - Choose the right AI solution for your business. Feature comparison, pricing, and benefits analysis.">
-    <meta name="keywords" content="AI comparison, call agent vs chatbot, business automation comparison, AI receptionist comparison">
+    <meta name="description" content="Learn about Conversync - the team behind revolutionary AI receptionist technology. Our mission to transform customer service with intelligent automation.">
+    <meta name="keywords" content="Conversync team, AI company, customer service automation, about us">
     <meta name="theme-color" content="#0066ff">
-    <title>Compare AI Solutions - AI Call Agent vs AI Chatbot | Conversync</title>
+    <title>About Conversync - Revolutionizing Customer Service with AI</title>
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,21 +15,6 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "AI Call Agent vs AI Chatbot Comparison",
-        "description": "Compare AI Call Agent and AI Chatbot solutions for businesses. Features, pricing, and benefits analysis.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Conversync",
-            "url": "https://aibusiness.com"
-        }
-    }
-    </script>
     
     <!-- Critical CSS -->
     <style>
@@ -287,18 +272,6 @@
             padding: var(--space-xl);
         }
         
-        .card-pricing {
-            text-align: center;
-            padding: var(--space-xl);
-            position: relative;
-        }
-        
-        .card-pricing.featured {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-            transform: scale(1.05);
-        }
-        
         /* Icon System */
         .icon {
             width: 24px;
@@ -317,9 +290,9 @@
         }
         
         .icon-box {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -336,6 +309,10 @@
         
         .icon-box-accent {
             background: linear-gradient(135deg, var(--accent) 0%, #ff8a5b 100%);
+        }
+        
+        .icon-box-success {
+            background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);
         }
         
         /* Header */
@@ -390,22 +367,122 @@
         .nav-link.active {
             color: var(--primary);
         }
-        
-        @media (min-width: 768px) {
-            .nav { display: flex; }
+
+        /* Mobile navigation with animated reveal */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.98);
+            box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.35s cubic-bezier(.77,0,.18,1), opacity 0.25s cubic-bezier(.77,0,.18,1);
+            padding-top: 90px;
+            padding-bottom: 2rem;
+        }
+        .mobile-nav.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-nav .nav-link {
+            display: block;
+            color: var(--gray-300);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            transition: background 0.18s, color 0.18s;
+            text-align: center;
+        }
+        .mobile-nav .nav-link:hover,
+        .mobile-nav .nav-link.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .mobile-nav-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+            align-items: center;
+        }
+        .mobile-nav-buttons .btn {
+            width: 80%;
+            max-width: 260px;
+        }
+
+        /* Hamburger button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 2100;
+            margin-left: 0.5rem;
+            position: relative;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 30px;
+            height: 3.5px;
+            background: var(--primary);
+            margin: 4px 0;
+            border-radius: 3px;
+            transition: all 0.32s cubic-bezier(.77,0,.18,1);
+            position: relative;
+        }
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        @media (max-width: 1024px) {
+            .nav {
+                display: none !important;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+        @media (max-width: 1024px) {
+            .mobile-nav {
+                display: flex;
+            }
         }
         
-        /* Hero Section */
-        .hero {
-            min-height: 60vh;
+        
+        /* About Hero Section */
+        .about-hero {
+            min-height: 70vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: 100px;
         }
         
-        .hero::before {
+        .about-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -414,438 +491,220 @@
             bottom: 0;
             background: 
                 radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
         
-        .hero-content {
+        .about-hero-content {
             position: relative;
             z-index: 10;
-            max-width: 900px;
             text-align: center;
-            padding-top: 60px;
+            max-width: 900px;
         }
         
-        /* Comparison Table Styles */
-        .comparison-section {
+        /* Mission Section */
+        .mission {
             background: var(--bg-section);
         }
         
-        .comparison-table {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            margin: 0 auto;
-            max-width: 100%;
-        }
-        
-        .comparison-header {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-            border-bottom: 1px solid var(--border-glass);
-        }
-        
-        .comparison-header > div {
-            padding: var(--space-lg);
-            text-align: center;
-            font-weight: 600;
-            border-right: 1px solid var(--border-glass);
-        }
-        
-        .comparison-header > div:last-child {
-            border-right: none;
-        }
-        
-        .feature-category {
-            background: rgba(0, 102, 255, 0.05);
-            padding: var(--space-md) var(--space-lg);
-            font-weight: 600;
-            color: var(--primary);
-            border-bottom: 1px solid var(--border-glass);
-        }
-        
-        .comparison-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            border-bottom: 1px solid var(--border-glass);
-        }
-        
-        .comparison-row:last-child {
-            border-bottom: none;
-        }
-        
-        .comparison-cell {
-            padding: var(--space-md) var(--space-lg);
-            display: flex;
-            align-items: center;
-            border-right: 1px solid var(--border-glass);
-            min-height: 60px;
-        }
-        
-        .comparison-cell:last-child {
-            border-right: none;
-        }
-        
-        .feature-name {
-            font-weight: 500;
-            color: var(--gray-200);
-        }
-        
-        .feature-value {
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .check-yes {
-            color: var(--success);
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .check-no {
-            color: var(--gray-500);
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .feature-text {
-            color: var(--gray-300);
-            font-size: 0.9rem;
-            text-align: center;
-        }
-        
-        /* Solution Cards */
-        .solution-cards {
+        .mission-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            margin-bottom: var(--space-3xl);
-        }
-        
-        .solution-card {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: var(--space-xl);
-            backdrop-filter: blur(10px);
-            transition: all var(--transition-normal);
-            text-align: center;
-            position: relative;
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-primary);
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .solution-card.featured {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-        }
-        
-        .solution-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .solution-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: var(--space-sm);
-            color: var(--white);
-        }
-        
-        .solution-description {
-            color: var(--gray-300);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .best-for {
-            background: var(--bg-card);
-            border: 1px solid var(--border-secondary);
-            border-radius: 15px;
-            padding: var(--space-md);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .best-for-title {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-sm);
-            font-size: 0.9rem;
-        }
-        
-        .best-for-list {
-            list-style: none;
-            text-align: left;
-        }
-        
-        .best-for-list li {
-            color: var(--gray-300);
-            font-size: 0.9rem;
-            padding: 0.25rem 0;
-            display: flex;
+            gap: var(--space-3xl);
             align-items: center;
-            gap: var(--space-xs);
         }
         
-        .best-for-list .checkmark {
-            color: var(--success);
-            font-weight: 600;
-            font-size: 0.8rem;
+        .mission-content h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
         }
         
-        /* Feature Grid */
-        .feature-grid {
+        .mission-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: var(--space-lg);
-            margin-top: var(--space-3xl);
+            margin-top: var(--space-xl);
         }
         
-        .feature-card {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: var(--space-lg);
-            backdrop-filter: blur(10px);
-            transition: all var(--transition-normal);
+        .stat {
+            text-align: center;
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-primary);
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
         }
         
-        .feature-card-header {
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin-top: 0.5rem;
+        }
+        
+        /* Team Section */
+        .team {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             display: flex;
             align-items: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-md);
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto var(--space-md);
+            position: relative;
+            overflow: hidden;
         }
         
-        .feature-card-title {
-            font-size: 1.2rem;
+        .team-avatar::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 50%;
+            background: var(--gray-900);
+            z-index: -1;
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
             font-weight: 600;
+            margin-bottom: 0.5rem;
             color: var(--white);
         }
         
-        .feature-card-description {
-            color: var(--gray-300);
+        .team-role {
+            color: var(--primary);
+            font-weight: 500;
             margin-bottom: var(--space-md);
         }
         
-        .feature-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-sm);
+        .team-bio {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-            font-size: 0.9rem;
+        /* Values Section */
+        .values {
+            background: var(--bg-section);
         }
         
-        .feature-item.call-agent {
-            color: var(--primary);
-        }
-        
-        .feature-item.chatbot {
-            color: var(--secondary);
-        }
-        
-        /* Decision Helper */
-        .decision-helper {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-        }
-        
-        .decision-card {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: var(--space-xl);
-            backdrop-filter: blur(10px);
+        .value-card {
             text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        
+        .value-description {
+            color: var(--gray-400);
+            flex-grow: 1;
+        }
+        
+        /* Story Timeline */
+        .story {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(0, 102, 255, 0.05) 100%);
+        }
+        
+        .timeline {
+            position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
         
-        .decision-title {
-            font-size: 1.5rem;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-3xl);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: var(--space-xl);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .timeline-year {
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: var(--space-md);
-            color: var(--white);
-        }
-        
-        .decision-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-lg);
-            margin: var(--space-lg) 0;
-        }
-        
-        .decision-option {
-            background: var(--bg-card);
-            border: 1px solid var(--border-secondary);
-            border-radius: 15px;
-            padding: var(--space-lg);
-            cursor: pointer;
-            transition: all var(--transition-normal);
-        }
-        
-        .decision-option:hover {
-            border-color: var(--border-primary);
-            transform: translateY(-2px);
-        }
-        
-        .decision-option.selected {
-            border-color: var(--primary);
-            background: rgba(0, 102, 255, 0.1);
-        }
-        
-        .option-title {
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-            color: var(--white);
-        }
-        
-        .option-description {
-            color: var(--gray-400);
-            font-size: 0.9rem;
-        }
-        
-        .recommendation {
-            margin-top: var(--space-lg);
-            padding: var(--space-lg);
-            background: var(--bg-card);
-            border: 1px solid var(--border-secondary);
-            border-radius: 15px;
-            display: none;
-        }
-        
-        .recommendation.show {
-            display: block;
-        }
-        
-        .recommendation-title {
-            font-weight: 600;
             color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: var(--space-sm);
+            color: var(--white);
         }
         
-        .recommendation-text {
-            color: var(--gray-300);
-            margin-bottom: var(--space-md);
+        .timeline-description {
+            color: var(--gray-400);
+            line-height: 1.6;
         }
         
-        /* CTA Section */
-        .cta {
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px var(--gray-900), 0 0 0 8px var(--primary-light);
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             text-align: center;
         }
         
-        .cta .text-heading {
+        .contact-cta .text-heading {
             color: var(--white);
+            margin-bottom: var(--space-md);
         }
         
-        .cta .text-lead {
+        .contact-cta .text-lead {
             color: rgba(255, 255, 255, 0.8);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--gray-900);
-            padding: var(--space-3xl) 0 var(--space-lg);
-            border-top: 1px solid var(--border-secondary);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: var(--space-xl);
-            margin-bottom: var(--space-xl);
-        }
-        
-        .footer-brand {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: var(--space-md);
-        }
-        
-        .footer-description {
-            color: var(--gray-400);
-            margin-bottom: var(--space-md);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: var(--space-sm);
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--bg-card);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-            text-decoration: none;
-            transition: all var(--transition-normal);
-        }
-        
-        .social-link:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-        
-        .footer-title {
-            font-weight: 600;
-            margin-bottom: var(--space-md);
-            color: var(--white);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: var(--space-xs);
-        }
-        
-        .footer-links a {
-            color: var(--gray-400);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid var(--border-secondary);
-            padding-top: var(--space-lg);
-            text-align: center;
-            color: var(--gray-400);
         }
         
         /* Utility Classes */
@@ -883,82 +742,26 @@
         
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-lg);
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
             }
             
-            .solution-cards {
-                grid-template-columns: 1fr;
+            .timeline::before {
+                left: 30px;
             }
             
-            .decision-options {
-                grid-template-columns: 1fr;
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                text-align: left !important;
+            }
+            
+            .timeline-dot {
+                left: 30px;
             }
         }
         
-        @media (max-width: 768px) {
-            .mobile-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 39, 0.98);
-                backdrop-filter: blur(20px);
-                border: 1px solid var(--border-secondary);
-                padding: 1rem;
-                display: none;
-            }
-            
-            .mobile-menu.active {
-                display: block;
-            }
-            
-            .mobile-menu .nav-link {
-                display: block;
-                padding: 0.75rem 0;
-                border-bottom: 1px solid var(--border-secondary);
-            }
-
-            .header .flex {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-end;
-            }
-
-            .header .flex .btn {
-                font-size: 0.875rem;
-                padding: 0.4rem 0.8rem;
-                min-width: 120px;
-            }
-
-            .comparison-header,
-            .comparison-row {
-                grid-template-columns: 1.5fr 0.75fr 0.75fr;
-            }
-            
-            .comparison-cell {
-                padding: var(--space-sm);
-                font-size: 0.9rem;
-            }
-            
-            .feature-name {
-                font-size: 0.85rem;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn {
-                min-height: 48px;
-                padding: 0.75rem 1.5rem;
-            }
-            
-            .solution-cards {
-                gap: var(--space-lg);
-            }
-        }
         
         @media (max-width: 480px) {
             .container {
@@ -969,7 +772,7 @@
                 padding: var(--space-2xl) 0;
             }
             
-            .hero {
+            .about-hero {
                 padding-top: 60px;
             }
             
@@ -977,423 +780,24 @@
                 font-size: 2.5rem;
             }
             
-            .comparison-header,
-            .comparison-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .comparison-header > div:not(:first-child),
-            .comparison-cell:not(:first-child) {
-                border-right: none;
-                border-top: 1px solid var(--border-glass);
-            }
-            
-            .comparison-cell {
-                min-height: auto;
-                padding: var(--space-sm);
-            }
-            
-            .feature-value {
-                justify-content: flex-start;
-                text-align: left;
-            }
-        }
-
-        /* ================= FIXES FOR BOTTOM ALIGNMENT ================= */
-
-        /* Footer Grid Alignment */
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-xl);
-        }
-
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md);
-                text-align: center;
-            }
-
-            .footer-links {
-                padding: 0;
-            }
-
-            .footer-links li {
-                margin-bottom: var(--space-xs);
-            }
-        }
-
-        /* CTA Buttons Alignment */
-        .cta .fade-in {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .cta .btn {
-            margin: 0 !important;
-        }
-
-        /* Modal Centering */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            background: rgba(0,0,0,0.6);
-            padding: 1rem;
-        }
-
-        .modal-content {
-            background: var(--bg-primary);
-            border-radius: 20px;
-            max-width: 600px;
-            margin: 3rem auto;
-            padding: 2rem;
-            position: relative;
-        }
-
-        /* Booking Modal Buttons */
-        .solution-selector {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        /* Feature Comparison Grid Fix */
-        .feature-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-sm);
-        }
-
-        @media (max-width: 480px) {
-            .feature-comparison {
+            .mission-stats {
                 grid-template-columns: 1fr;
             }
         }
 
-         /* ================= BOOKING MODAL FORM STYLES ================= */
-
-.modal-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.modal-content p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: var(--gray-300);
-}
-
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-}
-
-#booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-}
-
-#booking-form .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-#booking-form .form-label {
-    font-weight: 600;
-    color: var(--white);
-    font-size: 0.95rem;
-}
-
-#booking-form .form-input,
-#booking-form .form-textarea,
-#booking-form select {
-    padding: 0.6rem 0.8rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-glass);
-    background: var(--bg-card);
-    color: var(--white);
-    font-size: 0.95rem;
-    outline: none;
-    transition: all var(--transition-normal);
-}
-
-#booking-form .form-input:focus,
-#booking-form .form-textarea:focus,
-#booking-form select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 8px rgba(0, 102, 255, 0.4);
-}
-
-#booking-form button[type="submit"] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: var(--space-sm);
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: var(--white);
-    transition: all var(--transition-normal);
-}
-
-#booking-form button[type="submit"]:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: var(--shadow-glow);
-}
-
-#booking-form .text-small {
-    font-size: 0.8rem;
-    text-align: center;
-    color: var(--gray-400);
-}
-
-@media (max-width: 768px) {
-    .modal-content {
-        padding: var(--space-lg);
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .modal-content {
-        padding: var(--space-md);
-        width: 95%;
-    }
-}
-        /* ================= FREE TRIAL MODAL FORM STYLES ================= */
-
-#free-trial-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-}
-
-#free-trial-form .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-#free-trial-form .form-label {
-    font-weight: 600;
-    color: var(--white);
-    font-size: 0.95rem;
-}
-
-#free-trial-form .form-input,
-#free-trial-form select {
-    padding: 0.6rem 0.8rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-glass);
-    background: var(--bg-card);
-    color: var(--white);
-    font-size: 0.95rem;
-    outline: none;
-    transition: all var(--transition-normal);
-}
-
-#free-trial-form .form-input:focus,
-#free-trial-form select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 8px rgba(0, 102, 255, 0.4);
-}
-
-#free-trial-form button[type="submit"] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: var(--space-sm);
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
-    color: var(--white);
-    transition: all var(--transition-normal);
-}
-
-#free-trial-form button[type="submit"]:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: var(--shadow-glow-secondary);
-}
-
-#free-trial-form .text-small {
-    font-size: 0.8rem;
-    text-align: center;
-    color: var(--gray-400);
-}
-
-/* Modal Enhancements */
-.modal-content {
-    box-shadow: var(--shadow-xl);
-    border: 1px solid var(--border-glass);
-    backdrop-filter: blur(12px);
-}
-
-.modal-content button.modal-close {
-    font-size: 1.8rem;
-    color: var(--primary);
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    padding: 0.25rem 0.5rem;
-    top: 1rem;
-    right: 1rem;
-    transition: all var(--transition-normal);
-}
-
-.modal-content button.modal-close:hover {
-    background: var(--primary);
-    color: var(--white);
-    transform: scale(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .modal-content {
-        padding: var(--space-lg);
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .modal-content {
-        padding: var(--space-md);
-        width: 95%;
-    }
-}
-    </style>
-    <!-- Mobile Hamburger & Navbar -->
-    <style>
-        /* Mobile Hamburger & Navbar */
-        .mobile-menu-btn {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 44px;
-            height: 44px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1101;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 28px;
-            height: 2px; /* thinner line */
-            margin: 3px 0; /* spacing */
-            background: #fff;
-            border-radius: 1px;
-            transition: all 0.35s cubic-bezier(.4,1.5,.5,1);
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0.2);
-        }
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 14, 39, 0.98);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-secondary);
-            padding: 80px 1.5rem 1.5rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            opacity: 0;
-            pointer-events: none;
-            max-height: 0;
-            transition: opacity 0.35s, max-height 0.35s;
-            z-index: 1100;
-        }
-
-        .mobile-nav.active {
-            opacity: 1;
-            pointer-events: auto;
-            max-height: 100vh;
-        }
-
-        .mobile-nav .nav-link {
-            color: var(--gray-100);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1rem 0.75rem;
-            border-radius: 8px;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .mobile-nav .nav-link:hover,
-        .mobile-nav .nav-link.active {
-            background: var(--bg-card);
-            color: var(--primary);
-        }
-
-        .mobile-nav-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .mobile-nav-buttons .btn {
-            width: 100%;
-            justify-content: center;
-        }
-
-        @media (min-width: 768px) {
-            .mobile-menu-btn, .mobile-nav { display: none; }
-        }
-
-                /* Show only on desktop */
+        /* Desktop only: visible on screens wider than 768px */
 .desktop-only {
-    display: flex;
+    display: flex; /* or whatever layout you need */
+    gap: 1rem;
 }
 
+/* Hide on mobile (screens smaller than 768px) */
 @media (max-width: 768px) {
     .desktop-only {
         display: none !important;
     }
 }
     </style>
-   
 </head>
 <body>
     <!-- Header -->
@@ -1404,771 +808,503 @@
                     <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
                     <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
                 </a>
+
+                <!-- Hamburger button -->
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 
                 <nav class="nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="features.html" class="nav-link">Features</a>
                     <a href="price.html" class="nav-link">Pricing</a>
-                    <a href="compare.html" class="nav-link active">Compare</a>
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="compare.html" class="nav-link">Compare</a>
+                    <a href="about.html" class="nav-link active">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </nav>
 
-                <!-- Mobile Hamburger Button -->
-                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <!-- Mobile Navbar -->
-                <nav class="mobile-nav" id="mobile-nav">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="features.html" class="nav-link">Features</a>
-                    <a href="price.html" class="nav-link">Pricing</a>
-                    <a href="compare.html" class="nav-link active">Compare</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                    <div class="mobile-nav-buttons">
-                        <a href="/" class="btn btn-outline btn-sm">Try Demo</a>
-                        <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
-                    </div>
-                </nav>
-                
-  <div class="flex desktop-only" style="gap: 1rem;">
-    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
-    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+<div class="flex desktop-only" style="gap: 1rem;">
+    <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
+    <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
 </div>
-                
+
             </div>
+            <!-- Mobile navigation -->
+            <nav class="mobile-nav" id="mobile-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="price.html" class="nav-link">Pricing</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="mobile-nav-buttons">
+                    <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero section" id="hero">
+    <!-- About Hero Section -->
+    <section class="about-hero section">
         <div class="container">
-            <div class="hero-content fade-in">
+            <div class="about-hero-content fade-in">
                 <h1 class="text-hero">
-                    AI Call Agent vs <br>
-                    <span style="color: var(--secondary);">AI Chatbot</span>
+                    Revolutionizing Customer Service<br>
+                    <span style="color: var(--secondary);">One Conversation at a Time</span>
                 </h1>
-                <p class="text-lead">
-                    Choose the perfect AI solution for your business. Compare features, pricing, and benefits to make the right decision for your customer service needs.
+                <p class="text-lead" style="max-width: 700px; margin: 0 auto;">
+                    We're building the future of customer interactions with AI that understands, responds, and delivers experiences that feel authentically human.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Solution Overview Cards -->
-    <section class="section">
+    <!-- Mission Section -->
+    <section class="mission section" id="mission">
         <div class="container">
-            <div class="solution-cards fade-in">
-                <div class="solution-card featured">
-                    <div class="solution-badge">Most Popular</div>
+            <div class="mission-grid">
+                <div class="mission-content fade-in">
+                    <h2 class="text-heading">Our Mission</h2>
+                    <p class="text-body" style="margin-bottom: var(--space-md);">
+                        At Conversync, we believe every customer interaction should be exceptional. Traditional customer service solutions leave businesses choosing between cost-effective automation and quality human experience.
+                    </p>
+                    <p class="text-body" style="margin-bottom: var(--space-md);">
+                        We've eliminated that compromise. Our AI receptionists and chatbots deliver the warmth and intelligence of human conversation with the reliability and scalability of advanced technology.
+                    </p>
+                    <p class="text-body">
+                        From missed calls at 3 AM to complex appointment scheduling, we ensure your business never misses an opportunity to serve customers excellently.
+                    </p>
+                </div>
+                <div class="fade-in delay-1">
+                    <div class="card card-glass" style="text-align: center; padding: var(--space-xl);">
+                        <h3 style="color: var(--primary); margin-bottom: var(--space-lg); font-size: 1.4rem; font-weight: 600;">Why We Built This</h3>
+                        <p style="color: var(--gray-300); margin-bottom: var(--space-md); font-size: 1rem;">
+                            After experiencing countless frustrating customer service interactions, we knew there had to be a better way.
+                        </p>
+                        <p style="color: var(--gray-300); font-size: 1rem;">
+                            Traditional systems force businesses to choose between human warmth and automated efficiency. We refuse to accept that compromise.
+                        </p>
+                    </div>
+                    
+                    <div class="mission-stats">
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Availability</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15k+</span>
+                            <span class="stat-label">Businesses Served</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.5M+</span>
+                            <span class="stat-label">Conversations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values section" id="values">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-display fade-in">Our Core Values</h2>
+                <p class="text-lead fade-in delay-1">
+                    The principles that guide every decision we make and every product we build.
+                </p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card value-card fade-in delay-1">
                     <div class="icon-box icon-box-primary">
                         <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
                         </svg>
                     </div>
-                    <h3 class="solution-title">AI Call Agent</h3>
-                    <p class="solution-description">
-                        Human-like AI that answers your business phone 24/7, manages reservations, and handles customer inquiries with natural conversation.
+                    <h3 class="value-title">Human-Centric Design</h3>
+                    <p class="value-description">
+                        Technology should enhance human connection, not replace it. Our AI is designed to feel natural, empathetic, and genuinely helpful in every interaction.
                     </p>
-                    <div class="best-for">
-                        <div class="best-for-title">BEST FOR:</div>
-                        <ul class="best-for-list">
-                            <li><span class="checkmark">✓</span> Service-based businesses</li>
-                            <li><span class="checkmark">✓</span> Appointment scheduling</li>
-                            <li><span class="checkmark">✓</span> Phone-first customer service</li>
-                            <li><span class="checkmark">✓</span> Higher-value transactions</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary" onclick="openModal('free-trial-modal')">
-                        Request Free Trial
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                        </svg>
-                    </button>
                 </div>
-
-                <div class="solution-card">
+                
+                <div class="card value-card fade-in delay-2">
                     <div class="icon-box icon-box-secondary">
                         <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            <rect x="3" y="11" width="18" height="10" rx="2" ry="2"/>
+                            <circle cx="12" cy="16" r="1"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
                     </div>
-                    <h3 class="solution-title">AI Chatbot</h3>
-                    <p class="solution-description">
-                        Intelligent chatbot for websites and messaging platforms. One-time purchase, lifetime license, no monthly fees.
+                    <h3 class="value-title">Privacy & Security</h3>
+                    <p class="value-description">
+                        Your data and your customers' data are sacred. We implement enterprise-grade security and never compromise on privacy protection.
                     </p>
-                    <div class="best-for">
-                        <div class="best-for-title">BEST FOR:</div>
-                        <ul class="best-for-list">
-                            <li><span class="checkmark">✓</span> E-commerce & retail</li>
-                            <li><span class="checkmark">✓</span> FAQ automation</li>
-                            <li><span class="checkmark">✓</span> Lead generation</li>
-                            <li><span class="checkmark">✓</span> Budget-conscious businesses</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-secondary" onclick="openModal('booking-modal')">
-                        Request Chatbot
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 10L5 3H3m4 10a2 2 0 1 0 0 4 2 2 0 0 1 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 1 0-4z"/>
+                </div>
+                
+                <div class="card value-card fade-in delay-3">
+                    <div class="icon-box icon-box-accent">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
                         </svg>
-                    </button>
+                    </div>
+                    <h3 class="value-title">Delightful Experiences</h3>
+                    <p class="value-description">
+                        Every customer interaction should be a positive moment. We obsess over details that make conversations feel smooth, natural, and pleasant.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-1">
+                    <div class="icon-box icon-box-success">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Continuous Innovation</h3>
+                    <p class="value-description">
+                        We're constantly pushing boundaries in AI conversation technology, staying ahead of the curve to deliver cutting-edge solutions.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-2">
+                    <div class="icon-box icon-box-primary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21V19a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Customer Success</h3>
+                    <p class="value-description">
+                        Your success is our success. We provide comprehensive support, training, and resources to ensure you get maximum value from our platform.
+                    </p>
+                </div>
+                
+                <div class="card value-card fade-in delay-3">
+                    <div class="icon-box icon-box-secondary">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Excellence in Simplicity</h3>
+                    <p class="value-description">
+                        Complex technology should be simple to use. We create powerful AI solutions that are intuitive and accessible to everyone.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Feature Comparison -->
-    <section class="comparison-section section">
+    <!-- Team Section -->
+    <section class="team section" id="team">
         <div class="container">
             <div class="text-center mb-4">
-                <h2 class="text-display fade-in">Feature-by-Feature Comparison</h2>
+                <h2 class="text-display fade-in">Meet Our Team</h2>
                 <p class="text-lead fade-in delay-1">
-                    See exactly how our AI Call Agent and AI Chatbot compare across all features and capabilities.
+                    Passionate experts in AI, customer experience, and business automation working to revolutionize how businesses connect with customers.
                 </p>
             </div>
             
-            <div class="comparison-table fade-in delay-2">
-                <div class="comparison-header">
-                    <div>Features</div>
-                    <div style="color: var(--primary);">AI Call Agent</div>
-                    <div style="color: var(--secondary);">AI Chatbot</div>
+            <div class="grid grid-3">
+                <div class="card team-member fade-in delay-1">
+                    <div class="team-avatar">AS</div>
+                    <h3 class="team-name">Alex Singh</h3>
+                    <p class="team-role">CEO & Co-Founder</p>
+                    <p class="team-bio">
+                        Former AI researcher at Google with 12+ years building conversational AI systems. Passionate about making AI accessible and human-centered.
+                    </p>
                 </div>
                 
-                <div class="feature-category">Communication Channels</div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Phone Call Handling</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
+                <div class="card team-member fade-in delay-2">
+                    <div class="team-avatar">MR</div>
+                    <h3 class="team-name">Maria Rodriguez</h3>
+                    <p class="team-role">CTO & Co-Founder</p>
+                    <p class="team-bio">
+                        Previously led engineering teams at Stripe and Shopify. Expert in scalable systems and natural language processing with a focus on customer experience.
+                    </p>
                 </div>
                 
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Website Chat Widget</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
+                <div class="card team-member fade-in delay-3">
+                    <div class="team-avatar">DK</div>
+                    <h3 class="team-name">David Kim</h3>
+                    <p class="team-role">VP of Product</p>
+                    <p class="team-bio">
+                        Product leader with deep experience in SaaS and customer service tools. Previously at Zendesk and Intercom, building products used by millions.
+                    </p>
                 </div>
                 
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">WhatsApp Integration</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
+                <div class="card team-member fade-in delay-1">
+                    <div class="team-avatar">SJ</div>
+                    <h3 class="team-name">Sarah Johnson</h3>
+                    <p class="team-role">VP of Engineering</p>
+                    <p class="team-bio">
+                        Experienced engineering leader with expertise in machine learning infrastructure. Former principal engineer at OpenAI and Microsoft AI.
+                    </p>
                 </div>
                 
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Facebook Messenger</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
+                <div class="card team-member fade-in delay-2">
+                    <div class="team-avatar">RC</div>
+                    <h3 class="team-name">Robert Chen</h3>
+                    <p class="team-role">Head of Customer Success</p>
+                    <p class="team-bio">
+                        Customer success expert who has helped thousands of businesses optimize their customer service operations at companies like Salesforce and HubSpot.
+                    </p>
                 </div>
                 
-                <div class="feature-category">Core Capabilities</div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">24/7 Availability</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Human-like Conversation</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Appointment Booking</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">FAQ Answering</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Lead Capture</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="feature-category">Advanced Features</div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Voice Recognition & Response</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Interruption Handling</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Multi-language Support</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Custom Branding</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">Limited</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="feature-category">Integration & Setup</div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">CRM Integration</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Calendar Integration</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-yes">✓</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Setup Time</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">15 min</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">30 min</span>
-                    </div>
-                </div>
-                
-                <div class="feature-category">Pricing Model</div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Pricing Structure</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">Monthly</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">One-time</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Starting Price</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">$249/mo</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">$599</span>
-                    </div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell">
-                        <span class="feature-name">Free Trial</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="feature-text">14 days</span>
-                    </div>
-                    <div class="comparison-cell feature-value">
-                        <span class="check-no">✗</span>
-                    </div>
+                <div class="card team-member fade-in delay-3">
+                    <div class="team-avatar">EP</div>
+                    <h3 class="team-name">Emily Parker</h3>
+                    <p class="team-role">Head of Design</p>
+                    <p class="team-bio">
+                        UX design leader focused on creating intuitive, accessible interfaces. Previously designed conversation experiences at Slack and Discord.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Decision Helper -->
-    <section class="decision-helper section">
-        <div class="container">
-            <div class="decision-card fade-in">
-                <div class="decision-title">Not sure which solution is right for you?</div>
-                <p class="text-body">Answer a few quick questions to get a personalized recommendation.</p>
-                
-                <div class="decision-options">
-                    <div class="decision-option" onclick="selectOption('phone-first')">
-                        <div class="option-title">📞 Phone-First Business</div>
-                        <div class="option-description">Most customer interactions happen over the phone</div>
-                    </div>
-                    <div class="decision-option" onclick="selectOption('digital-first')">
-                        <div class="option-title">💻 Digital-First Business</div>
-                        <div class="option-description">Customers primarily interact through your website</div>
-                    </div>
-                </div>
-                
-                <div id="recommendation-phone" class="recommendation">
-                    <div class="recommendation-title">🎯 Perfect Match: AI Call Agent</div>
-                    <div class="recommendation-text">
-                        Since most of your customer interactions happen over the phone, our AI Call Agent is ideal for your business. It handles calls like a human receptionist, manages appointments, and never misses a call.
-                    </div>
-                    <button class="btn btn-primary" onclick="openModal('booking-modal')">
-                        Get Personalised recommendation
-                    </button>
-                </div>
-                
-                <div id="recommendation-digital" class="recommendation">
-                    <div class="recommendation-title">🎯 Perfect Match: AI Chatbot</div>
-                    <div class="recommendation-text">
-                        For digital-first businesses, our AI Chatbot is perfect. It handles website visitors, captures leads, and supports multiple messaging platforms with a one-time purchase and no monthly fees.
-                    </div>
-                    <button class="btn btn-secondary" onclick="openModal('booking-modal')">
-                        Get Personalised recommendation
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature Deep Dive -->
-    <section class="section" style="background: var(--bg-section);">
+    <!-- Story Timeline Section -->
+    <section class="story section" id="story">
         <div class="container">
             <div class="text-center mb-4">
-                <h2 class="text-display fade-in">Key Differences Explained</h2>
+                <h2 class="text-display fade-in">Our Story</h2>
                 <p class="text-lead fade-in delay-1">
-                    Understanding the unique strengths of each solution
+                    The journey from frustrated customers to AI pioneers transforming customer service.
                 </p>
             </div>
             
-            <div class="feature-grid">
-                <div class="feature-card fade-in delay-1">
-                    <div class="feature-card-header">
-                        <div class="icon-box icon-box-primary">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-card-title">Voice & Phone Capabilities</div>
+            <div class="timeline">
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3 class="timeline-title">The Problem Becomes Clear</h3>
+                        <p class="timeline-description">
+                            After countless experiences with poor customer service automation, our founders realized that businesses were forced to choose between cost-effective bots and quality human interaction. There had to be a better way.
+                        </p>
                     </div>
-                    <div class="feature-card-description">
-                        How each solution handles voice-based customer interactions and phone support.
-                    </div>
-                    <div class="feature-comparison">
-                        <div class="feature-item call-agent">
-                            <span class="check-yes">✓</span>
-                            <span>Natural voice conversations</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-no">✗</span>
-                            <span>Text-only communication</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span class="check-yes">✓</span>
-                            <span>Handles interruptions</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-no">✗</span>
-                            <span>Sequential messaging only</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span class="check-yes">✓</span>
-                            <span>Phone number integration</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-no">✗</span>
-                            <span>No phone functionality</span>
-                        </div>
-                    </div>
+                    <div class="timeline-dot"></div>
                 </div>
                 
-                <div class="feature-card fade-in delay-2">
-                    <div class="feature-card-header">
-                        <div class="icon-box icon-box-secondary">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                        </div>
-                        <div class="feature-card-title">Digital Channels</div>
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3 class="timeline-title">Research & Development</h3>
+                        <p class="timeline-description">
+                            We began deep research into conversational AI, studying thousands of customer interactions to understand what makes conversations feel natural, helpful, and genuinely human.
+                        </p>
                     </div>
-                    <div class="feature-card-description">
-                        Coverage across websites, social media, and messaging platforms.
-                    </div>
-                    <div class="feature-comparison">
-                        <div class="feature-item call-agent">
-                            <span class="check-no">✗</span>
-                            <span>No website integration</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-yes">✓</span>
-                            <span>Full website integration</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span class="check-no">✗</span>
-                            <span>No messaging apps</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-yes">✓</span>
-                            <span>WhatsApp, Messenger+</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span class="check-no">✗</span>
-                            <span>No social media</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-yes">✓</span>
-                            <span>Multi-platform support</span>
-                        </div>
-                    </div>
+                    <div class="timeline-dot"></div>
                 </div>
                 
-                <div class="feature-card fade-in delay-3">
-                    <div class="feature-card-header">
-                        <div class="icon-box icon-box-accent">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="3"/>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-card-title">Setup & Maintenance</div>
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3 class="timeline-title">First Breakthrough</h3>
+                        <p class="timeline-description">
+                            Our prototype AI successfully handled complex restaurant reservations with interruption handling and natural conversation flow. The first business to try it saw a 300% increase in bookings.
+                        </p>
                     </div>
-                    <div class="feature-card-description">
-                        Implementation complexity, ongoing maintenance, and technical requirements.
-                    </div>
-                    <div class="feature-comparison">
-                        <div class="feature-item call-agent">
-                            <span class="check-yes">✓</span>
-                            <span>15-minute setup</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-yes">✓</span>
-                            <span>30-minute setup</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span class="check-yes">✓</span>
-                            <span>Managed service</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-yes">✓</span>
-                            <span>Self-managed</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span class="check-yes">✓</span>
-                            <span>Auto-updates</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span class="check-yes">✓</span>
-                            <span>Manual updates</span>
-                        </div>
-                    </div>
+                    <div class="timeline-dot"></div>
                 </div>
                 
-                <div class="feature-card fade-in delay-4">
-                    <div class="feature-card-header">
-                        <div class="icon-box" style="background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="1" x2="12" y2="23"/>
-                                <path d="m17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                            </svg>
-                        </div>
-                        <div class="feature-card-title">Cost Structure</div>
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3 class="timeline-title">Company Founded</h3>
+                        <p class="timeline-description">
+                            Conversync officially launched with seed funding from leading AI investors. Our mission: make every customer interaction exceptional through human-like AI technology.
+                        </p>
                     </div>
-                    <div class="feature-card-description">
-                        Pricing models, long-term costs, and return on investment comparison.
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3 class="timeline-title">Rapid Growth</h3>
+                        <p class="timeline-description">
+                            Reached 1,000+ businesses using our AI receptionist. Expanded from restaurants to healthcare, legal services, and retail with consistently outstanding results.
+                        </p>
                     </div>
-                    <div class="feature-comparison">
-                        <div class="feature-item call-agent">
-                            <span>💳</span>
-                            <span>$249-$1,249/month</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span>💰</span>
-                            <span>$599-$799 one-time</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span>🔄</span>
-                            <span>Recurring payments</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span>✅</span>
-                            <span>Lifetime license</span>
-                        </div>
-                        <div class="feature-item call-agent">
-                            <span>📞</span>
-                            <span>Per-call efficiency</span>
-                        </div>
-                        <div class="feature-item chatbot">
-                            <span>💻</span>
-                            <span>Unlimited usage</span>
-                        </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3 class="timeline-title">Advanced AI Platform</h3>
+                        <p class="timeline-description">
+                            Launched our comprehensive AI platform with both call agents and chatbots. Processed over 1 million customer conversations with industry-leading satisfaction scores.
+                        </p>
                     </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">The Future of Customer Service</h3>
+                        <p class="timeline-description">
+                            Today, we're proud to serve 15,000+ businesses worldwide, handling millions of conversations with AI that customers often prefer over human agents. This is just the beginning.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
                 </div>
             </div>
         </div>
     </section>
 
-   
-
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('booking-modal')" aria-label="Close modal">&times;</button>
-            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Get Started with Conversync</h2>
-            <p class="text-body" style="margin-bottom: 2rem;">
-                Ready to transform your customer service? Fill out the form below and we'll get your AI receptionist set up in minutes.
+    <!-- Contact CTA Section -->
+    <section class="contact-cta section" id="contact">
+        <div class="container text-center">
+            <h2 class="text-heading fade-in">Ready to Transform Your Customer Service?</h2>
+            <p class="text-lead fade-in delay-1" style="max-width: 600px; margin: 0 auto var(--space-xl);">
+                Join thousands of businesses that have revolutionized their customer interactions with Conversync. Our AI agents are ready to work for you 24/7.
             </p>
-            
-            <form id="booking-form" onsubmit="handleBookingSubmit(event)">
-                <div class="form-group">
-                    <label class="form-label" for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="email">Business Email *</label>
-                    <input type="email" id="email" name="email" class="form-input" required placeholder="you@company.com">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="company">Company Name *</label>
-                    <input type="text" id="company" name="company" class="form-input" required placeholder="Your Business Name">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="business-type">Business Type</label>
-                    <select id="business-type" name="business-type" class="form-input">
-                        <option value="">Select your industry</option>
-                        <option value="healthcare">Healthcare & Medical</option>
-                        <option value="restaurant">Restaurant & Food Service</option>
-                        <option value="beauty">Beauty & Wellness</option>
-                        <option value="legal">Legal Services</option>
-                        <option value="consulting">Consulting</option>
-                        <option value="retail">Retail & E-commerce</option>
-                        <option value="real-estate">Real Estate</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="team-size">Team Size</label>
-                    <select id="team-size" name="team-size" class="form-input">
-                        <option value="">Select team size</option>
-                        <option value="1-5">1-5 employees</option>
-                        <option value="6-20">6-20 employees</option>
-                        <option value="21-50">21-50 employees</option>
-                        <option value="51-100">51-100 employees</option>
-                        <option value="100+">100+ employees</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="message">How can we help? (Optional)</label>
-                    <textarea id="message" name="message" class="form-textarea" rows="3" placeholder="Tell us about your customer service needs..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-                    <span>Request Free Trial</span>
+            <div class="fade-in delay-2" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-secondary btn-lg" onclick="window.open('index.html#pricing', '_self')">
+                    Start Free Trial
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M7 17L17 7M17 7H7M17 7V17"/>
                     </svg>
                 </button>
-                
-                <p class="text-small" style="text-align: center; margin-top: 1rem; color: var(--gray-400);">
-                    No credit card required • 14-day free trial • Setup in under 15 minutes
-                </p>
-            </form>
-        </div>
-    </div>
-
-    <!-- Request Free Trial Modal -->
-    <div id="free-trial-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('free-trial-modal')" aria-label="Close modal">&times;</button>
-            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Request Your Free Trial</h2>
-            <p class="text-body" style="margin-bottom: 2rem;">
-                Fill out the form below to start your 14-day free trial with Conversync's AI solutions.
-            </p>
-            
-            <form id="free-trial-form" onsubmit="handleFreeTrialSubmit(event)">
-                <div class="form-group">
-                    <label class="form-label" for="trial-name">Full Name *</label>
-                    <input type="text" id="trial-name" name="trial-name" class="form-input" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="trial-email">Email *</label>
-                    <input type="email" id="trial-email" name="trial-email" class="form-input" required placeholder="you@company.com">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="trial-phone">Phone Number</label>
-                    <input type="tel" id="trial-phone" name="trial-phone" class="form-input" placeholder="(555) 123-4567">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="trial-company">Company Name *</label>
-                    <input type="text" id="trial-company" name="trial-company" class="form-input" required placeholder="Your Business Name">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="trial-solution">Select Solution</label>
-                    <select id="trial-solution" name="trial-solution" class="form-input">
-                        <option value="call-agent">AI Call Agent</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
-                    <span>Start Free Trial</span>
+                <button class="btn btn-outline btn-lg" onclick="window.open('index.html#demo', '_self')" style="color: white; border-color: white;">
+                    Try Demo
                 </button>
-                
-                <p class="text-small" style="text-align: center; margin-top: 1rem; color: var(--gray-400);">
-                    No credit card required • 14-day free trial • Setup in under 15 minutes
-                </p>
-            </form>
+                <button class="btn btn-secondary btn-lg" onclick="window.open('mailto:hello@conversync.ai', '_blank')">
+                    Contact Us
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </button>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4" style="margin-bottom: var(--space-xl);">
+                <div>
+                    <div class="footer-brand">Conversync</div>
+                    <p class="footer-description">
+                        Revolutionizing customer service with AI that never sleeps. Transform your business with intelligent automation and 24/7 support.
+                    </p>
+                    <div class="social-links" style="display: flex; gap: var(--space-sm);">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-md); color: var(--white);">Product</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#features" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Features</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#pricing" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Pricing</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#demo" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Demo</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">API Documentation</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-md); color: var(--white);">Company</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="about.html" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">About Us</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Blog</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Careers</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Press Kit</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#contact" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-md); color: var(--white);">Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Help Center</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="index.html#faq" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">FAQ</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Community</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Privacy Policy</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--gray-400); text-decoration: none; transition: color var(--transition-fast);">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--border-secondary); padding-top: var(--space-lg); text-align: center; color: var(--gray-400);">
+                <p>&copy; 2025 Conversync. All rights reserved. Transforming customer service with intelligent AI solutions.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script>
-        // Global variables
-        let selectedSolution = '';
-        let currentDemoType = 'call-agent';
-        let reducedMotion = false;
-        
-        // Check for reduced motion preference
-        if (window.matchMedia) {
-            reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileMenuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
         }
 
-        // Initialize app when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            initScrollAnimations();
-            initHeaderScroll();
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    const mobileNav = document.getElementById('mobile-nav');
+                    mobileMenuBtn.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                }
+            });
         });
 
-
-        // ========================================================================
-        // SCROLL ANIMATIONS
-        // ========================================================================
-        
+        // Initialize scroll animations
         function initScrollAnimations() {
-            if (reducedMotion) return;
-            
-            const elements = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
+            const observeElements = () => {
+                const elements = document.querySelectorAll('.fade-in');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { 
+                    threshold: 0.1,
+                    rootMargin: '50px 0px -100px 0px'
                 });
-            }, { 
-                threshold: 0.1,
-                rootMargin: '50px 0px -100px 0px'
-            });
 
-            elements.forEach(el => observer.observe(el));
+                elements.forEach(el => observer.observe(el));
+            };
+
+            observeElements();
         }
 
-        // ========================================================================
-        // HEADER SCROLL EFFECT
-        // ========================================================================
-        
+        // Header scroll effect
         function initHeaderScroll() {
             const header = document.getElementById('header');
             let lastScrollTop = 0;
@@ -2186,398 +1322,7 @@
             });
         }
 
-        // ========================================================================
-        // DECISION HELPER
-        // ========================================================================
-        
-        function selectOption(optionType) {
-            // Remove active class from all options
-            document.querySelectorAll('.decision-option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            // Hide all recommendations
-            document.querySelectorAll('.recommendation').forEach(rec => {
-                rec.classList.remove('show');
-            });
-            
-            // Add active class to selected option
-            event.target.classList.add('selected');
-            
-            // Show appropriate recommendation
-            if (optionType === 'phone-first') {
-                document.getElementById('recommendation-phone').classList.add('show');
-            } else if (optionType === 'digital-first') {
-                document.getElementById('recommendation-digital').classList.add('show');
-            }
-        }
-
-        // ========================================================================
-        // SOLUTION SELECTION
-        // ========================================================================
-        
-        function selectSolution(solution) {
-            selectedSolution = solution;
-            
-            // Update button states
-            document.querySelectorAll('#booking-modal .btn-outline').forEach(btn => {
-                btn.classList.remove('btn-primary');
-                btn.classList.add('btn-outline');
-            });
-            
-            const selectedBtn = document.getElementById(`select-${solution}`);
-            selectedBtn.classList.remove('btn-outline');
-            selectedBtn.classList.add('btn-primary');
-            
-            // Update form submission button and disclaimer
-            const submitBtn = document.getElementById('submit-btn');
-            const disclaimer = document.getElementById('form-disclaimer');
-            
-            if (solution === 'call-agent') {
-                submitBtn.innerHTML = `
-                    <span>Request Free Trial (AI Call Agent)</span>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                    </svg>
-                `;
-                disclaimer.textContent = 'No credit card required • 14-day free trial • Setup in under 15 minutes';
-            } else if (solution === 'chatbot') {
-                submitBtn.innerHTML = `
-                    <span>Purchase AI Chatbot</span>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 10L5 3H3m4 10a2 2 0 1 0 0 4 2 2 0 0 1 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 1 0-4z"/>
-                    </svg>
-                `;
-                disclaimer.textContent = 'One-time purchase • Lifetime license • No monthly fees';
-            }
-        }
-
-        // ========================================================================
-        // DEMO FUNCTIONALITY
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNav = document.getElementById('mobile-nav');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.mobile-nav .nav-link, .mobile-nav-buttons .btn').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    mobileMenuBtn.classList.remove('active');
-                    mobileNav.classList.remove('active');
-                }
-            });
-        });
-        // ========================================================================
-        
-        const callAgentMessages = [
-            { type: 'ai', text: 'Hello! Thank you for calling Stella\'s Spa. I\'m your AI receptionist. How can I help you today?' },
-            { type: 'user', text: 'Hi! I\'d like to book a massage for this weekend.' },
-            { type: 'ai', text: 'I\'d be happy to help you book a massage! What type would you prefer? We offer Swedish, deep tissue, hot stone, and couples massages.' },
-            { type: 'user', text: 'A deep tissue massage sounds perfect.' },
-            { type: 'ai', text: 'Excellent choice! For this weekend, I have these available times:\n\n• Saturday 2:30 PM with James\n• Sunday 11:00 AM with Maria\n• Sunday 3:00 PM with James\n\nWhich works best for you?' },
-            { type: 'user', text: 'Saturday at 2:30 PM would be perfect!' },
-            { type: 'ai', text: '✅ Perfect! I\'ve booked you for Saturday at 2:30 PM with James for a 60-minute deep tissue massage. May I get your name and phone number to confirm?' }
-        ];
-
-        const chatbotMessages = [
-            { type: 'ai', text: 'Hi there! Welcome to our online store. How can I help you today?' },
-            { type: 'user', text: 'I\'m looking for information about your return policy.' },
-            { type: 'ai', text: 'I\'d be happy to help with that! We offer a 30-day return policy on most items. Items must be unused and in original packaging. Would you like details about a specific product?' },
-            { type: 'user', text: 'What about electronics?' },
-            { type: 'ai', text: 'Electronics have a 14-day return window due to their nature. They must be in original condition with all accessories and packaging. We also offer a 1-year warranty on all electronics. Need help with anything else?' },
-            { type: 'user', text: 'That\'s helpful, thanks! Can you help me track an order?' },
-            { type: 'ai', text: 'Absolutely! I can help you track your order. Please provide your order number or the email address used for the purchase, and I\'ll get your tracking information right away.' }
-        ];
-
-        function switchDemo(demoType) {
-            currentDemoType = demoType;
-            
-            // Update button states
-            document.querySelectorAll('[id^="demo-"]').forEach(btn => {
-                btn.classList.remove('btn-primary');
-                btn.classList.add('btn-outline');
-            });
-            
-            document.getElementById(`demo-${demoType}`).classList.remove('btn-outline');
-            document.getElementById(`demo-${demoType}`).classList.add('btn-primary');
-            
-            // Update header info
-            const headerInfo = document.getElementById('demo-header-info');
-            if (demoType === 'call-agent') {
-                headerInfo.innerHTML = `
-                    <div style="font-weight: 600;">AI Call Agent</div>
-                    <div style="font-size: 0.8rem; opacity: 0.8;">Stella's Spa & Wellness</div>
-                `;
-            } else {
-                headerInfo.innerHTML = `
-                    <div style="font-weight: 600;">AI Chatbot</div>
-                    <div style="font-size: 0.8rem; opacity: 0.8;">Online Store Support</div>
-                `;
-            }
-            
-            // Clear chat and start new demo
-            document.getElementById('demo-chat-body').innerHTML = '';
-            startDemoChat();
-        }
-
-        function startDemoChat() {
-            const chatBody = document.getElementById('demo-chat-body');
-            chatBody.innerHTML = '';
-            
-            const messages = currentDemoType === 'call-agent' ? callAgentMessages : chatbotMessages;
-            
-            messages.forEach((message, index) => {
-                const isAiMessage = message.type === 'ai' && index > 0;
-                const baseDelay = index * 1500;
-                const typingDelay = isAiMessage ? 800 : 0;
-                
-                if (isAiMessage) {
-                    // Show typing indicator before AI messages
-                    setTimeout(() => {
-                        const typingIndicator = showTypingIndicator(chatBody);
-                        setTimeout(() => {
-                            if (typingIndicator.parentNode) {
-                                chatBody.removeChild(typingIndicator);
-                            }
-                            displayChatMessage(chatBody, message, 0);
-                        }, typingDelay);
-                    }, baseDelay - typingDelay);
-                } else {
-                    displayChatMessage(chatBody, message, baseDelay);
-                }
-            });
-        }
-
-        function displayChatMessage(container, message, delay = 0) {
-            setTimeout(() => {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `chat-message ${message.type}`;
-                messageDiv.innerHTML = `<div class="message-bubble">${message.text.replace(/\n/g, '<br>')}</div>`;
-                
-                container.appendChild(messageDiv);
-                container.scrollTop = container.scrollHeight;
-                
-                setTimeout(() => {
-                    messageDiv.style.animationDelay = '0s';
-                }, 100);
-                
-            }, delay);
-        }
-
-        function showTypingIndicator(container) {
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'chat-message ai typing-indicator';
-            typingDiv.innerHTML = `
-                <div class="message-bubble">
-                    <div style="display: flex; gap: 4px; align-items: center;">
-                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out;"></div>
-                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.2s;"></div>
-                        <div style="width: 8px; height: 8px; background: var(--gray-400); border-radius: 50%; animation: typing-dot 1.4s infinite ease-in-out; animation-delay: 0.4s;"></div>
-                    </div>
-                </div>
-            `;
-            
-            // Add typing animation CSS if not already present
-            if (!document.getElementById('typing-animation')) {
-                const style = document.createElement('style');
-                style.id = 'typing-animation';
-                style.textContent = `
-                    @keyframes typing-dot {
-                        0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
-                        40% { opacity: 1; transform: scale(1.2); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-            
-            container.appendChild(typingDiv);
-            container.scrollTop = container.scrollHeight;
-            return typingDiv;
-        }
-
-        // ========================================================================
-        // MODAL FUNCTIONALITY
-        // ========================================================================
-        
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                
-                // Initialize demo if it's the demo modal
-                if (modalId === 'demo-modal') {
-                    setTimeout(() => {
-                        switchDemo('call-agent');
-                    }, 300);
-                }
-                
-                // Focus first input for accessibility
-                if (modalId === 'booking-modal') {
-                    setTimeout(() => {
-                        const firstInput = modal.querySelector('input');
-                        if (firstInput) firstInput.focus();
-                    }, 300);
-                }
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close modals when clicking outside
-        document.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Close modals with escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const activeModal = document.querySelector('.modal.active');
-                if (activeModal) {
-                    activeModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            }
-        });
-
-        // ========================================================================
-        // FORM HANDLING
-        // ========================================================================
-        
-        function handleBookingSubmit(event) {
-            event.preventDefault();
-            
-            if (!selectedSolution) {
-                alert('Please select a solution (AI Call Agent or AI Chatbot) before continuing.');
-                return;
-            }
-            
-            const formData = new FormData(event.target);
-            const bookingData = Object.fromEntries(formData);
-            bookingData.solution = selectedSolution;
-            
-            // Show loading state
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <div style="width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-                    Setting up your AI...
-                </div>
-            `;
-            submitBtn.disabled = true;
-            
-            // Add spin animation if not present
-            if (!document.getElementById('spin-animation')) {
-                const style = document.createElement('style');
-                style.id = 'spin-animation';
-                style.textContent = `
-                    @keyframes spin {
-                        0% { transform: rotate(0deg); }
-                        100% { transform: rotate(360deg); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-
-            // Simulate API call for demo
-            setTimeout(() => {
-                showBookingSuccess();
-            }, 2000);
-        }
-
-        function showBookingSuccess() {
-            const modal = document.getElementById('booking-modal');
-            const modalContent = modal.querySelector('.modal-content');
-            
-            const solutionName = selectedSolution === 'call-agent' ? 'AI Call Agent' : 'AI Chatbot';
-            const solutionIcon = selectedSolution === 'call-agent' ? 
-                '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>' :
-                '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>';
-            
-            modalContent.innerHTML = `
-                <div style="text-align: center; padding: 2rem;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; animation: checkmark-bounce 0.6s ease;">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
-                            <polyline points="20,6 9,17 4,12"></polyline>
-                        </svg>
-                    </div>
-                    <h2 style="color: var(--success); margin-bottom: 1rem; font-size: 1.8rem;">Welcome to Conversync!</h2>
-                    <p style="color: var(--gray-300); margin-bottom: 2rem; font-size: 1.1rem;">
-                        Your ${solutionName} is being set up now. You'll receive an email with ${selectedSolution === 'call-agent' ? 'login details and setup instructions' : 'download links and installation guide'} within the next few minutes.
-                    </p>
-                    <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid var(--border-secondary);">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                    ${solutionIcon}
-                                </svg>
-                            </div>
-                            <div style="text-align: left;">
-                                <h3 style="color: var(--primary); margin-bottom: 0.25rem;">${solutionName}</h3>
-                                <p style="color: var(--gray-400); font-size: 0.9rem;">
-                                    ${selectedSolution === 'call-agent' ? 'Phone-based customer service automation' : 'Website and messaging automation'}
-                                </p>
-                            </div>
-                        </div>
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">What happens next?</h3>
-                        <div style="text-align: left; color: var(--gray-300);">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">1</div>
-                                <span>Check your email for setup instructions</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">2</div>
-                                <span>${selectedSolution === 'call-agent' ? 'Complete the 10-minute setup wizard' : 'Install and customize your chatbot'}</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                <div style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">3</div>
-                                <span>Start ${selectedSolution === 'call-agent' ? 'receiving perfect phone service' : 'automating customer conversations'}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-lg" onclick="closeModal('booking-modal')" style="margin-right: 1rem;">
-                        Get Started Now
-                    </button>
-                    <button class="btn btn-secondary" onclick="closeModal('booking-modal')">
-                        Close
-                    </button>
-                </div>
-            `;
-            
-            // Add bounce animation
-            if (!document.getElementById('bounce-animation')) {
-                const style = document.createElement('style');
-                style.id = 'bounce-animation';
-                style.textContent = `
-                    @keyframes checkmark-bounce {
-                        0% { transform: scale(0); }
-                        50% { transform: scale(1.2); }
-                        100% { transform: scale(1); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
-
-        // ========================================================================
-        // SMOOTH SCROLLING FOR ANCHOR LINKS
-        // ========================================================================
-        
+        // Smooth scrolling for anchor links
         document.addEventListener('click', function(event) {
             const link = event.target.closest('a[href^="#"]');
             if (link) {
@@ -2597,29 +1342,11 @@
             }
         });
 
-        function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-}
-
-// Close modal when clicking outside modal content
-window.addEventListener('click', function(event) {
-    const bookingModal = document.getElementById('booking-modal');
-    if (event.target === bookingModal) {
-        closeModal('booking-modal');
-    }
-});
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollAnimations();
+            initHeaderScroll();
+        });
     </script>
 </body>
 </html>
