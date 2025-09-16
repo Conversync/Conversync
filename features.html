@@ -743,6 +743,17 @@
 @media (min-width: 768px) {
     .mobile-menu-btn, .mobile-nav { display: none; }
 }
+
+/* Show only on desktop */
+.desktop-only {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -777,10 +788,10 @@
     </div>
 </nav>
 
-                <div class="flex" style="gap: 1rem;">
-                    <a href="/" class="btn btn-outline btn-sm">Try Demo</a>
-                    <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
-                </div>
+<div class="flex desktop-only" style="gap: 1rem;">
+    <a href="/" class="btn btn-outline btn-sm">Try Demo</a>
+    <a href="get_started.html" class="btn btn-primary btn-sm">Get Started</a>
+</div>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
     <span></span>
     <span></span>
