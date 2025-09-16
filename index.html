@@ -405,46 +405,7 @@
             border: none;
             color: var(--white);
             cursor: pointer;
-            padding: 8px;
-            width: 48px;
-            height: 48px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            z-index: 1101; /* sit above mobile-nav */
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .mobile-menu-btn:focus {
-            outline: 2px solid rgba(0,102,255,0.25);
-            outline-offset: 2px;
-        }
-
-        /* Hamburger bars */
-        .mobile-menu-btn .bar {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: currentColor;
-            margin: 3px 0;
-            border-radius: 2px;
-            transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease, background 200ms ease;
-            transform-origin: center;
-        }
-
-        /* Open state -> cross */
-        .mobile-menu-btn.open .bar:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-
-        .mobile-menu-btn.open .bar:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0.2);
-        }
-
-        .mobile-menu-btn.open .bar:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
+            padding: var(--space-xs);
         }
         
         @media (min-width: 768px) {
@@ -460,69 +421,6 @@
             position: relative;
             overflow: hidden;
             padding-top: 80px;
-        }
-
-        /* Parallax layers inside hero */
-        .hero-parallax {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .parallax-layer {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            will-change: transform, opacity;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            opacity: 0.7;
-            transition: transform var(--transition-slow) ease-out, opacity var(--transition-normal);
-        }
-
-        .layer-back {
-            width: 160%;
-            height: 120%;
-            background-image: radial-gradient(circle at 10% 80%, rgba(0,102,255,0.08), transparent 20%), radial-gradient(circle at 90% 20%, rgba(0,212,255,0.06), transparent 25%);
-            filter: blur(30px) saturate(1.05);
-            opacity: 0.25;
-        }
-
-        .layer-mid {
-            width: 120%;
-            height: 110%;
-            background-image: radial-gradient(circle at 40% 30%, rgba(255,107,53,0.05), transparent 20%);
-            mix-blend-mode: screen;
-            opacity: 0.35;
-        }
-
-        .layer-front {
-            width: 90%;
-            height: 90%;
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.02), transparent 40%);
-            opacity: 0.12;
-            transform-origin: center;
-        }
-
-        /* Pointer parallax for large viewports */
-        @media (min-width: 768px) {
-            .hero-content { z-index: 10; }
-        }
-
-        /* entrance animation tweaks */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(18px);
-            transition: transform 0.6s cubic-bezier(.2,.9,.2,1), opacity 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         .hero::before {
@@ -1325,7 +1223,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
-                    <img src="IMG_8525.jpg" srcset="IMG_8525.jpg 1x" sizes="40px" alt="Conversync Logo" width="40" height="40" loading="lazy" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
+                    <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
                     <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
                 </a>
                 
@@ -1354,11 +1252,13 @@
                 
 
                 
-                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
-                    <span class="bar" aria-hidden="true"></span>
-                    <span class="bar" aria-hidden="true"></span>
-                    <span class="bar" aria-hidden="true"></span>
-                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+</button>
             </div>
         </div>
     </header>
@@ -1366,14 +1266,7 @@
     <!-- Hero Section -->
     <section class="hero section" id="hero">
         <div class="container">
-            <!-- Parallax layers (decorative, non-interactive) -->
-            <div class="hero-parallax" aria-hidden="true">
-                <div class="parallax-layer layer-back"></div>
-                <div class="parallax-layer layer-mid"></div>
-                <div class="parallax-layer layer-front"></div>
-            </div>
-
-            <div class="hero-content fade-in" id="hero-content">
+            <div class="hero-content fade-in">
                 <h1 class="text-hero">
                     AI Call Agent &amp; Chatbot<br>
                     <span style="color: var(--secondary);">For Modern Businesses</span>
@@ -2006,42 +1899,53 @@
 
 function toggleMobileMenu() {
     const mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.getElementById('mobile-menu-btn');
-
-    if (!mobileNav || !menuBtn) return;
-
-    const isOpen = mobileNav.classList.contains('active');
-    if (isOpen) {
-        mobileNav.classList.remove('active');
-        menuBtn.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.setAttribute('aria-label', 'Open menu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    console.log('Toggle function called'); // Add this to test
+    console.log('Mobile nav element:', mobileNav); // Add this to test
+    
+    if (mobileNav) {
+        if (mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            // Change hamburger back to menu icon
+            menuBtn.innerHTML = `
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            `;
+        } else {
+            mobileNav.classList.add('active');
+            // Change to X icon
+            menuBtn.innerHTML = `
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            `;
+        }
     } else {
-        mobileNav.classList.add('active');
-        menuBtn.classList.add('open');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        menuBtn.setAttribute('aria-label', 'Close menu');
+        console.error('Mobile nav element not found');
     }
-}
-;
+};
 
 // Add this in your existing JavaScript
 document.addEventListener('click', function(event) {
     const mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
     const header = document.querySelector('.header');
-
-    // If menu is open and click happens outside the header & mobile-nav, close it
-    if (mobileNav && mobileNav.classList.contains('active')) {
-        const target = event.target;
-        if (!header.contains(target) && !mobileNav.contains(target) && target !== menuBtn) {
-            mobileNav.classList.remove('active');
-            if (menuBtn) {
-                menuBtn.classList.remove('open');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.setAttribute('aria-label', 'Open menu');
-            }
-        }
+    
+    if (mobileNav && mobileNav.classList.contains('active') && 
+        !header.contains(event.target)) {
+        mobileNav.classList.remove('active');
+        menuBtn.innerHTML = `
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        `;
     }
 });
         // ============================================================================
@@ -2074,7 +1978,6 @@ document.addEventListener('click', function(event) {
                         startLiveDemoChat();
                     }
                 }, 2000);
-                initParallax();
             });
 
             // ========================================================================
@@ -2101,77 +2004,6 @@ document.addEventListener('click', function(event) {
                 };
 
                 observeElements();
-            }
-
-            // ========================================================================
-            // PARALLAX (SCROLL + POINTER) - lightweight and performant
-            // ========================================================================
-
-            function initParallax() {
-                if (reducedMotion) return; // Respect accessibility
-
-                const hero = document.getElementById('hero');
-                const layers = hero ? hero.querySelectorAll('.parallax-layer') : null;
-                if (!hero || !layers || layers.length === 0) return;
-
-                // Simple scroll-based parallax using transform translateY
-                let ticking = false;
-
-                function onScroll() {
-                    if (!ticking) {
-                        window.requestAnimationFrame(() => {
-                            const rect = hero.getBoundingClientRect();
-                            const center = window.innerHeight / 2;
-                            const dist = rect.top - center;
-
-                            layers.forEach((layer, i) => {
-                                const depth = (i + 1) / (layers.length + 1); // 0..1
-                                const movement = -dist * depth * 0.06; // subtle movement
-                                layer.style.transform = `translate3d(-50%, calc(-50% + ${movement}px), 0)`;
-                            });
-
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                }
-
-                // Pointer-based parallax (desktop only)
-                function onPointer(e) {
-                    const px = (e.clientX / window.innerWidth) - 0.5;
-                    const py = (e.clientY / window.innerHeight) - 0.5;
-
-                    layers.forEach((layer, i) => {
-                        const amplitude = (i + 1) * 6; // px
-                        const tx = -px * amplitude;
-                        const ty = -py * amplitude * 0.6;
-                        layer.style.transform = `translate3d(calc(-50% + ${tx}px), calc(-50% + ${ty}px), 0)`;
-                    });
-                }
-
-                // Throttle pointer events for performance
-                let pointerTimeout = null;
-                function onPointerThrottled(e) {
-                    if (pointerTimeout) return;
-                    pointerTimeout = setTimeout(() => pointerTimeout = null, 40);
-                    onPointer(e);
-                }
-
-                // Initialize positions
-                onScroll();
-
-                window.addEventListener('scroll', onScroll, { passive: true });
-
-                // Only enable pointer parallax on non-touch large viewports
-                const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-                if (!isTouch && window.innerWidth > 768) {
-                    window.addEventListener('pointermove', onPointerThrottled);
-                }
-
-                // Recalculate on resize
-                window.addEventListener('resize', () => {
-                    onScroll();
-                });
             }
 
             // ========================================================================
