@@ -353,13 +353,19 @@
             color: var(--primary);
         }
         
-        .mobile-menu-btn {
-            display: block;
-            background: none;
-            border: none;
-            color: var(--white);
+         .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
             cursor: pointer;
-            padding: var(--space-xs);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: #ffffff;
+            transition: all 0.3s ease;
         }
         
         .mobile-nav {
@@ -789,6 +795,11 @@
                     <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
                 </a>
                 
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
                 <nav class="nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="features.html" class="nav-link">Features</a>
@@ -797,27 +808,27 @@
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link active">Contact</a>
                 </nav>
-
-                <nav class="mobile-nav" id="mobile-nav">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="features.html" class="nav-link">Features</a>
-                    <a href="price.html" class="nav-link">Pricing</a>
-                    <a href="compare.html" class="nav-link">Compare</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-
-                </nav>
                 
+
+                
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="price.html" class="nav-link">Pricing</a>
+    <a href="compare.html" class="nav-link">Compare</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <div class="mobile-nav-buttons">
+        <button class="btn btn-outline btn-sm" onclick="openModal('demo-modal')">Try Demo</button>
+        <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
+    </div>
+</nav>
+
                 <div class="flex" style="gap: 1rem;">
                     <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
                     <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
                 </div>
                 
-<button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-</button>
             </div>
         </div>
     </header>
