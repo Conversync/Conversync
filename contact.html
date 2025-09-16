@@ -1218,48 +1218,24 @@
             // MOBILE MENU
             // ========================================================================
             
-            window.toggleMobileMenu = function() {
-                const mobileNav = document.getElementById('mobile-nav');
-                const menuBtn = document.querySelector('.mobile-menu-btn');
-                if (mobileNav) {
-                    if (mobileNav.classList.contains('active')) {
-                        mobileNav.classList.remove('active');
-                        menuBtn.innerHTML = `
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <line x1="3" y1="12" x2="21" y2="12"></line>
-                                <line x1="3" y1="18" x2="21" y2="18"></line>
-                            </svg>
-                        `;
-                    } else {
-                        mobileNav.classList.add('active');
-                        menuBtn.innerHTML = `
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        `;
-                    }
-                }
-            };
+  function toggleMobileMenu() {
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  mobileMenuBtn.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
 
-            // Close mobile menu when clicking outside (from index.html)
-            document.addEventListener('click', function(event) {
-                const mobileNav = document.getElementById('mobile-nav');
-                const menuBtn = document.querySelector('.mobile-menu-btn');
-                const header = document.querySelector('.header');
-                if (mobileNav && mobileNav.classList.contains('active') &&
-                    !header.contains(event.target)) {
-                    mobileNav.classList.remove('active');
-                    menuBtn.innerHTML = `
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    `;
-                }
-            });
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      mobileMenuBtn.classList.remove('active');
+      mobileNav.classList.remove('active');
+    }
+  });
+});
 
             // ========================================================================
             // FAQ FUNCTIONALITY
