@@ -1285,16 +1285,16 @@
             <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
             <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal')">Get Started</button>
           </div>
-          <!-- Mobile Hamburger Button -->
-          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation" onclick="toggleMobileMenu()">
+          <!-- Mobile Hamburger Button (contact.html style) -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation" type="button">
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
       </div>
-      <!-- Mobile Navigation -->
-      <nav class="mobile-nav" id="mobile-nav">
+      <!-- Mobile Navigation (contact.html style) -->
+      <nav class="mobile-nav" id="mobile-nav" tabindex="-1">
         <a href="index.html" class="nav-link">Home</a>
         <a href="features.html" class="nav-link">Features</a>
         <a href="price.html" class="nav-link">Pricing</a>
@@ -1935,28 +1935,59 @@
 
     <!-- JavaScript -->
     <script>
-
-        // =========================
-        // Mobile menu toggle logic
-        // =========================
-        function toggleMobileMenu() {
-          const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-          const mobileNav = document.getElementById('mobile-nav');
-          mobileMenuBtn.classList.toggle('active');
-          mobileNav.classList.toggle('active');
+      // =========================
+      // Mobile menu toggle logic (contact.html style)
+      // =========================
+      function toggleMobileMenu(forceClose = false) {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('mobile-nav');
+        if (forceClose) {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('active');
+          nav.setAttribute('aria-hidden', 'true');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          return;
         }
+        const isActive = menuBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+        nav.setAttribute('aria-hidden', !isActive);
+        menuBtn.setAttribute('aria-expanded', isActive);
+        if (isActive) {
+          nav.focus();
+        }
+      }
 
-        // Close mobile nav on link click
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelectorAll('#mobile-nav .nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-              if (window.innerWidth <= 768) {
-                document.getElementById('mobile-menu-btn').classList.remove('active');
-                document.getElementById('mobile-nav').classList.remove('active');
-              }
-            });
+      document.addEventListener('DOMContentLoaded', function() {
+        // Hamburger toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function(e) {
+          toggleMobileMenu();
+        });
+        // Close on nav link click
+        document.querySelectorAll('#mobile-nav .nav-link').forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              toggleMobileMenu(true);
+            }
           });
         });
+        // Optional: close on outside click or ESC key
+        document.addEventListener('click', function(e) {
+          const nav = document.getElementById('mobile-nav');
+          const btn = document.getElementById('mobile-menu-btn');
+          if (
+            nav.classList.contains('active') &&
+            !nav.contains(e.target) &&
+            !btn.contains(e.target)
+          ) {
+            toggleMobileMenu(true);
+          }
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            toggleMobileMenu(true);
+          }
+        });
+      });
 
         // ============================================================================
         // MAIN APPLICATION SCRIPT
