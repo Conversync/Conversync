@@ -405,7 +405,46 @@
             border: none;
             color: var(--white);
             cursor: pointer;
-            padding: var(--space-xs);
+            padding: 8px;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            z-index: 1101; /* sit above mobile-nav */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-menu-btn:focus {
+            outline: 2px solid rgba(0,102,255,0.25);
+            outline-offset: 2px;
+        }
+
+        /* Hamburger bars */
+        .mobile-menu-btn .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+            margin: 3px 0;
+            border-radius: 2px;
+            transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease, background 200ms ease;
+            transform-origin: center;
+        }
+
+        /* Open state -> cross */
+        .mobile-menu-btn.open .bar:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .mobile-menu-btn.open .bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0.2);
+        }
+
+        .mobile-menu-btn.open .bar:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
         }
         
         @media (min-width: 768px) {
@@ -1315,13 +1354,11 @@
                 
 
                 
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-</button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -1969,53 +2006,42 @@
 
 function toggleMobileMenu() {
     const mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    
-    console.log('Toggle function called'); // Add this to test
-    console.log('Mobile nav element:', mobileNav); // Add this to test
-    
-    if (mobileNav) {
-        if (mobileNav.classList.contains('active')) {
-            mobileNav.classList.remove('active');
-            // Change hamburger back to menu icon
-            menuBtn.innerHTML = `
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            `;
-        } else {
-            mobileNav.classList.add('active');
-            // Change to X icon
-            menuBtn.innerHTML = `
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            `;
-        }
+    const menuBtn = document.getElementById('mobile-menu-btn');
+
+    if (!mobileNav || !menuBtn) return;
+
+    const isOpen = mobileNav.classList.contains('active');
+    if (isOpen) {
+        mobileNav.classList.remove('active');
+        menuBtn.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open menu');
     } else {
-        console.error('Mobile nav element not found');
+        mobileNav.classList.add('active');
+        menuBtn.classList.add('open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        menuBtn.setAttribute('aria-label', 'Close menu');
     }
-};
+}
+;
 
 // Add this in your existing JavaScript
 document.addEventListener('click', function(event) {
     const mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const menuBtn = document.getElementById('mobile-menu-btn');
     const header = document.querySelector('.header');
-    
-    if (mobileNav && mobileNav.classList.contains('active') && 
-        !header.contains(event.target)) {
-        mobileNav.classList.remove('active');
-        menuBtn.innerHTML = `
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
+
+    // If menu is open and click happens outside the header & mobile-nav, close it
+    if (mobileNav && mobileNav.classList.contains('active')) {
+        const target = event.target;
+        if (!header.contains(target) && !mobileNav.contains(target) && target !== menuBtn) {
+            mobileNav.classList.remove('active');
+            if (menuBtn) {
+                menuBtn.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.setAttribute('aria-label', 'Open menu');
+            }
+        }
     }
 });
         // ============================================================================
