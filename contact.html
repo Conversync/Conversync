@@ -797,6 +797,12 @@
     border-radius: 2px;
     transition: all var(--transition-normal);
 }
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -838,10 +844,10 @@
                     </div>
                 </nav>
 
-                <div class="flex" style="gap: 1rem;">
-                    <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
-                    <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
-                </div>
+<div class="flex desktop-only" style="gap: 1rem;">
+    <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
+    <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
+</div>
             </div>
         </div>
     </header>
