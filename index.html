@@ -1253,12 +1253,27 @@
             padding: 0.5rem;
         }
 
-        .mobile-menu-btn span {
-            width: 24px;
-            height: 2px;
-            background: #ffffff;
-            transition: all 0.3s ease;
-        }
+.mobile-menu-btn span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 4px 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+
+/* Transform into X when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.2);
+}
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
     </style>
 </head>
 <body>
