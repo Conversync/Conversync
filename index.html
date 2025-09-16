@@ -230,6 +230,21 @@
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
         }
+
+        /* Transparent Get Started button with blue border */
+        .btn-no-bg {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-no-bg:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: none;
+            box-shadow: none;
+        }
         
         .btn-secondary {
             background: var(--bg-glass);
@@ -1344,7 +1359,7 @@
 
 <div class="flex desktop-only" style="gap: 1rem;">
     <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
-    <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html'">Get Started</button>
+    <button class="btn btn-no-bg btn-sm" onclick="window.location.href='index.html'">Get Started</button>
 </div>
 
 
@@ -1969,7 +1984,7 @@
                     <button class="btn btn-secondary btn-sm" onclick="startDemoChat()" style="flex: 1;">
                         Start New Demo
                     </button>
-                    <button class="btn btn-primary btn-sm" onclick="openModal('booking-modal'); closeModal('demo-modal');">
+                    <button class="btn btn-no-bg btn-sm" onclick="openModal('booking-modal'); closeModal('demo-modal');">
                         Get Started
                     </button>
                 </div>
