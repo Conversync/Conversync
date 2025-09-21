@@ -300,58 +300,59 @@
         }
         
         /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(10, 14, 39, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-secondary);
-            padding: var(--space-sm) 0;
-            transition: all var(--transition-normal);
-        }
-        
-        .header.scrolled {
-            background: rgba(10, 14, 39, 0.95);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .nav {
-            display: none;
-            gap: var(--space-lg);
-        }
-        
-        .nav-link {
-            color: var(--gray-300);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color var(--transition-fast);
-        }
+        /* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 14, 39, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-secondary);
+    padding: var(--space-sm) 0;
+    transition: all var(--transition-normal);
+}
 
-        .nav-link.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-        }
+.header.scrolled {
+    background: rgba(10, 14, 39, 0.95);
+    box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav {
+    display: none;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    color: var(--gray-300);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+}
         
         /* --- Begin Saved Hamburger Menu Styles --- */
         .mobile-menu-btn {
