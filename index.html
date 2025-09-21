@@ -361,58 +361,59 @@
         }
         
         /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(10, 14, 39, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-secondary);
-            padding: var(--space-sm) 0;
-            transition: all var(--transition-normal);
-        }
-        
-        .header.scrolled {
-            background: rgba(10, 14, 39, 0.95);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-                position: relative; /* ADD THIS LINE */
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .nav {
-            display: none;
-            gap: var(--space-lg);
-        }
-        
-        .nav-link {
-            color: var(--gray-300);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color var(--transition-fast);
-        }
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 14, 39, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-secondary);
+    padding: var(--space-sm) 0;
+    transition: all var(--transition-normal);
+}
 
-        .nav-link.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-        }
+.header.scrolled {
+    background: rgba(10, 14, 39, 0.95);
+    box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav {
+    display: none;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    color: var(--gray-300);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+}
         
         .mobile-menu-btn {
             display: block;
@@ -1358,8 +1359,8 @@
 </nav>
 
 <div class="flex desktop-only" style="gap: 1rem;">
-    <button class="btn btn-outline btn-sm" onclick="scrollToForm()">Get In Touch</button>
-    <button class="btn btn-no-bg btn-sm" onclick="window.location.href='index.html'">Get Started</button>
+    <button class="btn btn-outline btn-sm" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="btn btn-outline btn-sm" onclick="window.location.href='get_started.html'">Get Started</button>
 </div>
 
 
