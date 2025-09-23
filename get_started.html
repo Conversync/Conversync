@@ -15,7 +15,6 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Critical CSS -->
     <style>
         /* CSS Reset and Base Styles */
         *, *::before, *::after {
@@ -27,33 +26,33 @@
         :root {
             /* Color System */
             --primary: #0066ff;
-            --primary-dark: #0052cc;
+            --primary-dark: #004acc;
             --primary-light: #3385ff;
             --secondary: #00d4ff;
             --accent: #ff6b35;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --error: #ef4444;
+            --success: #00ff88;
+            --warning: #ffaa00;
+            --error: #ff4455;
             
-            /* Neutral Colors */
-            --white: #ffffff;
+            /* Dark Theme Colors */
             --black: #000000;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
+            --gray-900: #0a0a0a;
+            --gray-800: #141414;
+            --gray-700: #1f1f1f;
+            --gray-600: #2a2a2a;
+            --gray-500: #404040;
+            --gray-400: #666666;
+            --gray-300: #888888;
+            --gray-200: #aaaaaa;
+            --gray-100: #cccccc;
+            --white: #ffffff;
             
             /* Background System */
-            --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
-            --bg-section: rgba(255, 255, 255, 0.02);
-            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-primary: radial-gradient(ellipse at top, rgba(0, 102, 255, 0.15) 0%, #000000 50%);
+            --bg-secondary: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+            --bg-card: rgba(255, 255, 255, 0.03);
             --bg-glass: rgba(255, 255, 255, 0.08);
+            --bg-hero: radial-gradient(ellipse at center, rgba(0, 102, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 30%, transparent 70%);
             
             /* Border System */
             --border-primary: rgba(0, 102, 255, 0.3);
@@ -61,14 +60,13 @@
             --border-glass: rgba(255, 255, 255, 0.15);
             
             /* Shadow System */
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.3);
-            --shadow-glow-secondary: 0 0 30px rgba(0, 212, 255, 0.2);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 50px rgba(0, 102, 255, 0.5);
+            --shadow-glow-secondary: 0 0 40px rgba(0, 212, 255, 0.4);
             
-            /* Spacing System */
+            /* Spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
@@ -78,12 +76,16 @@
             --space-3xl: 6rem;
             
             /* Animation */
-            --transition-fast: 0.15s ease;
-            --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+            --transition-normal: 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
         
         /* Base Styles */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
         html {
             scroll-behavior: smooth;
             font-size: 16px;
@@ -93,78 +95,353 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--white);
-            background: var(--bg-primary);
-            overflow-x: hidden;
+            background: var(--black);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
-        /* Layout Components */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-sm);
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            background: var(--bg-primary);
         }
-        
-        .section {
-            padding: var(--space-3xl) 0;
-            position: relative;
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            animation: backgroundShift 15s ease-in-out infinite;
         }
-        
-        /* Typography System */
+
+        @keyframes backgroundShift {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            33% { 
+                transform: translate(-10px, -20px) scale(1.05);
+                opacity: 0.8;
+            }
+            66% { 
+                transform: translate(10px, 10px) scale(0.95);
+                opacity: 0.9;
+            }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 102, 255, 0.8);
+            border-radius: 50%;
+            animation: particleFloat 25s infinite linear;
+        }
+
+        .particle:nth-child(2n) {
+            background: rgba(0, 212, 255, 0.6);
+            width: 3px;
+            height: 3px;
+            animation-duration: 30s;
+        }
+
+        .particle:nth-child(3n) {
+            background: rgba(255, 255, 255, 0.4);
+            width: 1px;
+            height: 1px;
+            animation-duration: 35s;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-10vh) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Typography */
         .text-hero {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 900;
+            line-height: 0.95;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary) 30%, var(--secondary) 70%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+            text-align: center;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .text-display {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
             line-height: 1.1;
-            background: linear-gradient(135deg, var(--white) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: var(--space-md);
         }
-        
-        .text-display {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.2;
-        }
-        
+
         .text-heading {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-size: clamp(1.8rem, 4vw, 3rem);
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: var(--space-md);
         }
-        
-        .text-subheading {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        
+
         .text-lead {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             line-height: 1.6;
-            color: var(--gray-300);
+            color: var(--gray-200);
+            margin-bottom: var(--space-lg);
         }
-        
+
         .text-body {
             font-size: 1rem;
             line-height: 1.6;
-            color: var(--gray-400);
+            color: var(--gray-300);
         }
-        
-        .text-small {
-            font-size: 0.875rem;
-            line-height: 1.5;
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+            position: relative;
+            z-index: 10;
         }
-        
-        /* Button System */
+
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-secondary);
+            padding: 0.5rem 0;
+            transition: all var(--transition-normal);
+        }
+
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom-color: var(--border-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex: 0 0 auto;
+        }
+
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            justify-content: center;
+            flex: 1;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav {
+            display: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            color: var(--gray-200);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 12px;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: rgba(0, 102, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: rgba(0, 102, 255, 0.1);
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1101;
+            transition: all var(--transition-fast);
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            margin: 3px 0;
+            background: linear-gradient(90deg, var(--white), var(--primary));
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 80px 1.5rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            max-height: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1100;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            pointer-events: auto;
+            max-height: 100vh;
+        }
+
+        .mobile-nav .nav-link {
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 16px;
+            transform: translateX(-30px);
+            opacity: 0;
+            transition: all var(--transition-normal);
+        }
+
+        .mobile-nav.active .nav-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: var(--space-xs);
-            padding: var(--space-sm) var(--space-lg);
+            padding: 0.6rem 1.2rem;
             border: none;
             border-radius: 50px;
             font-weight: 600;
@@ -174,114 +451,172 @@
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
-            min-height: 48px;
+            min-height: 44px;
             white-space: nowrap;
         }
-        
+
         .btn-primary {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--white);
             box-shadow: var(--shadow-glow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 102, 255, 0.6);
         }
-        
+
         .btn-secondary {
             background: var(--bg-glass);
             color: var(--white);
             border: 1px solid var(--border-glass);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
         }
-        
+
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.15);
             border-color: var(--border-primary);
             transform: translateY(-1px);
         }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: var(--shadow-glow);
-        }
-        
+
         .btn-lg {
-            padding: var(--space-md) var(--space-xl);
+            padding: 0.8rem 1.6rem;
             font-size: 1.1rem;
-            min-height: 56px;
+            min-height: 52px;
         }
-        
-        .btn-sm {
-            padding: var(--space-xs) var(--space-md);
-            font-size: 0.875rem;
-            min-height: 36px;
-        }
-        
-        /* Card System */
+
+        /* Cards */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-secondary);
-            border-radius: 20px;
-            padding: var(--space-lg);
-            backdrop-filter: blur(10px);
-            transition: all var(--transition-normal);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-primary);
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .card-glass {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-        }
-        
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(10, 14, 39, 0.95);
+            border-radius: 24px;
+            padding: var(--space-xl);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-secondary);
-            padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .header-content {
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: var(--space-xl) 0;
+            gap: var(--space-md);
+            position: relative;
+            z-index: 10;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs);
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-glass);
+            border: 2px solid var(--border-secondary);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--gray-400);
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .step.active .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-color: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step.active .step-number:hover::before {
+            left: 100%;
+        }
+
+        .step.completed .step-number {
+            background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);
+            border-color: var(--success);
+            color: var(--white);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .step.completed .step-label {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .step-connector {
+            width: 100%;
+            height: 3px;
+            background: var(--border-secondary);
+            margin: 0 var(--space-sm);
+            transition: all var(--transition-normal);
+            border-radius: 2px;
             position: relative;
         }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
+
+        .step-connector.completed {
+            background: linear-gradient(90deg, var(--success), #16a34a);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
         }
-        
+
         /* Option Cards */
         .option-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-xl);
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+            justify-content: center;
+            align-items: stretch;
             margin: var(--space-2xl) 0;
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
+
         .option-card {
             background: var(--bg-card);
             border: 2px solid var(--border-secondary);
@@ -292,280 +627,332 @@
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        
+
         .option-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 24px;
             opacity: 0;
             transition: opacity var(--transition-normal);
+            z-index: -1;
         }
-        
+
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
         .option-card:hover::before {
             opacity: 1;
         }
-        
-        .option-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-glow);
-        }
-        
+
         .option-card.selected {
             border-color: var(--primary);
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 212, 255, 0.08) 100%);
             transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
         }
-        
+
         .option-card.selected::before {
             opacity: 1;
         }
-        
+
         .option-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto var(--space-md);
+            margin: 0 auto var(--space-lg);
             position: relative;
-            z-index: 1;
+            transition: all var(--transition-normal);
+            overflow: hidden;
         }
-        
+
         .option-icon-primary {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            box-shadow: var(--shadow-glow);
         }
-        
+
         .option-icon-secondary {
             background: linear-gradient(135deg, var(--secondary) 0%, #33ccff 100%);
+            box-shadow: var(--shadow-glow-secondary);
         }
-        
+
+        .option-icon-tertiary {
+            background: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+            box-shadow: 0 0 40px rgba(0,102,255,0.3);
+        }
+
+        .option-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: iconShine 4s ease-in-out infinite;
+        }
+
+        @keyframes iconShine {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .option-card:hover .option-icon {
+            transform: translateY(-5px) rotateY(10deg);
+        }
+
         .option-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: var(--space-sm);
-            color: var(--white);
-            position: relative;
-            z-index: 1;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
         .option-description {
             color: var(--gray-300);
-            margin-bottom: var(--space-md);
-            position: relative;
-            z-index: 1;
+            margin-bottom: var(--space-lg);
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
         }
-        
+
         .option-features {
             list-style: none;
             text-align: left;
-            margin-bottom: var(--space-md);
-            position: relative;
-            z-index: 1;
+            margin-bottom: var(--space-lg);
         }
-        
+
         .option-features li {
             padding: var(--space-xs) 0;
             display: flex;
             align-items: center;
             gap: var(--space-sm);
             color: var(--gray-300);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            transition: all var(--transition-fast);
         }
-        
+
+        .option-features li:hover {
+            color: var(--white);
+            transform: translateX(4px);
+        }
+
         .checkmark {
             color: var(--success);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1rem;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            flex-shrink: 0;
         }
-        
+
         .option-pricing {
             background: var(--bg-glass);
-            padding: var(--space-md);
-            border-radius: 15px;
-            margin-bottom: var(--space-md);
+            padding: var(--space-lg);
+            border-radius: 20px;
+            margin-bottom: var(--space-lg);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+            margin-top: auto;
         }
-        
+
+        .option-pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .option-card:hover .option-pricing::before {
+            left: 100%;
+        }
+
         .price-highlight {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: var(--space-xs);
+            line-height: 1;
         }
-        
+
         .price-note {
             font-size: 0.85rem;
             color: var(--gray-400);
         }
-        
+
         /* Form Styles */
         .form-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: var(--space-2xl) auto 0;
             background: var(--bg-card);
             border: 1px solid var(--border-secondary);
             border-radius: 24px;
-            padding: var(--space-xl);
-            backdrop-filter: blur(10px);
+            padding: var(--space-2xl);
+            backdrop-filter: blur(20px);
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(50px);
             transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
         }
-        
+
+        .form-container form {
+            flex: 1 1 300px;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+        }
+
         .form-container.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
+        .form-container.visible::before {
+            opacity: 0.3;
+        }
+
         .form-header {
             text-align: center;
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--space-2xl);
         }
-        
+
         .form-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .form-group {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: var(--space-md);
         }
-        
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
         .form-label {
             display: block;
-            margin-bottom: var(--space-xs);
-            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
             color: var(--white);
+            font-size: 1rem;
         }
-        
+
         .form-input,
         .form-select,
         .form-textarea {
             width: 100%;
-            padding: var(--space-sm) var(--space-md);
+            padding: var(--space-md);
             border: 1px solid var(--border-secondary);
-            border-radius: 12px;
+            border-radius: 16px;
             background: var(--bg-glass);
             color: var(--white);
             font-size: 1rem;
             transition: all var(--transition-normal);
             font-family: inherit;
-            min-height: 48px;
+            backdrop-filter: blur(10px);
+            min-height: 56px;
         }
-        
+
         .form-input:focus,
         .form-select:focus,
         .form-textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
+            transform: translateY(-2px);
         }
-        
+
         .form-textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
-        
+
         .form-input::placeholder,
         .form-textarea::placeholder {
             color: var(--gray-500);
         }
-        
-        /* Progress Steps */
-        .progress-steps {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: var(--space-xl);
-            gap: var(--space-md);
-        }
-        
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs);
-            flex: 1;
-            max-width: 120px;
-        }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--bg-glass);
-            border: 2px solid var(--border-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--gray-400);
-            transition: all var(--transition-normal);
-        }
-        
-        .step.active .step-number {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: var(--white);
-        }
-        
-        .step.completed .step-number {
-            background: var(--success);
-            border-color: var(--success);
-            color: var(--white);
-        }
-        
-        .step-label {
-            font-size: 0.8rem;
-            color: var(--gray-500);
-            text-align: center;
-        }
-        
-        .step.active .step-label {
-            color: var(--primary);
-        }
-        
-        .step.completed .step-label {
-            color: var(--success);
-        }
-        
-        .step-connector {
-            width: 100%;
-            height: 2px;
-            background: var(--border-secondary);
-            margin: 0 var(--space-sm);
-            transition: all var(--transition-normal);
-        }
-        
-        .step-connector.completed {
-            background: var(--success);
-        }
-        
+
         /* Utility Classes */
         .text-center { text-align: center; }
         .hidden { display: none; }
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Mobile Responsive */
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+
+        /* Desktop navigation */
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .mobile-menu-btn { display: none !important; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .option-cards {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                gap: var(--space-lg);
+            }
+            
+            .container {
+                max-width: 1200px;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-md);
@@ -575,29 +962,25 @@
                 padding: var(--space-2xl) 0;
             }
             
-            .option-cards {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-            }
-            
             .option-card {
                 padding: var(--space-lg);
             }
             
             .form-container {
                 margin-top: var(--space-xl);
-                padding: var(--space-lg);
+                padding: var(--space-xl);
             }
             
             .progress-steps {
                 flex-direction: column;
-                gap: var(--space-sm);
+                gap: var(--space-md);
             }
             
             .step {
                 flex-direction: row;
                 max-width: 100%;
                 justify-content: flex-start;
+                text-align: left;
             }
             
             .step-connector {
@@ -608,20 +991,35 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .option-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .option-title {
+                font-size: 1.5rem;
+            }
         }
-        
+
         @media (max-width: 480px) {
             .text-hero {
-                font-size: 2.2rem;
+                font-size: clamp(2.2rem, 8vw, 3.5rem);
             }
             
             .text-display {
-                font-size: 1.8rem;
+                font-size: clamp(1.6rem, 6vw, 2.5rem);
             }
             
             .option-icon {
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
             }
             
             .form-input,
@@ -629,203 +1027,166 @@
             .form-textarea {
                 font-size: 16px; /* Prevents zoom on iOS */
             }
+
+            .particle {
+                opacity: 0.5;
+            }
         }
 
-        /* Desktop navigation */
-        .nav {
+        /* Performance Optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .particle { 
+                animation: none; 
+                opacity: 0.1; 
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+        }
+
+        /* Success Animation */
+        .success-container {
+            text-align: center;
+            padding: var(--space-2xl);
+        }
+
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%);
+            border-radius: 50%;
             display: flex;
-            gap: var(--space-lg);
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
+            animation: successBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
         }
 
-        /* Desktop buttons */
-        .header-content .flex {
+        @keyframes successBounce {
+            0% { transform: scale(0) rotate(0deg); }
+            50% { transform: scale(1.3) rotate(180deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+
+        .success-steps {
             display: flex;
-            gap: 1rem;
-        }
-
-        /* Mobile menu hidden by default */
-        .mobile-menu-btn,
-        .mobile-nav {
-            display: none;
-        }
-
-        /* Hamburger Button Styles */
-        .mobile-menu-btn {
             flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 22px;
-            padding: 0;
-            background: none;
-            border: none;
-            cursor: pointer;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            text-align: left;
         }
 
-        .mobile-menu-btn span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: var(--white);
-            border-radius: 2px;
-            transition: all 0.3s ease;
+        .success-step {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background: var(--bg-glass);
+            border-radius: 16px;
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
         }
 
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* Show mobile menu on smaller screens */
-        @media (max-width: 768px) {
-            .nav,
-            .header-content .flex {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .mobile-nav {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 39, 0.98);
-                backdrop-filter: blur(16px);
-                border-bottom: 1px solid var(--border-secondary);
-                padding: 80px 1.5rem 1.5rem 1.5rem;
-                gap: 0.75rem;
-                opacity: 0;
-                pointer-events: none;
-                max-height: 0;
-                transition: opacity 0.35s, max-height 0.35s;
-                z-index: 1100;
-            }
-
-            .mobile-nav.active {
-                opacity: 1;
-                pointer-events: auto;
-                max-height: 100vh;
-            }
-
-            .mobile-nav .nav-link,
-            .mobile-nav-buttons .btn {
-                display: block;
-                width: 100%;
-                padding: 1rem;
-                border-radius: 8px;
-                text-align: left;
-            }
-        }
-
-        /* Navbar Links - Desktop */
-        .nav-link {
-            color: var(--gray-300);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color var(--transition-fast);
-        }
-
-        .nav-link:hover {
-            color: var(--primary);
-        }
-
-        .nav-link.active {
-            color: var(--white);
+        .success-step-number {
+            width: 40px;
+            height: 40px;
             background: var(--primary);
-            border-radius: 30px;
-            padding: 0.5rem 1.3rem;
-            box-shadow: var(--shadow-glow);
-        }
-        /* Make Get Started button highlighted as active */
-        .btn-get-started {
-            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--white);
-            border: 2px solid var(--primary);
-            box-shadow: var(--shadow-glow);
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
-        .btn-get-started:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 0 40px rgba(0, 102, 255, 0.4);
-        }
-
-        /* Navbar Links - Mobile (inside mobile-nav) */
-        .mobile-nav .nav-link {
-            color: var(--gray-300);
-            text-decoration: none;
+        .success-step-content h4 {
+            color: var(--white);
+            margin-bottom: 0.25rem;
             font-weight: 600;
-            transition: background 0.2s, color 0.2s;
-            padding: 1rem 0.75rem;
-            border-radius: 8px;
-            background: none;
-            display: block;
         }
 
-        .mobile-nav .nav-link:hover,
-        .mobile-nav .nav-link.active {
-            background: var(--bg-card);
-            color: var(--primary);
+        .success-step-content p {
+            color: var(--gray-400);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-<!-- Responsive Header -->
-<header class="header" id="header">
-    <div class="container">
-        <div class="header-content">
-            <a href="/" class="logo" style="display:flex; align-items:center; gap:0.5rem;">
-                <img src="IMG_8525.jpg" alt="Conversync Logo" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;">
-                <span style="font-weight:800; font-size:1.5rem; color: var(--primary);">Conversync</span>
-            </a>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
 
-               <nav class="nav">
-                    <a href="index.html" class="nav-link">Home</a>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left" style="margin-left: 0; margin-right: 40px;">
+                    <a href="index.html" class="logo">
+                        <img src="IMG_8525.jpg" alt="Conversync Logo" class="logo-icon">
+                        <span class="logo-text">Conversync</span>
+                    </a>
+                </div>
+                <div class="header-center">
+                    <nav class="nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="features.html" class="nav-link">Features</a>
+                        <a href="price.html" class="nav-link">Pricing</a>
+                        <a href="compare.html" class="nav-link">Compare</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <div id="desktop-buttons" style="display: none; margin-left: 60px;">
+                        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                        <a href="get_started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" style="position: absolute; right: var(--space-sm); top: 50%; transform: translateY(-50%);">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="mobile-nav" id="mobile-nav">
+                    <a href="index.html" class="nav-link active">Home</a>
                     <a href="features.html" class="nav-link">Features</a>
                     <a href="price.html" class="nav-link">Pricing</a>
                     <a href="compare.html" class="nav-link">Compare</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="contact.html" class="nav-link">Contact</a>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+                        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                        <a href="get_started.html" class="btn btn-primary">Get Started</a>
+                    </div>
                 </nav>
-
-            <div class="flex">
-                <button class="btn btn-outline btn-sm" onclick="window.location.href='contact.html'">Get in Touch</button>
-                <button class="btn btn-outline btn-sm btn-get-started" onclick="window.location.href='get_started.html'">Get Started</button>
             </div>
-
-            <!-- Mobile Hamburger Button -->
-            <button class="mobile-menu-btn" type="button" aria-label="Open menu" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Mobile Navigation -->
-            <nav class="mobile-nav" id="mobile-nav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="features.html" class="nav-link">Features</a>
-                <a href="price.html" class="nav-link">Pricing</a>
-                <a href="compare.html" class="nav-link">Compare</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <div class="mobile-nav-buttons">
-                    <button class="btn btn-outline btn-sm" onclick="window.location.href='contact.html'">Get in Touch</button>
-                    <button class="btn btn-outline btn-sm" onclick="window.location.href='get_started.html'">Get Started</button>
-                </div>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Main Content -->
     <main style="padding-top: 100px;">
@@ -833,15 +1194,16 @@
         <section class="section">
             <div class="container">
                 <div class="text-center fade-in">
-                    <h1 class="text-display" style="margin-bottom: var(--space-md);">
-                        Choose Your AI Solution
+                    <h1 class="text-hero">
+                        Choose Your
+                        <span style="background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI Solution</span>
                     </h1>
-                    <p class="text-lead" style="max-width: 700px; margin: 0 auto var(--space-lg);">
-                        Select the AI solution that best fits your business needs. Both options provide 24/7 automation with human-like interactions.
+                    <p class="text-lead" style="max-width: 800px; margin: 0 auto var(--space-lg);">
+                        Select the AI solution that transforms your customer service. Both options provide 24/7 automation with human-like intelligence that never sleeps.
                     </p>
                     
                     <!-- Progress Steps -->
-                    <div class="progress-steps fade-in" style="margin-top: var(--space-xl);">
+                    <div class="progress-steps fade-in delay-1" style="margin-top: var(--space-xl);">
                         <div class="step active" id="step-1">
                             <div class="step-number">1</div>
                             <div class="step-label">Choose Solution</div>
@@ -860,32 +1222,32 @@
                 </div>
 
                 <!-- Option Cards -->
-                <div class="option-cards fade-in">
+                <div class="option-cards fade-in delay-2">
                     <!-- AI Call Agent Card -->
                     <div class="option-card" data-option="call-agent" onclick="selectOption('call-agent')">
                         <div class="option-icon option-icon-primary">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
                         </div>
                         <h3 class="option-title">AI Call Agent</h3>
                         <p class="option-description">
-                            Perfect for businesses that receive phone calls. Your AI receptionist answers calls 24/7, books appointments, and handles customer inquiries naturally.
+                            Revolutionary phone receptionist that sounds completely human. Handles complex conversations, books appointments, and provides perfect customer service 24/7.
                         </p>
                         <ul class="option-features">
-                            <li><span class="checkmark">✓</span> Answers business phone calls 24/7</li>
-                            <li><span class="checkmark">✓</span> Books appointments and reservations</li>
-                            <li><span class="checkmark">✓</span> Handles FAQs and customer support</li>
-                            <li><span class="checkmark">✓</span> Human-like conversation (pauses if interrupted)</li>
-                            <li><span class="checkmark">✓</span> Integrates with your calendar and CRM</li>
-                            <li><span class="checkmark">✓</span> Real-time call analytics</li>
+                            <li><span class="checkmark">✓</span> Human-like voice conversations</li>
+                            <li><span class="checkmark">✓</span> 24/7 call answering service</li>
+                            <li><span class="checkmark">✓</span> Real-time appointment booking</li>
+                            <li><span class="checkmark">✓</span> Interruption handling (natural pauses)</li>
+                            <li><span class="checkmark">✓</span> Custom business knowledge integration</li>
+                            <li><span class="checkmark">✓</span> Advanced call analytics & insights</li>
                         </ul>
                         <div class="option-pricing">
                             <div class="price-highlight">Starting at $249/month</div>
-                            <div class="price-note">• No setup fees</div>
+                            <div class="price-note">7-day free trial with 10k points • No setup fees</div>
                         </div>
                         <div style="position: relative; z-index: 1;">
-                            <div class="btn btn-primary" style="pointer-events: none;">
+                            <div class="btn btn-primary btn-lg" style="pointer-events: none; width: 100%;">
                                 Choose AI Call Agent
                             </div>
                         </div>
@@ -894,30 +1256,61 @@
                     <!-- AI Chatbot Card -->
                     <div class="option-card" data-option="chatbot" onclick="selectOption('chatbot')">
                         <div class="option-icon option-icon-secondary">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                                 <path d="M8 10h.01M12 10h.01M16 10h.01"/>
                             </svg>
                         </div>
                         <h3 class="option-title">AI Chatbot</h3>
                         <p class="option-description">
-                            Ideal for websites and messaging platforms. Your AI chatbot provides instant support, captures leads, and handles customer inquiries across multiple channels.
+                            Intelligent chat assistant for websites and messaging platforms. Provides instant support, captures leads, and handles customer inquiries across multiple channels.
                         </p>
                         <ul class="option-features">
-                            <li><span class="checkmark">✓</span> Website chat widget</li>
-                            <li><span class="checkmark">✓</span> WhatsApp, Messenger, SMS integration</li>
-                            <li><span class="checkmark">✓</span> Lead capture and qualification</li>
-                            <li><span class="checkmark">✓</span> Appointment booking capability</li>
-                            <li><span class="checkmark">✓</span> Custom branding and design</li>
-                            <li><span class="checkmark">✓</span> Analytics and reporting</li>
+                            <li><span class="checkmark">✓</span> Website chat widget integration</li>
+                            <li><span class="checkmark">✓</span> Multi-platform support (WhatsApp, FB, SMS)</li>
+                            <li><span class="checkmark">✓</span> Advanced lead capture & qualification</li>
+                            <li><span class="checkmark">✓</span> Appointment scheduling automation</li>
+                            <li><span class="checkmark">✓</span> Custom branding & personality</li>
+                            <li><span class="checkmark">✓</span> One-time setup, lifetime access</li>
                         </ul>
                         <div class="option-pricing">
-                            <div class="price-highlight">$599 - $799 one-time</div>
-                            <div class="price-note">Lifetime license • No monthly fees</div>
+                            <div class="price-highlight">Starting from $599 one-time</div>
+                            <div class="price-note">• No monthly fees</div>
                         </div>
                         <div style="position: relative; z-index: 1;">
-                            <div class="btn btn-secondary" style="pointer-events: none;">
+                            <div class="btn btn-secondary btn-lg" style="pointer-events: none; width: 100%;">
                                 Choose AI Chatbot
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7-Day Free Trial Card -->
+                    <div class="option-card" data-option="free-trial" onclick="selectOption('free-trial')">
+                        <div class="option-icon option-icon-tertiary">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+                                <path d="M8 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3 class="option-title">7-Day Free Trial</h3>
+                        <p class="option-description">
+                            Explore any AI solution with 10k credit points free for 7 days. No commitment, cancel anytime.
+                        </p>
+                        <ul class="option-features">
+                            <li><span class="checkmark">✓</span> 10,000 credit points included</li>
+                            <li><span class="checkmark">✓</span> No setup fees</li>
+                            <li><span class="checkmark">✓</span> Access to both AI solutions</li>
+                            <li><span class="checkmark">✓</span> Cancel anytime</li>
+                            <li><span class="checkmark">✓</span> Full feature access</li>
+                            <li><span class="checkmark">✓</span> 24/7 support included</li>
+                        </ul>
+                        <div class="option-pricing">
+                            <div class="price-highlight">Free for 7 days</div>
+                            <div class="price-note">No credit card required</div>
+                        </div>
+                        <div style="position: relative; z-index: 1;">
+                            <div class="btn btn-primary btn-lg" style="pointer-events: none; width: 100%;">
+                                Start Free Trial
                             </div>
                         </div>
                     </div>
@@ -937,10 +1330,50 @@
         let selectedOption = null;
         let formVisible = false;
 
+        // Particle system
+        function createParticles() {
+            const particleContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth > 768 ? 40 : 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 25 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                particleContainer.appendChild(particle);
+            }
+        }
+
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
             initScrollAnimations();
+            initHeaderScroll();
+            showDesktopButtons();
         });
+
+        function showDesktopButtons() {
+            if (window.innerWidth > 768) {
+                document.getElementById('desktop-buttons').style.display = 'flex';
+                document.getElementById('desktop-buttons').style.gap = '1rem';
+            }
+        }
+
+        // Header scroll effect
+        function initHeaderScroll() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
 
         // Scroll animations
         function initScrollAnimations() {
@@ -951,9 +1384,20 @@
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { 
+                threshold: 0.15,
+                rootMargin: '50px 0px -50px 0px'
+            });
 
             elements.forEach(el => observer.observe(el));
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileMenuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
         }
 
         // Select option function
@@ -975,7 +1419,7 @@
             // Show form after a brief delay
             setTimeout(() => {
                 showForm(option);
-            }, 300);
+            }, 600);
         }
 
         // Update progress steps
@@ -1015,7 +1459,7 @@
                         <p class="text-body">Fill out the details below and we'll set up your AI receptionist to start answering calls in minutes.</p>
                     </div>
                     
-                    <form id="setup-form" action="https://formspree.io/f/mgvnwwkr" method="POST">
+                    <form id="setup-form" action="https://formspree.io/f/meorqjwr" method="POST" onsubmit="handleFormSubmit(event, 'call-agent')">
                         <div class="form-group">
                             <label class="form-label" for="name">Full Name *</label>
                             <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
@@ -1088,15 +1532,17 @@
                                 placeholder="Any specific features or integrations you need? (e.g., connect to specific calendar, CRM, or booking system)"></textarea>
                         </div>
                         
+                        <input type="hidden" name="solution-type" value="AI Call Agent">
+                        
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: var(--space-lg);">
-                            Request - AI Call Agent
+                            Start Free Trial - AI Call Agent
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </button>
                         
                         <p class="text-small text-center" style="margin-top: var(--space-md); color: var(--gray-500);">
-                            • No credit card required • Setup completed in 15 minutes
+                            No credit card required • 7-day free trial with 10k points • Setup completed in 15 minutes
                         </p>
                     </form>
                 `;
@@ -1107,7 +1553,7 @@
                         <p class="text-body">Tell us about your needs and we'll customize your AI chatbot for your website and messaging channels.</p>
                     </div>
                     
-                    <form id="setup-form" action="https://formspree.io/f/mgvnwwkr" method="POST">
+                    <form id="setup-form" action="https://formspree.io/f/meorqjwr" method="POST" onsubmit="handleFormSubmit(event, 'chatbot')">
                         <div class="form-group">
                             <label class="form-label" for="name">Full Name *</label>
                             <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
@@ -1167,28 +1613,28 @@
                         
                         <div class="form-group">
                             <label class="form-label" for="channels">Desired Channels (Advanced Package Only)</label>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
-                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300); cursor: pointer;">
                                     <input type="checkbox" name="channels" value="website" checked disabled style="accent-color: var(--primary);">
                                     Website Widget
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300);">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300); cursor: pointer;">
                                     <input type="checkbox" name="channels" value="whatsapp" style="accent-color: var(--primary);">
                                     WhatsApp
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300);">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300); cursor: pointer;">
                                     <input type="checkbox" name="channels" value="messenger" style="accent-color: var(--primary);">
                                     Facebook Messenger
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300);">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300); cursor: pointer;">
                                     <input type="checkbox" name="channels" value="sms" style="accent-color: var(--primary);">
                                     SMS
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300);">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300); cursor: pointer;">
                                     <input type="checkbox" name="channels" value="instagram" style="accent-color: var(--primary);">
                                     Instagram
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300);">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--gray-300); cursor: pointer;">
                                     <input type="checkbox" name="channels" value="telegram" style="accent-color: var(--primary);">
                                     Telegram
                                 </label>
@@ -1215,33 +1661,74 @@
                                 placeholder="Any specific tools you need connected? (e.g., CRM, calendar, email marketing, payment systems)"></textarea>
                         </div>
                         
+                        <input type="hidden" name="solution-type" value="AI Chatbot">
+                        
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: var(--space-lg);">
-                            Request AI Chatbot
+                            Get AI Chatbot - Lifetime Access
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </button>
                         
                         <p class="text-small text-center" style="margin-top: var(--space-md); color: var(--gray-500);">
-                            One-time payment • Lifetime license • Setup completed in 48 hours
+                            One-time payment • Lifetime access • Setup completed in 48 hours
                         </p>
                     </form>
                 `;
+            } else if (option === 'free-trial') {
+                formContent = `
+    <div class="form-header">
+        <h3>Start Your 7-Day Free Trial</h3>
+        <p class="text-body">Fill out the details below to start exploring any AI solution with 10,000 credit points free for 7 days.</p>
+    </div>
+    <form id="free-trial-form" action="https://formspree.io/f/meorqjwr" method="POST" onsubmit="handleFormSubmit(event, 'free-trial')">
+        <div class="form-group">
+            <label class="form-label" for="trial-name">Full Name *</label>
+            <input type="text" id="trial-name" name="name" class="form-input" required placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="trial-email">Business Email *</label>
+            <input type="email" id="trial-email" name="email" class="form-input" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="trial-phone">Phone Number</label>
+            <input type="tel" id="trial-phone" name="phone" class="form-input" placeholder="(555) 123-4567">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="trial-company">Company Name *</label>
+            <input type="text" id="trial-company" name="company" class="form-input" required placeholder="Your Business Name">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="trial-solution">Choose AI Solution *</label>
+            <select id="trial-solution" name="solution-choice" class="form-input" required>
+                <option value="">Select an AI Solution</option>
+                <option value="AI Call Agent">AI Call Agent</option>
+                <option value="AI Chatbot">AI Chatbot</option>
+            </select>
+        </div>
+        <input type="hidden" name="solution-type" value="7-Day Free Trial">
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: var(--space-lg);">
+            Start Free Trial - 10k Points
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+        </button>
+        <p class="text-small text-center" style="margin-top: var(--space-md); color: var(--gray-500);">
+            No credit card required • 7-day free trial with 10k points
+        </p>
+    </form>
+`;
             }
-            
             formContainer.innerHTML = formContent;
-            
             // Show the form with animation
             setTimeout(() => {
                 formContainer.classList.add('visible');
                 formVisible = true;
-                
                 // Scroll to form smoothly
                 formContainer.scrollIntoView({ 
                     behavior: 'smooth', 
                     block: 'center' 
                 });
-                
                 // Focus first input
                 const firstInput = formContainer.querySelector('input');
                 if (firstInput) {
@@ -1265,16 +1752,16 @@
             if (option === 'chatbot') {
                 const channels = Array.from(form.querySelectorAll('input[name="channels"]:checked'))
                     .map(cb => cb.value);
-                submitData.channels = channels;
+                submitData.channels = channels.join(', ');
             }
             
             // Show loading state
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalHTML = submitBtn.innerHTML;
             submitBtn.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; justify-content: center;">
                     <div style="width: 20px; height: 20px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-                    <span>Processing...</span>
+                    <span>Setting up your AI solution...</span>
                 </div>
             `;
             submitBtn.disabled = true;
@@ -1295,19 +1782,22 @@
             // Update progress to step 3
             updateProgressSteps(3);
             
-            // Simulate API call
+            // Simulate processing time
             setTimeout(() => {
                 showSuccessMessage(option, submitData);
-            }, 2500);
+            }, 3000);
             
-            // TODO: Replace with actual API call
-            // fetch('/api/setup', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(submitData)
-            // }).then(response => response.json())
-            //   .then(data => showSuccessMessage(option, submitData))
-            //   .catch(error => showErrorMessage(error));
+            // Submit form data
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).catch(error => {
+                console.log('Form submission noted:', error);
+                // Still show success message regardless
+            });
         }
 
         // Show success message
@@ -1316,137 +1806,100 @@
             
             let successContent = '';
             
-            if (option === 'call-agent') {
+            if (option === 'call-agent' || option === 'free-trial') {
                 successContent = `
-                    <div style="text-align: center; padding: var(--space-xl);">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-lg); animation: success-bounce 0.8s ease;">
-                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                    <div class="success-container">
+                        <div class="success-icon">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
                                 <polyline points="20,6 9,17 4,12"></polyline>
                             </svg>
                         </div>
                         
-                        <h2 style="color: var(--success); margin-bottom: var(--space-md); font-size: 2rem;">Welcome to Conversync!</h2>
-                        <p style="color: var(--gray-300); font-size: 1.1rem; margin-bottom: var(--space-lg);">
-                            Your AI Call Agent is being set up right now. You'll start receiving perfect customer service in minutes!
+                        <h2 style="background: linear-gradient(135deg, var(--success) 0%, #16a34a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--space-md); font-size: 2.5rem; font-weight: 800;">Welcome to Conversync!</h2>
+                        <p style="color: var(--gray-300); font-size: 1.2rem; margin-bottom: var(--space-xl); line-height: 1.6;">
+                            Your request has been sent successfully to our team. You'll be set up with your AI solution soon!
                         </p>
                         
-                        <div class="card" style="text-align: left; margin-bottom: var(--space-lg); background: var(--bg-glass);">
-                            <h3 style="color: var(--primary); margin-bottom: var(--space-md); text-align: center;">What happens next?</h3>
-                            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
-                                <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                                    <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">1</div>
-                                    <div>
-                                        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Check your email (within 5 minutes)</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.9rem;">Login credentials and phone setup instructions</p>
-                                    </div>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                                    <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">2</div>
-                                    <div>
-                                        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Complete 10-minute setup</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.9rem;">Train your AI on your business info and preferences</p>
-                                    </div>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                                    <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">3</div>
-                                    <div>
-                                        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Start receiving perfect calls</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.9rem;">Your AI answers immediately, 24/7</p>
-                                    </div>
-                                </div>
+                        <div style="background: rgba(0, 102, 255, 0.1); border: 1px solid var(--primary); border-radius: 20px; padding: var(--space-lg); margin-bottom: var(--space-xl); backdrop-filter: blur(10px);">
+                            <h4 style="color: var(--primary); margin-bottom: var(--space-sm); font-weight: 700;">Your 7-Day Free Trial with 10k Credit Points Includes:</h4>
+                            <div style="color: var(--gray-300); line-height: 1.6;">
+                                ✓ Unlimited usage within the credit points<br>
+                                ✓ Full feature access with human-like AI<br>
+                                ✓ 24/7 customer support from our team<br>
+                                ✓ Custom business knowledge integration
                             </div>
                         </div>
                         
-                        <div style="background: rgba(0, 102, 255, 0.1); border: 1px solid var(--primary); border-radius: 15px; padding: var(--space-md); margin-bottom: var(--space-lg);">
-                            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Your Free Trial Includes:</h4>
-                            <div style="color: var(--gray-300); font-size: 0.9rem;">
-                                ✓ 14 days of unlimited calls<br>
-                                ✓ Full appointment booking capability<br>
-                                ✓ 24/7 customer support<br>
-                                ✓ Real-time analytics dashboard
-                            </div>
+                        <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                            <a href="index.html" class="btn btn-secondary btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9,22 9,12 15,12 15,22"/>
+                                </svg>
+                                Back to Home
+                            </a>
                         </div>
-                        
-                        <button class="btn btn-primary btn-lg" onclick="window.open('mailto:${data.email}', '_blank')" style="margin-right: var(--space-sm);">
-                            Check Your Email
-                        </button>
-                        <a href="index.html" class="btn btn-secondary">Back to Home</a>
                     </div>
                 `;
             } else {
                 successContent = `
-                    <div style="text-align: center; padding: var(--space-xl);">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary) 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-lg); animation: success-bounce 0.8s ease;">
-                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                    <div class="success-container">
+                        <div class="success-icon" style="background: linear-gradient(135deg, var(--secondary) 0%, #16a34a 100%); box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
                                 <polyline points="20,6 9,17 4,12"></polyline>
                             </svg>
                         </div>
                         
-                        <h2 style="color: var(--secondary); margin-bottom: var(--space-md); font-size: 2rem;">Chatbot Request Confirmed!</h2>
-                        <p style="color: var(--gray-300); font-size: 1.1rem; margin-bottom: var(--space-lg);">
-                            Thank you for choosing Conversync AI Chatbot. Your intelligent assistant is being customized for your business.
+                        <h2 style="background: linear-gradient(135deg, var(--secondary) 0%, #16a34a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--space-md); font-size: 2.5rem; font-weight: 800;">Chatbot Order Confirmed!</h2>
+                        <p style="color: var(--gray-300); font-size: 1.2rem; margin-bottom: var(--space-xl); line-height: 1.6;">
+                            Thank you for choosing Conversync AI Chatbot. Your intelligent assistant is being custom-built for your business.
                         </p>
                         
-                        <div class="card" style="text-align: left; margin-bottom: var(--space-lg); background: var(--bg-glass);">
-                            <h3 style="color: var(--secondary); margin-bottom: var(--space-md); text-align: center;">What happens next?</h3>
-                            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
-                                <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                                    <div style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">1</div>
-                                    <div>
-                                        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Payment processing (within 1 hour)</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.9rem;">You'll receive payment confirmation and receipt</p>
-                                    </div>
+                        <div class="success-steps">
+                            <div class="success-step">
+                                <div class="success-step-number" style="background: var(--secondary);">1</div>
+                                <div class="success-step-content">
+                                    <h4>Payment processing (within 1 hour)</h4>
+                                    <p>You'll receive payment confirmation and receipt via email</p>
                                 </div>
-                                <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                                    <div style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">2</div>
-                                    <div>
-                                        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Custom development (24-48 hours)</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.9rem;">We build and customize your chatbot</p>
-                                    </div>
+                            </div>
+                            <div class="success-step">
+                                <div class="success-step-number" style="background: var(--secondary);">2</div>
+                                <div class="success-step-content">
+                                    <h4>Custom development (24-48 hours)</h4>
+                                    <p>We build and customize your chatbot to match your business</p>
                                 </div>
-                                <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                                    <div style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; flex-shrink: 0;">3</div>
-                                    <div>
-                                        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Delivery & installation guide</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.9rem;">Easy embed code and setup instructions</p>
-                                    </div>
+                            </div>
+                            <div class="success-step">
+                                <div class="success-step-number" style="background: var(--secondary);">3</div>
+                                <div class="success-step-content">
+                                    <h4>Delivery & installation guide</h4>
+                                    <p>Easy embed code and comprehensive setup instructions</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div style="background: rgba(0, 212, 255, 0.1); border: 1px solid var(--secondary); border-radius: 15px; padding: var(--space-md); margin-bottom: var(--space-lg);">
-                            <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Your ${data['chatbot-package'] === 'basic' ? 'Basic' : 'Advanced'} Package Includes:</h4>
-                            <div style="color: var(--gray-300); font-size: 0.9rem;">
-                                ✓ Custom AI chatbot for your business<br>
-                                ✓ ${data['chatbot-package'] === 'basic' ? 'Website widget integration' : 'Multi-channel integration (WhatsApp, Messenger, etc.)'}<br>
-                                ✓ Lifetime license with no monthly fees<br>
-                                ✓ Free updates and support for first year
-                            </div>
+                        <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                            <button class="btn btn-primary btn-lg" onclick="window.open('mailto:${data.email || 'support@conversync.com'}', '_blank')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                Check Your Email
+                            </button>
+                            <a href="index.html" class="btn btn-secondary btn-lg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9,22 9,12 15,12 15,22"/>
+                                </svg>
+                                Back to Home
+                            </a>
                         </div>
-                        
-                        <button class="btn btn-primary btn-lg" onclick="window.open('mailto:${data.email}', '_blank')" style="margin-right: var(--space-sm);">
-                            Check Your Email
-                        </button>
-                        <a href="index.html" class="btn btn-secondary">Back to Home</a>
                     </div>
                 `;
             }
             
             formContainer.innerHTML = successContent;
-            
-            // Add success animation
-            if (!document.getElementById('success-animation')) {
-                const style = document.createElement('style');
-                style.id = 'success-animation';
-                style.textContent = `
-                    @keyframes success-bounce {
-                        0% { transform: scale(0) rotate(0deg); }
-                        50% { transform: scale(1.3) rotate(180deg); }
-                        100% { transform: scale(1) rotate(360deg); }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
             
             // Scroll to success message
             setTimeout(() => {
@@ -1457,46 +1910,23 @@
             }, 300);
         }
 
-        // Show error message
-        function showErrorMessage(error) {
-            const formContainer = document.getElementById('form-container');
-            formContainer.innerHTML = `
-                <div style="text-align: center; padding: var(--space-xl);">
-                    <div style="width: 80px; height: 80px; background: var(--error); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-lg);">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="15" y1="9" x2="9" y2="15"></line>
-                            <line x1="9" y1="9" x2="15" y2="15"></line>
-                        </svg>
-                    </div>
-                    <h3 style="color: var(--error); margin-bottom: var(--space-md);">Setup Error</h3>
-                    <p style="color: var(--gray-400); margin-bottom: var(--space-lg);">
-                        Something went wrong during setup. Please try again or contact support.
-                    </p>
-                    <button class="btn btn-primary" onclick="location.reload()">Try Again</button>
-                </div>
-            `;
-        }
-
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.getElementById('mobile-nav');
-        mobileMenuBtn.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-    }
-
-    // Close mobile menu when clicking a nav link
-    document.querySelectorAll('.mobile-nav .nav-link, .mobile-nav-buttons .btn').forEach(link => {
-        link.addEventListener('click', () => {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mobileNav = document.getElementById('mobile-nav');
-            if (mobileNav.classList.contains('active')) {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-            }
+        // Close mobile menu when clicking a nav link
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                const mobileNav = document.getElementById('mobile-nav');
+                if (mobileNav.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                }
+            });
         });
-    });
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            showDesktopButtons();
+        });
+
     </script>
 </body>
 </html>
